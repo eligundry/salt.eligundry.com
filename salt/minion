@@ -1,0 +1,4 @@
+master: localhost
+fileserver_backend:
+  - roots
+file_client: local
