@@ -1,4 +1,4 @@
 user:
-  - name: eligundry
-  - email: eligundry@gmail.com
-  - fullname: eligundry
+  name: eligundry
+  email: eligundry@gmail.com
+  fullname: eligundry

@@ -1,4 +1,6 @@
-{{ user_name }}:
+{% set user = pillar['user'] %}
+
+{{ user['name'] }}:
   user.present:
     - groups:
       - docker
