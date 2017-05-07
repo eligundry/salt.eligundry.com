@@ -16,7 +16,7 @@ desktop_pkgs:
       - thunderbird
       - transmission
       - ttf-mscorefonts-installer
-      - xfce4-whiskermenu-plugin
+      - xfce4-goodies
 
 google_chrome:
   pkgrepo.managed:
