@@ -10,11 +10,13 @@ America/New_York:
   timezone.system:
     - utc: True
 
-system_hostname:
-  network.system:
-    - hostname: '{{ pillar['hostname'] }}'
-    - apply_hostname: True
-    - retain_settings: True
+/etc/hostname:
+  file.managed:
+    - contents_pillar: hostname
+    - user: root
+    - group: root
+    - mode: 644
+    - create: False
 
 apt_extensions:
   pkg.latest:

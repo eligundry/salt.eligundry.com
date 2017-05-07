@@ -6,6 +6,8 @@ pyenv:
     - name: https://github.com/pyenv/pyenv.git
     - target: {{ pyenv_path }}
     - user: {{ user }}
+    - require:
+      - {{ user }}
 
 pyenv-default-packages:
   git.latest:

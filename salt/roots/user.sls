@@ -11,4 +11,4 @@
     - shell: {{ user['shell'] }}
     - createhome: True
     - require:
-      - docker
+      - docker-group

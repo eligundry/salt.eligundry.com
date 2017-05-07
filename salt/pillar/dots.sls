@@ -14,7 +14,7 @@ dots:
   gitignore: .gitignore
   ideavimrc: .ideavimrc
   inputrc: .inputrc
-  oh-my-zsh: .oh-my-zsh/custom
+  oh-my-zsh/custom: .oh-my-zsh/custom
   profile: .profile
   psqlrc: .psqlrc
   tmux.conf: .tmux.conf

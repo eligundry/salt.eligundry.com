@@ -2,7 +2,7 @@
 {% set home = '/home/' + user %}
 {% set dots = home + '/dots' %}
 
-dots_repo:
+dots-repo:
   git.latest:
     - name: https://github.com/eligundry/dots.git
     - submodules: True
@@ -29,5 +29,5 @@ oh-my-zsh:
     - makedirs: True
     - force: True
     - require:
-      - dots_repo
+      - dots-repo
 {% endfor %}

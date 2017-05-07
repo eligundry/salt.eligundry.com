@@ -1,6 +1,3 @@
-{% set os = grains['os']|lower %}
-{% set release = grains['oscodename'] %}
-
 development_pkgs:
   pkg.latest:
     - pkgs:

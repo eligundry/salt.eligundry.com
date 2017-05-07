@@ -1,12 +1,12 @@
 base:
   '*':
     - system
-    - development
     - user
+    - development
     - dots
+    - docker
   'kernel:Linux':
     - match: grain
     - linux_desktop
     - linux_development
-    - linux_docker
     - xfce
