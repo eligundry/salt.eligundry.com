@@ -1,6 +1,7 @@
 dots:
   bash_profile: .bash_profile
   bashrc: .bashrc
+  commonprofile: .commonprofile
   ctags: .ctags
   eslintrc: .eslintrc
   bin: .bin
@@ -18,6 +19,7 @@ dots:
   profile: .profile
   psqlrc: .psqlrc
   tmux.conf: .tmux.conf
+  weechat: .weechat
   wgetrc: .wgetrc
   zsh: .zsh
   zshrc: .zshrc

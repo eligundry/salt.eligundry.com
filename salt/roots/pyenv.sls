@@ -1,5 +1,20 @@
 {% set user = pillar['user']['name'] %}
-{% set pyenv_path = '/home/' + user + '/.pyenv' %}
+{% set home = '/home/' + user %}
+{% set pyenv_path = home + '/.pyenv' %}
+
+pyenv-dependencies:
+  pkg.installed:
+    - comment: "Packages that pyenv needs to compile Python"
+    - pkgs:
+      - build-essential
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - llvm
+      - make
+      - wget
+      - zlib1g-dev
 
 pyenv:
   git.latest:
@@ -16,6 +31,14 @@ pyenv-default-packages:
     - user: {{ user }}
     - require:
       - pyenv
+
+{{ pyenv_path }}/default-packages:
+  file.managed:
+    - source: salt://configs/pyenv/default-packages
+    - user: {{ user }}
+    - group: {{ user }}
+    - require:
+      - pyenv-default-packages
 
 pyenv-implicit:
   git.latest:
@@ -40,12 +63,3 @@ pyenv-virtualenvwrapper:
     - user: {{ user }}
     - require:
       - pyenv
-
-nvm:
-  cmd.run:
-    - name: 'curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash'
-    - unless: test -d /home/{{ user }}/.nvm
-    - runas: {{ user }}
-    - cwd: /home/{{ user }}
-    - require:
-      - {{ user }}

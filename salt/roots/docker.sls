@@ -1,6 +1,22 @@
 {% set os = grains['os']|lower %}
 {% set release = 'stretch' %}
 
+docker-group:
+  group.present:
+    - name: docker
+
+docker-user:
+  user.present:
+    - name: docker
+    - groups:
+      - docker
+      - users
+    - createhome: True
+    - fullname: Moby Dock
+    - empty_password: True
+    - require:
+      - docker-group
+
 docker-ppa:
   pkgrepo.managed:
     - humanname: Docker
@@ -18,22 +34,6 @@ docker:
     - require:
       - docker-ppa
 
-docker-group:
-  group.present:
-    - name: docker
-
-docker-user:
-  user.present:
-    - name: docker
-    - groups:
-      - docker
-      - users
-    - createhome: True
-    - fullname: Moby Dock
-    - empty_password: True
-    - require:
-      - docker-group
-
 docker-service-file:
   file.managed:
     - name: /etc/systemd/system/docker.service.d/docker_user.conf
@@ -48,14 +48,10 @@ docker-service-file:
 docker-service-enabled:
   service.enabled:
     - name: docker
-    - require:
-      - docker-service-file
 
 docker-service-running:
   service.running:
     - name: docker
-    - require:
-      - docker-service-file
 
 service.systemctl_reload:
   module.run:

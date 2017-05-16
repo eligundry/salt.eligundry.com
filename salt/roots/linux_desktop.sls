@@ -1,10 +1,13 @@
-desktop_environments:
+{% set os = grains['os']|lower %}
+{% set release = 'jessie' %}
+
+desktop-environments:
   pkg.latest:
     - pkgs:
       - gnome
       - xfce4
 
-desktop_pkgs:
+desktop-pkgs:
   pkg.latest:
     - pkgs:
       - clementine
@@ -12,11 +15,20 @@ desktop_pkgs:
       - firefox-esr
       - fonts-roboto
       - gimp
+      - gnome-do
+      - qt4-qtconfig
       - redshift-gtk
       - thunderbird
       - transmission
+      - ttf-ancient-fonts
       - ttf-mscorefonts-installer
       - xfce4-goodies
+
+empathy:
+  pkg.purged
+
+polari:
+  pkg.purged
 
 google-chrome-ppa:
   pkgrepo.managed:
@@ -35,15 +47,18 @@ google-chrome:
     - require:
       - google-chrome-ppa
 
-xfce4-dockbarx:
+xfce4-dockbarx-ppa:
   pkgrepo.managed:
     - humanname: XFCE4 DockbarX Plugin
     - name: deb http://ppa.launchpad.net/dockbar-main/ppa/ubuntu zesty main
     - keyid: 38BD81CA
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/dockbarx.list
+
+xfce4-dockbarx-plugin:
   pkg.latest:
-    - name: xfce4-dockbarx-plugin
+    - require:
+      - xfce4-dockbarx-ppa
 
 spotify-ppa:
   pkgrepo.managed:
@@ -101,6 +116,49 @@ veracrypt-ppa:
 
 veracrypt:
   pkg.latest:
-    - name: veracrypt
     - require:
       - veracrypt-ppa
+
+emojione-ppa:
+  pkgrepo.managed:
+    - humanname: 'EmojiOne - Color Emoji Fonts'
+    - name: deb http://ppa.launchpad.net/eosrei/fonts/ubuntu zesty main
+    - keyid: 62D7EDF8
+    - keyserver: keyserver.ubuntu.com
+    - file: /etc/apt/sources.list.d/emojione.list
+
+emojione-picker-ppa:
+  pkgrepo.managed:
+    - humanname: EmojiOne Picker
+    - name: deb http://ppa.launchpad.net/ys/emojione-picker/ubuntu xenial main
+    - keyid: EC2F4EE0
+    - keyserver: keyserver.ubuntu.com
+    - file: /etc/apt/sources.list.d/emojione-picker.list
+
+emojione:
+  pkg.latest:
+    - pkgs:
+      - fonts-emojione-svginot
+      - fonts-twemoji-svginot
+      - emojione-picker
+    - require:
+      - emojione-ppa
+      - emojione-picker-ppa
+
+dropbox-ppa:
+  pkgrepo.managed:
+    - humanname: Dropbox
+    - name: deb http://linux.dropbox.com/{{ os }}/ {{ release }} main
+    - keyid: 5044912E
+    - keyserver: pgp.mit.edu
+    - file: /etc/apt/sources.list.d/dropbox.list
+
+dropbox:
+  pkg.latest:
+    - require:
+      - dropbox-ppa
+
+discord:
+  pkg.installed:
+    - sources:
+      - discord: 'https://discordapp.com/api/download?platform=linux&format=deb'
