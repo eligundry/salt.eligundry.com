@@ -34,7 +34,7 @@ pyenv-default-packages:
 
 {{ pyenv_path }}/default-packages:
   file.managed:
-    - source: salt://configs/pyenv/default-packages
+    - source: salt://shared/pyenv/default-packages
     - user: {{ user }}
     - group: {{ user }}
     - require:

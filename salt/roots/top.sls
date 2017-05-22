@@ -1,20 +1,9 @@
 base:
   '*':
-    - system
-    - user
-    - dots
-    - pyenv
-    - nvm
+    - shared
   'kernel:Linux':
     - match: grain
-    - apt
-    - ctags
-    - docker
-    - linux_desktop
-    - linux_development
-    - google-cloud
-    - xfce
-    - neovim
+    - linux
   'kernel:Darwin':
     - match: grain
-    - mac_development
+    - mac
