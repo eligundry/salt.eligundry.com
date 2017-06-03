@@ -2,3 +2,4 @@ ipython
 pdbpp
 pipenv
 pytest
+tox

@@ -6,12 +6,16 @@ universal-ctags-deps:
       - automake
       - make
 
-univeral-ctags:
+univeral-ctags-repo:
   git.latest:
     - name: https://github.com/universal-ctags/ctags.git
     - target: {{ repo_path }}
+
+universal-ctags-build:
   cmd.run:
     - cwd: {{ repo_path }}
     - name: './autogen.sh && ./configure && make && make install'
+    - watch:
+      - universal-ctags-repo
     - require:
       - universal-ctags-deps

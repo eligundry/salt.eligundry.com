@@ -29,15 +29,17 @@ docker:
   pkg.installed:
     - pkgs:
       - docker
-      - docker-compose
       - docker-engine
+      {% if os == 'debian' %}
+      - docker-compose
+      {% endif %}
     - require:
       - docker-ppa
 
 docker-service-file:
   file.managed:
     - name: /etc/systemd/system/docker.service.d/docker_user.conf
-    - source: salt://configs/docker/docker_user.conf
+    - source: salt://linux/docker/docker_user.conf
     - makedirs: True
     - user: root
     - group: root
@@ -53,7 +55,9 @@ docker-service-running:
   service.running:
     - name: docker
 
+{% if os == 'debian' %}
 service.systemctl_reload:
   module.run:
     - onchanges:
       - file: /etc/systemd/system/docker.service.d/docker_user.conf
+{% endif %}

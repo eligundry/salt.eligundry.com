@@ -4,15 +4,15 @@
   {% set codename = pillar['debian_ppa_codename'] %}
 {% endif %}
 
-neovim-ppa:
+veracrypt-ppa:
   pkgrepo.managed:
-    - humanname: Neovim
-    - name: deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu {{ codename }} main
-    - keyid: 8231B6DD
+    - humanname: VeraCrypt
+    - name: deb http://ppa.launchpad.net/unit193/encryption/ubuntu {{ codename }} main
+    - keyid: B58A653A
     - keyserver: keyserver.ubuntu.com
-    - file: /etc/apt/sources.list.d/neovim.list
+    - file: /etc/apt/sources.list.d/veracrypt.list
 
-neovim:
+veracrypt:
   pkg.latest:
     - require:
-      - neovim-ppa
+      - veracrypt-ppa

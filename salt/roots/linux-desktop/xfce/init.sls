@@ -15,7 +15,7 @@ xfce4-dockbarx-plugin:
 
 xfce4-customize:
   cmd.run:
-    - name: /srv/salt/configs/customize-xfce.sh
+    - name: /srv/salt/linux-desktop/xfce/customize-xfce.sh
     - runas: {{ user }}
     - cwd: /home/{{ user }}
     - require:

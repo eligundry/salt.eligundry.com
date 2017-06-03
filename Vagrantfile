@@ -1,10 +1,4 @@
 Vagrant.configure('2') do |config|
-  # Debian Testing
-  config.vm.box = 'ideegeo/debian-sid'
-
-  # Static IP
-  config.vm.network "private_network", ip: "10.17.1.4"
-
   # Salt folder sync
   config.vm.synced_folder "salt/roots/", "/srv/salt/"
   config.vm.synced_folder "salt/pillar/", "/srv/pillar/"
@@ -21,5 +15,15 @@ Vagrant.configure('2') do |config|
     salt.minion_config = "salt/minion"
     salt.run_highstate = true
     salt.verbose = true
+  end
+
+  config.vm.define "debian" do |debian|
+    debian.vm.box = 'ideegeo/debian-sid'
+    debian.vm.network "private_network", ip: "10.17.1.4"
+  end
+
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.box = 'ubuntu/trusty64'
+    ubuntu.vm.network "private_network", ip: "10.17.1.5"
   end
 end

@@ -9,7 +9,6 @@ desktop-pkgs:
     - pkgs:
       - clementine
       - evince
-      - firefox-esr
       - fonts-roboto
       - gimp
       - gnome-do
@@ -20,6 +19,11 @@ desktop-pkgs:
       - ttf-ancient-fonts
       - ttf-mscorefonts-installer
       - xfce4-goodies
+      {% if grains['os'] == 'Debian' %}
+      - firefox-esr
+      {% else %}
+      - firefox
+      {% endif %}
 
 empathy:
   pkg.purged
