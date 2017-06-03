@@ -10,5 +10,5 @@ cli_pkgs:
       - silversearcher-ag
       - tmux
       - vagrant
-      - vim
+      - vim-nox
       - zsh
