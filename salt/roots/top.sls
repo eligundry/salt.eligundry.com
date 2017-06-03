@@ -23,3 +23,4 @@ base:
     - linux-desktop
     - media-center
     - thinkpad
+    - server
