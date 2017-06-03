@@ -15,6 +15,9 @@ base:
     - match: grain
     - linux-desktop
     - thinkpad
+  'eligundry_device:server':
+    - match: grain
+    - server
   'virtual:VirtualBox':
     - match: grain
     - linux-desktop

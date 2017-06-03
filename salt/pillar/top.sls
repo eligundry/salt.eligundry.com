@@ -3,6 +3,7 @@
     - system
     - user
     - dots
+    - server
   'eligundry_device:thinkpad':
     - match: grain
     - thinkpad
