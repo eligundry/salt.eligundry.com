@@ -4,7 +4,7 @@
 {{ user['name'] }}:
   user.present:
     - fullname: {{ user['fullname'] }}
-    - password: {{ user['password'] }}
+    # - password: {{ user['password'] }}
     - groups:
       - sudo
       - users
