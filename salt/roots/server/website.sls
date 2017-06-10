@@ -1,5 +1,6 @@
 {% set letsencrypt_dir = '/opt/letsencrypt' %}
 {% set eligundry_image = 'eligundry/eligundry.com' %}
+{% set nginx_image = 'jwilder/nginx-proxy' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
 {{ letsencrypt_dir }}:
@@ -20,6 +21,8 @@ eligundry.com:
       - LETSENCRYPT_EMAIL: {{ pillar['website']['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ pillar['website']['letsencrypt']['test'] }}"
       - ENABLE_IPV6: "True"
+    - port_bindings:
+      - "80:80"
     - restart_policy: always
     - require:
       - nginx-proxy
