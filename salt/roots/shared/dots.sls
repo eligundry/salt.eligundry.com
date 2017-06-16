@@ -1,5 +1,5 @@
 {% set user = pillar['user']['name'] %}
-{% set home = '/home/' + user %}
+{% set home = pillar['user']['home'] %}
 {% set dots = home + '/dots' %}
 {% set lib = home + '/.lib' %}
 
@@ -15,7 +15,6 @@ dots-repo:
 {{ lib }}:
   file.directory:
     - user: {{ user }}
-    - group: {{ user }}
 
 zplug:
   git.latest:
@@ -41,6 +40,14 @@ base16-shell:
     - require:
       - {{ lib }}
 
+base16-terminal-app:
+  git.latest:
+    - name: https://github.com/korzhyk/base16-terminal-app.git
+    - target: {{ lib }}/base16-terminal-app
+    - user: {{ user }}
+    - require:
+      - {{ lib }}
+
 pipes:
   git.latest:
     - name: https://github.com/pipeseroni/pipes.sh.git
@@ -54,7 +61,6 @@ pipes:
   file.symlink:
     - target: {{ dots }}/{{ src }}
     - user: {{ user }}
-    - group: {{ user }}
     - makedirs: True
     - force: True
     - require:

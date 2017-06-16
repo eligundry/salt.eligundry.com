@@ -5,12 +5,12 @@
   user.present:
     - fullname: {{ user['fullname'] }}
     # - password: {{ user['password'] }}
+    {% if is_linux %}
     - groups:
       - sudo
       - users
-      {% if is_linux %}
       - docker
-      {% endif %}
+    {% endif %}
     - shell: {{ user['shell'] }}
     - createhome: True
     {% if is_linux  %}

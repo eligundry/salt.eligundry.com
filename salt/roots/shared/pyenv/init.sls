@@ -1,11 +1,14 @@
 {% set user = pillar['user']['name'] %}
-{% set home = '/home/' + user %}
-{% set pyenv_path = home + '/.pyenv' %}
+{% set pyenv_path = pillar['user']['home'] + '/.pyenv' %}
 
 pyenv-dependencies:
   pkg.installed:
     - comment: "Packages that pyenv needs to compile Python"
     - pkgs:
+      {% if grains['os'] == 'MacOS' %}
+      - readline
+      - xz
+      {% else %}
       - build-essential
       - libbz2-dev
       - libreadline-dev
@@ -15,6 +18,7 @@ pyenv-dependencies:
       - make
       - wget
       - zlib1g-dev
+      {% endif %}
 
 pyenv:
   git.latest:
@@ -36,7 +40,6 @@ pyenv-default-packages:
   file.managed:
     - source: salt://shared/pyenv/default-packages
     - user: {{ user }}
-    - group: {{ user }}
     - require:
       - pyenv-default-packages
 

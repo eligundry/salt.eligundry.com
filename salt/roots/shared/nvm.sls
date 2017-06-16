@@ -1,5 +1,5 @@
 {% set user = pillar['user']['name'] %}
-{% set home = '/home/' + user %}
+{% set home = pillar['user']['home'] %}
 
 nvm-repo:
   git.latest:
