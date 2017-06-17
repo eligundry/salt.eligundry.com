@@ -32,15 +32,18 @@ else
 	if [ $? -ne 0 ];
 	then
 		echo "We need SaltStack ..."
-		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
-		# -d Don't enable salt-minion autostart
-		# -P Allow pip based installations
-		wget -qO- https://bootstrap.saltstack.com | $USE_SUDO sh -s -- -P -d git v2016.11.5
+		apt install -y salt-minion python-pip
+		pip install GitPython
 	fi
 fi
 
+# Link the directories
+ln -sv $PWD/salt/minion /etc/salt/minion
+ln -sv $PWD/salt/roots /srv/salt
+ln -sv $PWD/salt/pillar /srv/pillar
+
 # Set the user, home-directory, and state root
-$USE_SUDO salt-call --local --config=./ --state-output=changes grains.setvals "{ 'user': '$USERNAME', 'homedir': '$HOMEDIR', 'eligundry_device': '$DEVICE_NAME' }"
+$USE_SUDO salt-call --local --state-output=changes grains.setvals "{ 'user': '$USERNAME', 'homedir': '$HOMEDIR', 'eligundry_device': '$DEVICE_NAME' }"
 
 # Apply the high state
-$USE_SUDO salt-call --local --config=./ --state_verbose=False --state-output=mixed --log-level=quiet --retcode-passthrough state.highstate
+$USE_SUDO salt-call --local --state_verbose=False --state-output=mixed --log-level=quiet --retcode-passthrough state.highstate

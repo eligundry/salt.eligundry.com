@@ -3,6 +3,7 @@
     - system
     - user
     - dots
+    - repos
   'eligundry_device:thinkpad':
     - match: grain
     - thinkpad

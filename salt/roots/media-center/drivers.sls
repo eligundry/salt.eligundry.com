@@ -1,0 +1,2 @@
+firmware-iwlwifi:
+  pkg.installed

@@ -1,9 +1,4 @@
 {% set os = grains['os'] %}
-{% set codename = grains['lsb_distrib_codename'] %}
-
-{% if os == 'Debian' %}
-  {% set codename = pillar['debian_ppa_codename'] %}
-{% endif %}
 
 {% if os != 'Debian' %}
 kodi-ppa:

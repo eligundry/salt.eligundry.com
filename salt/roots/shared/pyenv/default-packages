@@ -1,4 +1,6 @@
 ipython
+jedi
+neovim
 pdbpp
 pipenv
 pytest

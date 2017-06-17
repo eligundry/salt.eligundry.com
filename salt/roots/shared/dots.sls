@@ -1,5 +1,5 @@
 {% set user = pillar['user']['name'] %}
-{% set home = '/home/' + user %}
+{% set home = pillar['user']['home'] %}
 {% set dots = home + '/dots' %}
 {% set lib = home + '/.lib' %}
 
@@ -15,46 +15,22 @@ dots-repo:
 {{ lib }}:
   file.directory:
     - user: {{ user }}
-    - group: {{ user }}
 
-zplug:
+{% for target, repo in pillar['dots_libs'].items() %}
+dots-lib-{{ target }}:
   git.latest:
-    - name: https://github.com/zplug/zplug.git
-    - target: {{ lib }}/zplug
+    - name: {{ repo }}
+    - target: {{ lib }}/{{ target }}
     - user: {{ user }}
     - require:
       - {{ lib }}
-
-tmuxifier:
-  git.latest:
-    - name: https://github.com/jimeh/tmuxifier.git
-    - target: {{ lib }}/tmuxifier
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
-
-base16-shell:
-  git.latest:
-    - name: https://github.com/chriskempson/base16-shell.git
-    - target: {{ lib }}/base16-shell
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
-
-pipes:
-  git.latest:
-    - name: https://github.com/pipeseroni/pipes.sh.git
-    - target: {{ lib }}/pipes
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
+{% endfor %}
 
 {% for src, dst in pillar['dots'].items() %}
 {{ home }}/{{ dst }}:
   file.symlink:
     - target: {{ dots }}/{{ src }}
     - user: {{ user }}
-    - group: {{ user }}
     - makedirs: True
     - force: True
     - require:
