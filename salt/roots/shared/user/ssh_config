@@ -1,0 +1,6 @@
+{% for alias, hostname in pillar['user']['ssh_aliases'].items() %}
+Host {{ alias }}:
+    Hostname {{ hostname }}
+{% endfor %}
+
+Include config.local

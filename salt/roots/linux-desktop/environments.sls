@@ -12,6 +12,7 @@ desktop-pkgs:
       - fonts-roboto
       - gimp
       - gnome-do
+      - playerctl
       - qt4-qtconfig
       - redshift-gtk
       - thunderbird
