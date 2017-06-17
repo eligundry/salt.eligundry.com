@@ -4,7 +4,6 @@
 {{ user['name'] }}:
   user.present:
     - fullname: {{ user['fullname'] }}
-    # - password: {{ user['password'] }}
     - shell: {{ user['shell'] }}
     - createhome: True
     {% if is_linux %}
@@ -23,3 +22,7 @@
     - mode: 600
     - contents_pillar: user:ssh_keys:{{ name }}
 {% endfor %}
+
+# salt-master-gpg-key:
+#   gpg.present:
+#     - name: salt.stack@eligundry.ninja

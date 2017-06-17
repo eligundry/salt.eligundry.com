@@ -5,3 +5,4 @@ include:
   - shared.pyenv
   - shared.nvm
   - shared.repos
+  - shared.docker-gc
