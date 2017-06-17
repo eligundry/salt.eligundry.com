@@ -6,6 +6,7 @@ pyenv-dependencies:
     - comment: "Packages that pyenv needs to compile Python"
     - pkgs:
       {% if grains['os'] == 'MacOS' %}
+      - sqlite
       - readline
       - xz
       {% else %}
