@@ -16,45 +16,15 @@ dots-repo:
   file.directory:
     - user: {{ user }}
 
-zplug:
+{% for target, repo in pillar['dots_libs'].items() %}
+dots-lib-{{ target }}:
   git.latest:
-    - name: https://github.com/zplug/zplug.git
-    - target: {{ lib }}/zplug
+    - name: {{ repo }}
+    - target: {{ lib }}/{{ target }}
     - user: {{ user }}
     - require:
       - {{ lib }}
-
-tmuxifier:
-  git.latest:
-    - name: https://github.com/jimeh/tmuxifier.git
-    - target: {{ lib }}/tmuxifier
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
-
-base16-shell:
-  git.latest:
-    - name: https://github.com/chriskempson/base16-shell.git
-    - target: {{ lib }}/base16-shell
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
-
-base16-terminal-app:
-  git.latest:
-    - name: https://github.com/korzhyk/base16-terminal-app.git
-    - target: {{ lib }}/base16-terminal-app
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
-
-pipes:
-  git.latest:
-    - name: https://github.com/pipeseroni/pipes.sh.git
-    - target: {{ lib }}/pipes
-    - user: {{ user }}
-    - require:
-      - {{ lib }}
+{% endfor %}
 
 {% for src, dst in pillar['dots'].items() %}
 {{ home }}/{{ dst }}:
