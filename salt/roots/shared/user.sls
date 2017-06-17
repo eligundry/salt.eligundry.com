@@ -23,6 +23,10 @@
     - contents_pillar: user:ssh_keys:{{ name }}
 {% endfor %}
 
-# salt-master-gpg-key:
-#   gpg.present:
-#     - name: salt.stack@eligundry.ninja
+salt-master-gpg-key:
+  gpg.present:
+    - name: {{ pillar['salt-master-gpg']['id'] }}
+    - keyserver: {{ pillar['salt-master-gpg']['server'] }}
+    - user: {{ user['name'] }}
+    - require:
+      - {{ user['name'] }}
