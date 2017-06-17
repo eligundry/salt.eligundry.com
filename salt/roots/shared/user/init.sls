@@ -18,10 +18,25 @@
 {% for name in user['ssh_keys'] %}
 {{ pillar['home'] }}/.ssh/{{ name }}:
   file.managed:
-    - user: {{ user }}
+    - user: {{ user['name'] }}
     - mode: 600
     - contents_pillar: user:ssh_keys:{{ name }}
+    - show_changes: False
 {% endfor %}
+
+{{ pillar['home'] }}/.ssh/config:
+  file.managed:
+    - user: {{ user['name'] }}
+    - mode: 600
+    - source: salt://shared/user/ssh_config
+    - template: jinja
+    - require:
+      - {{ user['name'] }}
+
+{{ pillar['home'] }}/.ssh/config.local:
+  file.managed:
+    - user: {{ user['name'] }}
+    - mode: 600
 
 salt-master-gpg-key:
   gpg.present:
