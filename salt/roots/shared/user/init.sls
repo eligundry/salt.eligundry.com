@@ -16,7 +16,7 @@
     {% endif %}
 
 {% for name in user['ssh_keys'] %}
-{{ pillar['home'] }}/.ssh/{{ name }}:
+{{ user['home'] }}/.ssh/{{ name }}:
   file.managed:
     - user: {{ user['name'] }}
     - mode: 600
@@ -24,7 +24,7 @@
     - show_changes: False
 {% endfor %}
 
-{{ pillar['home'] }}/.ssh/config:
+{{ user['home'] }}/.ssh/config:
   file.managed:
     - user: {{ user['name'] }}
     - mode: 600
@@ -33,7 +33,7 @@
     - require:
       - {{ user['name'] }}
 
-{{ pillar['home'] }}/.ssh/config.local:
+{{ user['home'] }}/.ssh/config.local:
   file.managed:
     - user: {{ user['name'] }}
     - mode: 600
