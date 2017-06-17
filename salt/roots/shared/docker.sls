@@ -4,7 +4,8 @@ docker-py:
 docker-gc:
   dockerng.image_present:
     - name: spotify/docker-gc
-    - require: docker-py
+    - require:
+      - docker-py
 
 docker-cleanup:
   cron.present:
