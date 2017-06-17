@@ -5,15 +5,21 @@
   user.present:
     - fullname: {{ user['fullname'] }}
     # - password: {{ user['password'] }}
+    - shell: {{ user['shell'] }}
+    - createhome: True
     {% if is_linux %}
     - groups:
       - sudo
       - users
       - docker
-    {% endif %}
-    - shell: {{ user['shell'] }}
-    - createhome: True
-    {% if is_linux  %}
     - require:
       - docker-group
     {% endif %}
+
+{% for name in user['ssh_keys'] %}
+{{ pillar['home'] }}/.ssh/{{ name }}:
+  file.managed:
+    - user: {{ user }}
+    - mode: 600
+    - contents_pillar: user:ssh_keys:{{ name }}
+{% endfor %}
