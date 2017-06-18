@@ -61,3 +61,11 @@ service.systemctl_reload:
     - onchanges:
       - file: /etc/systemd/system/docker.service.d/docker_user.conf
 {% endif %}
+
+minikube:
+  file.managed:
+    - comment: "Local Kubernetes Runner"
+    - name: /usr/local/bin/minikube
+    - source: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    - mode: 755
+    - show_changes: False

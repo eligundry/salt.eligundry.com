@@ -12,6 +12,10 @@ iterm2:
 htop:
   pkg.installed
 
+minikube:
+  pkg.installed:
+    - name: caskroom/cask/minikube
+
 neovim:
   pkg.installed
 
