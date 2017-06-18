@@ -16,13 +16,25 @@
     {% endif %}
 
 {% for name in user['ssh_keys'] %}
+
 {{ user['home'] }}/.ssh/{{ name }}:
   file.managed:
     - user: {{ user['name'] }}
     - mode: 600
     - contents_pillar: user:ssh_keys:{{ name }}
     - show_changes: False
+
 {% endfor %}
+
+{% if 'id_rsa.pub' in user['ssh_keys'] %}
+{{ user['name'] }}_ssh_auth:
+  ssh_auth.present:
+    - name: {{ user['ssh_keys']['id_rsa.pub'] }}
+    - user: {{ user['name'] }}
+    - enc: 'ssh-rsa'
+    - require:
+      - {{ user['name'] }}
+{% endif %}
 
 {{ user['home'] }}/.ssh/config:
   file.managed:
@@ -37,6 +49,7 @@
   file.managed:
     - user: {{ user['name'] }}
     - mode: 600
+    - replace: False
 
 salt-master-gpg-key:
   gpg.present:
