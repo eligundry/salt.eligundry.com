@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Modified from https://github.com/rawkode/saltstack-dotfiles/blob/master/init.sh
+
 HOMEDIR=$HOME
 USERNAME=$(whoami)
 DEVICE_NAME=$1
@@ -33,9 +35,11 @@ else
 	then
 		echo "We need SaltStack ..."
 		$USE_SUDO apt install -y salt-minion python-pip
-		pip install GitPython docker-py python-gnupg
 	fi
 fi
+
+# Install the dependencies.
+$USE_SUDO pip install GitPython docker-py python-gnupg
 
 # Set the user, home-directory, and state root
 $USE_SUDO salt-call --state-output=changes grains.setvals "{ 'eligundry_device': '$DEVICE_NAME' }"
