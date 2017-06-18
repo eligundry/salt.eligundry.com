@@ -69,3 +69,4 @@ minikube:
     - source: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     - mode: 755
     - show_changes: False
+    - skip_verify: True
