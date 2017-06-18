@@ -5,8 +5,8 @@ user:
   ssh_keys: {}
   ssh_aliases: {}
   gpg_keys:
-    private: []
-    public: []
+    private: {}
+    public: {}
   {% if grains['os'] == 'MacOS' %}
   shell: /usr/local/bin/zsh
   home: /Users/eligundry
