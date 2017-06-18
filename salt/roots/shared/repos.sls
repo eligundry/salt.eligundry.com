@@ -13,4 +13,6 @@
     - user: {{ user }}
     - identity: {{ home }}/.ssh/no_pass
     - onlyif: 'test ! -d {{ code }}/{{ target }}'
+    - require:
+      - {{ home }}/.ssh/no_pass
 {% endfor %}

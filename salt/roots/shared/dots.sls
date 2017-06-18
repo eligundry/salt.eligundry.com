@@ -5,7 +5,7 @@
 
 dots-repo:
   git.latest:
-    - name: https://github.com/eligundry/dots.git
+    - name: git@github.com:eligundry/dots.git
     - submodules: True
     - target: {{ dots }}
     - user: {{ user }}
@@ -26,7 +26,7 @@ dots-lib-{{ target }}:
       - {{ lib }}
 {% endfor %}
 
-{% for src, dst in pillar['dots'].items() %}
+{% for dst, src in pillar['dots'].items() %}
 {{ home }}/{{ dst }}:
   file.symlink:
     - target: {{ dots }}/{{ src }}
