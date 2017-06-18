@@ -7,6 +7,7 @@ cli_pkgs:
       - htop
       - python
       - python3
+      - python-pip
       - silversearcher-ag
       - tmux
       - vagrant

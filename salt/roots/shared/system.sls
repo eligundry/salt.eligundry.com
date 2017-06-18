@@ -14,7 +14,7 @@ America/New_York:
 
 /etc/hostname:
   file.managed:
-    - contents_pillar: hostname
+    - contents_grains: id
     - user: root
     - group: root
     - mode: 644
