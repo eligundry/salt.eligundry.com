@@ -8,6 +8,7 @@ include:
   - linux-desktop.mattermost
   - linux-desktop.numix
   - linux-desktop.spotify
+  - linux-desktop.slack
   - linux-desktop.steam
   - linux-desktop.veracrypt
   - linux-desktop.virtualbox

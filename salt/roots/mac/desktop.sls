@@ -18,6 +18,10 @@ gpgtools:
   pkg.installed:
     - name: caskroom/cask/gpgtools
 
+slack:
+  pkg.installed:
+    - name: caskroom/cask/slack
+
 spotify:
   pkg.installed:
     - name: caskroom/cask/spotify
