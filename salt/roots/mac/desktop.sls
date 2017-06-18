@@ -22,6 +22,10 @@ spotify:
   pkg.installed:
     - name: caskroom/cask/spotify
 
+spotify-notifications:
+  pkg.installed:
+    - name: caskroom/cask/spotify-notifications
+
 veracrypt:
   pkg.installed:
     - name: caskroom/cask/veracrypt
