@@ -9,7 +9,9 @@ dots-repo:
     - submodules: True
     - target: {{ dots }}
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
+      - {{ home }}/.ssh/no_pass
       - {{ user }}
 
 {{ lib }}:
