@@ -64,7 +64,7 @@ service.systemctl_reload:
 
 minikube:
   file.managed:
-    - comment: "Local Kubernetes Runner"
+    - comment: "Local Kubernetes Server"
     - name: /usr/local/bin/minikube
     - source: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     - mode: 755

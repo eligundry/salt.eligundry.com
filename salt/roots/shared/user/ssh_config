@@ -1,5 +1,5 @@
 {% for alias, hostname in pillar['user']['ssh_aliases'].items() %}
-Host {{ alias }}:
+Host {{ alias }}
     Hostname {{ hostname }}
 {% endfor %}
 
