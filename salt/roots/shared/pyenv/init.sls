@@ -44,13 +44,15 @@ pyenv-default-packages:
     - require:
       - pyenv-default-packages
 
-pyenv-implicit:
-  git.latest:
-    - name: https://github.com/concordusapps/pyenv-implict.git
-    - target: {{ pyenv_path }}/plugins/pyenv-implict
-    - user: {{ user }}
-    - require:
-      - pyenv
+# @TODO This is causing terrrible performance on shell init'ing on OSX. Figure
+# out why and reneable this as it allows tox to work really well.
+# pyenv-implicit:
+#   git.latest:
+#     - name: https://github.com/concordusapps/pyenv-implict.git
+#     - target: {{ pyenv_path }}/plugins/pyenv-implict
+#     - user: {{ user }}
+#     - require:
+#       - pyenv
 
 pyenv-virtualenv:
   git.latest:
