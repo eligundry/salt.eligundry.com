@@ -13,3 +13,8 @@ cli_pkgs:
       - vagrant
       - vim
       - zsh
+
+mysql:
+  pkg.latest:
+    - pkgs:
+      - libmysqlclient-dev

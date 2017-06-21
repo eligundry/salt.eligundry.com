@@ -16,6 +16,9 @@ minikube:
   pkg.installed:
     - name: caskroom/cask/minikube
 
+mysql:
+  pkg.installed
+
 neovim:
   pkg.installed
 
