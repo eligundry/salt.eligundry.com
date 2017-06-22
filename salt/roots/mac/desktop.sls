@@ -18,6 +18,10 @@ gpgtools:
   pkg.installed:
     - name: caskroom/cask/gpgtools
 
+licecap:
+  pkg.installed:
+    - name: caskroom/cask/licecap
+
 slack:
   pkg.installed:
     - name: caskroom/cask/slack
