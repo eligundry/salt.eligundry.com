@@ -32,6 +32,9 @@ python:
 the_silver_searcher:
   pkg.installed
 
+tree:
+  pkg.installed
+
 tmux:
   pkg.installed
 

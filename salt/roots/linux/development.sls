@@ -9,6 +9,7 @@ cli_pkgs:
       - python3
       - python-pip
       - silversearcher-ag
+      - tree
       - tmux
       - vagrant
       - vim
