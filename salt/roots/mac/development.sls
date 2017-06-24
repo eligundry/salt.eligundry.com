@@ -29,6 +29,9 @@ python:
       - python3
       - sqlite
 
+reattach-to-user-namespace:
+  pkg.installed
+
 the_silver_searcher:
   pkg.installed
 
