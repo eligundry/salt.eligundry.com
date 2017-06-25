@@ -16,3 +16,11 @@
     - require:
       - {{ home }}/.ssh/no_pass
 {% endfor %}
+
+# Generate host entries for the web apps I am working on.
+{% for host, ip in pillar['hosts'].items() %}
+host-{{ host }}:
+  host.present:
+    - name: {{ host }}
+    - ip: {{ ip }}
+{% endfor %}

@@ -16,6 +16,9 @@ minikube:
   pkg.installed:
     - name: caskroom/cask/minikube
 
+mysql:
+  pkg.installed
+
 neovim:
   pkg.installed
 
@@ -26,7 +29,13 @@ python:
       - python3
       - sqlite
 
+reattach-to-user-namespace:
+  pkg.installed
+
 the_silver_searcher:
+  pkg.installed
+
+tree:
   pkg.installed
 
 tmux:

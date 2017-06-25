@@ -9,7 +9,13 @@ cli_pkgs:
       - python3
       - python-pip
       - silversearcher-ag
+      - tree
       - tmux
       - vagrant
       - vim
       - zsh
+
+mysql:
+  pkg.latest:
+    - pkgs:
+      - libmysqlclient-dev
