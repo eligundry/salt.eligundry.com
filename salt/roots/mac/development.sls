@@ -43,7 +43,9 @@ tmux:
 
 vagrant:
   pkg.installed:
-    - name: caskroom/cask/vagrant
+    - pkgs:
+      - caskroom/cask/vagrant
+      - caskroom/cask/virtualbox
 
 vim:
   pkg.installed:
