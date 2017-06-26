@@ -15,6 +15,11 @@ cli_pkgs:
       - vim
       - zsh
 
+php:
+  pkg.latest:
+    - pkgs:
+      - php7.0
+
 mysql:
   pkg.latest:
     - pkgs:
