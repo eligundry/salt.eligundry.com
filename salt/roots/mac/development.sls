@@ -25,7 +25,6 @@ neovim:
 php:
   pkg.installed:
     - pkgs:
-      - homebrew/php/php56
       - homebrew/php/php72
       - homebrew/php/composer
 
