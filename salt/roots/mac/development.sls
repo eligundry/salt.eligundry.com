@@ -41,6 +41,10 @@ tree:
 tmux:
   pkg.installed
 
+vagrant:
+  pkg.installed:
+    - name: caskroom/cask/vagrant
+
 vim:
   pkg.installed:
     - pkgs:
