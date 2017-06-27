@@ -1,7 +1,7 @@
 Vagrant.configure('2') do |config|
   # Salt folder sync
-  config.vm.synced_folder "salt/roots/", "/srv/salt/"
-  config.vm.synced_folder "salt/pillar/", "/srv/pillar/"
+  config.vm.synced_folder "salt/", "/srv/salt/"
+  config.vm.synced_folder "pillar/", "/srv/pillar/"
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--memory", 1024]
