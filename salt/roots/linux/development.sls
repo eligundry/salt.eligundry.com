@@ -14,9 +14,10 @@ cli-pkgs:
 
 python:
   pkg.latest:
-    - python
-    - python3
-    - python-pip
+    - pkgs:
+      - python
+      - python3
+      - python-pip
 
 php:
   pkg.latest:
