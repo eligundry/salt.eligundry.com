@@ -6,6 +6,10 @@ caffeine:
   pkg.installed:
     - name: caskroom/cask/caffeine
 
+cyberduck:
+  pkg.installed:
+    - name: caskroom/cask/cyberduck
+
 dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
