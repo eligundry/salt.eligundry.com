@@ -1,13 +1,10 @@
-cli_pkgs:
+cli-pkgs:
   pkg.latest:
-    - comment: "Commonly used CLI packages."
+    - comment: Bare bones CLI packages
     - pkgs:
       - curl
       - git
       - htop
-      - python
-      - python3
-      - python-pip
       - silversearcher-ag
       - tree
       - tmux
@@ -15,9 +12,16 @@ cli_pkgs:
       - vim
       - zsh
 
+python:
+  pkg.latest:
+    - python
+    - python3
+    - python-pip
+
 php:
   pkg.latest:
     - pkgs:
+      - composer
       - php7.0
 
 mysql:

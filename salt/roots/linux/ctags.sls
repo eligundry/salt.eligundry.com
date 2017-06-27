@@ -10,6 +10,7 @@ univeral-ctags-repo:
   git.latest:
     - name: https://github.com/universal-ctags/ctags.git
     - target: {{ repo_path }}
+    - force: True
 
 universal-ctags-build:
   cmd.run:
