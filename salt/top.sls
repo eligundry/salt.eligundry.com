@@ -22,8 +22,6 @@ base:
     - linux-desktop.veracrypt
     - linux-desktop.virtualbox
     - linux-desktop.vs-code
-    - linux.google-cloud
-    - linux.yarn
     - thinkpad
   'virtual:VirtualBox':
     - match: grain
