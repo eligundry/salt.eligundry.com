@@ -14,6 +14,10 @@ dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
 
+gimp:
+  pkg.installed:
+    - name: caskroom/cask/gimp
+
 google-chrome:
   pkg.installed:
     - name: caskroom/cask/google-chrome
