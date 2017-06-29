@@ -3,7 +3,6 @@ cli-pkgs:
     - comment: Bare bones CLI packages
     - pkgs:
       - curl
-      - git
       - htop
       - silversearcher-ag
       - tree
@@ -11,6 +10,12 @@ cli-pkgs:
       - vagrant
       - vim
       - zsh
+
+git:
+  pkg.latest:
+    - pkgs:
+      - git
+      - git-lfs
 
 python:
   pkg.latest:
