@@ -14,6 +14,7 @@
     - identity: {{ home }}/.ssh/no_pass
     - onlyif: 'test ! -d {{ code }}/{{ target }}'
     - require:
+      - git
       - {{ home }}/.ssh/no_pass
 {% endfor %}
 
