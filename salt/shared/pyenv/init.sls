@@ -70,14 +70,17 @@ pyenv-virtualenvwrapper:
     - require:
       - pyenv
 
+{% set versions = [] %}
 {% for dst, config in pillar['repos'].items() %}
 {% set version = config.get('python') %}
 
-{% if version %}
+{% if version and version not in versions %}
 pyenv-python-{{ version }}:
   pyenv.installed:
     - name: python-{{ version }}
     - user: {{ user }}
 {% endif %}
+
+{% versions.append(version) %}
 
 {% endfor %}
