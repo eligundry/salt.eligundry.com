@@ -78,6 +78,6 @@ pyenv-python-{{ version }}:
   pyenv.installed:
     - name: python-{{ version }}
     - user: {{ user }}
-{% endif}
+{% endif %}
 
 {% endfor %}
