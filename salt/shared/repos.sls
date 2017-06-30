@@ -7,6 +7,7 @@
     - user: {{ user }}
 
 {% for target, config in pillar['repos'].items() %}
+
 {{ config['git'] }}:
   git.latest:
     - target: {{ code }}/{{ target }}
@@ -16,12 +17,16 @@
     - require:
       - git
       - {{ home }}/.ssh/no_pass
+      - {{ code }}
+
 {% endfor %}
 
 # Generate host entries for the web apps I am working on.
 {% for host, ip in pillar['hosts'].items() %}
+
 host-{{ host }}:
   host.present:
     - name: {{ host }}
     - ip: {{ ip }}
+
 {% endfor %}

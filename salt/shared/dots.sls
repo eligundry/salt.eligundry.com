@@ -19,6 +19,7 @@ dots-repo:
     - user: {{ user }}
 
 {% for target, repo in pillar['dots_libs'].items() %}
+
 dots-lib-{{ target }}:
   git.latest:
     - name: {{ repo }}
@@ -26,9 +27,11 @@ dots-lib-{{ target }}:
     - user: {{ user }}
     - require:
       - {{ lib }}
+
 {% endfor %}
 
 {% for dst, src in pillar['dots'].items() %}
+
 {{ home }}/{{ dst }}:
   file.symlink:
     - target: {{ dots }}/{{ src }}
@@ -37,4 +40,5 @@ dots-lib-{{ target }}:
     - force: True
     - require:
       - dots-repo
+
 {% endfor %}
