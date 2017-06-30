@@ -6,8 +6,8 @@
   file.directory:
     - user: {{ user }}
 
-{% for target, repo in pillar['repos'].items() %}
-{{ repo }}:
+{% for target, config in pillar['repos'].items() %}
+{{ config['git'] }}:
   git.latest:
     - target: {{ code }}/{{ target }}
     - user: {{ user }}
