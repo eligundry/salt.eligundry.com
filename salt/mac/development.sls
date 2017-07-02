@@ -15,7 +15,7 @@ iterm2:
 htop:
   pkg.installed
 
-mosh:
+mobile-shell:
   pkg.installed
 
 minikube:
