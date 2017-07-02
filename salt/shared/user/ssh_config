@@ -3,4 +3,8 @@ Host {{ alias }}
     Hostname {{ hostname }}
 {% endfor %}
 
+{# This is not working on Ubuntu 16.04 cause it's on an OpenSSH 7.2 and
+   Include only works after 7.3 #}
+{% if grains['osfinger'] != 'Ubuntu-16.04' %}
 Include config.local
+{% endif %}

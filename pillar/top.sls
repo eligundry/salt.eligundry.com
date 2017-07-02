@@ -4,6 +4,7 @@
     - user
     - dots
     - repos
+    - sudoers
   'eligundry_device:thinkpad':
     - match: grain
     - thinkpad
