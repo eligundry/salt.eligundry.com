@@ -43,7 +43,10 @@ spotify-notifications:
     - name: caskroom/cask/spotify-notifications
 
 transmission:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - transmission
+      - caskroom/cask/transmission
 
 veracrypt:
   pkg.installed:
