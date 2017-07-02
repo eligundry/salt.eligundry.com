@@ -12,7 +12,6 @@ desktop-pkgs:
       - fonts-roboto
       - gimp
       - gnome-do
-      - playerctl
       - qt4-qtconfig
       - redshift-gtk
       - thunderbird
@@ -30,4 +29,7 @@ empathy:
   pkg.purged
 
 polari:
+  pkg.purged
+
+evolution:
   pkg.purged
