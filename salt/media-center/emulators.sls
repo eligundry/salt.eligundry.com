@@ -12,15 +12,11 @@ playstation-one:
   pkg.latest:
     - name: pcsxr
 
-add-i386-architecture:
-  cmd.run:
-    - name: dpkg --add-architecture i386
-    - unless: dpkg --print-foreign-architectures | grep i386
-    - comment: Enable 32 bit packages for ZSNES.
-
 snes:
   pkg.latest:
     - name: 'zsnes:i386'
+    - require:
+      - add-i386-architecture
 
 nintendo-64:
   pkg.latest:
