@@ -24,7 +24,7 @@
 
 {% else %}
 
-{{ config['target'] }}:
+{{ config['git'] }}:
   file.absent:
     - name: {{ code }}/{{ target }}
 
