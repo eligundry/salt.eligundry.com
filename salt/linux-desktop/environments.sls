@@ -25,12 +25,3 @@ desktop-pkgs:
       {% else %}
       - firefox
       {% endif %}
-
-empathy:
-  pkg.purged
-
-polari:
-  pkg.purged
-
-evolution:
-  pkg.purged
