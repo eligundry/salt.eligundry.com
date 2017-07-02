@@ -10,6 +10,10 @@ cyberduck:
   pkg.installed:
     - name: caskroom/cask/cyberduck
 
+discord:
+  pkg.installed:
+    - name: caskroom/cask/discord
+
 dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox

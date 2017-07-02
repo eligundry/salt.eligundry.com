@@ -1,4 +1,5 @@
 include:
+  - media-center.dhcp-server
   - media-center.drivers
-  - media-center.kodi
   - media-center.emulators
+  - media-center.kodi
