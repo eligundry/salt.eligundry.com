@@ -25,4 +25,4 @@ steam-controller:
     - mode: 644
     - template: jinja
     - context:
-      - group: {{ pillar['user']['name'] }}
+      group: {{ pillar['user']['name'] }}
