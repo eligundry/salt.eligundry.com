@@ -12,16 +12,10 @@ America/New_York:
   timezone.system:
     - utc: True
 
-# /etc/hostname:
-#   file.managed:
-#     - contents_grains: id
-#     - user: root
-#     - group: root
-#     - mode: 644
-#     - create: False
-
-hostname:
-  network.system:
-    - hostname: {{ grains['id'] }}
-    - apply_hostname: True
-    - retain_settings: True
+/etc/hostname:
+  file.managed:
+    - contents_grains: id
+    - user: root
+    - group: root
+    - mode: 644
+    - create: False

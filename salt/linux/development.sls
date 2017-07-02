@@ -11,12 +11,6 @@ cli-pkgs:
       - vim
       - zsh
 
-git:
-  pkg.latest:
-    - pkgs:
-      - git
-      - git-lfs
-
 python:
   pkg.latest:
     - pkgs:
