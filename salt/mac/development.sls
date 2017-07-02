@@ -15,6 +15,9 @@ iterm2:
 htop:
   pkg.installed
 
+mosh:
+  pkg.installed
+
 minikube:
   pkg.installed:
     - name: caskroom/cask/minikube

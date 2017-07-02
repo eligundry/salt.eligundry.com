@@ -4,9 +4,10 @@ cli-pkgs:
     - pkgs:
       - curl
       - htop
+      - mosh
       - silversearcher-ag
-      - tree
       - tmux
+      - tree
       - vagrant
       - vim
       - zsh
