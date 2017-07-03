@@ -29,3 +29,6 @@ mysql:
   pkg.latest:
     - pkgs:
       - libmysqlclient-dev
+
+net-tools:
+  pkg.installed
