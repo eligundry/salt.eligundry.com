@@ -28,7 +28,7 @@ hauppage-wintv-hvr-950q-driver:
 tvheadend-ppa:
   pkgrepo.managed:
     - humanname: Tvheadend
-    - name: deb https://dl.bintray.com/tvheadend/deb xenial stable-4.2
+    - name: deb https://dl.bintray.com/tvheadend/deb jessie stable-4.2
     - keyid: 379CE192D401AB61
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/tvheadend.list
