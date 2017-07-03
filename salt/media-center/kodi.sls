@@ -16,6 +16,7 @@ kodi:
       - kodi
       - kodi-addons-dev
       - kodi-pvr-hts
+      - wmctrl
     {% if os != 'Debian' %}
     - require:
       - kodi-ppa
@@ -24,16 +25,3 @@ kodi:
 hauppage-wintv-hvr-950q-driver:
   pkg.installed:
     - name: firmware-linux-nonfree
-
-tvheadend-ppa:
-  pkgrepo.managed:
-    - humanname: Tvheadend
-    - name: deb https://dl.bintray.com/tvheadend/deb jessie stable-4.2
-    - keyid: 379CE192D401AB61
-    - keyserver: keyserver.ubuntu.com
-    - file: /etc/apt/sources.list.d/tvheadend.list
-
-tvheadend:
-  pkg.installed:
-    - require:
-      - tvheadend-ppa
