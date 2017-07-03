@@ -41,3 +41,5 @@ isc-dhcp-server-service:
     - watch:
       - file: /etc/dhcp/dhcpd.conf
       - file: /etc/default/isc-dhcp-server
+    - require:
+      - pkg: isc-dhcp-server
