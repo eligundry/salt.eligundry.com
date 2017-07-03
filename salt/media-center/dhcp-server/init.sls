@@ -20,8 +20,9 @@ isc-dhcp-server:
         domain: {{ pillar['dhcp']['domain'] }}
         base: {{ pillar['dhcp']['base'] }}
 
-isc-dhcp-server:
+isc-dhcp-server-service:
   service.running:
+    - name: isc-dhcp-server
     - enabled: True
     - watch:
       - file: /etc/dhcp/dhcpd.conf
