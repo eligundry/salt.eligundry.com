@@ -23,7 +23,7 @@ isc-dhcp-server:
 isc-dhcp-server-service:
   service.running:
     - name: isc-dhcp-server
-    - enabled: True
+    - enable: True
     - watch:
       - file: /etc/dhcp/dhcpd.conf
       - file: /etc/default/isc-dhcp-server
