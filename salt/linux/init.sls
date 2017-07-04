@@ -7,3 +7,4 @@ include:
   - linux.google-cloud
   - linux.neovim
   - linux.yarn
+  - openssh.config
