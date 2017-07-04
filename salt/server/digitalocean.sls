@@ -5,8 +5,6 @@ digitalocean-agent-ppa:
     - dist: main
     - file: /etc/apt/sources.list.d/digitalocean-agent.list
     - key_url: https://repos.sonar.digitalocean.com/sonar-agent.asc
-    - require:
-      - apt-extensions
 
 digitalocean-agent:
   pkg.latest:

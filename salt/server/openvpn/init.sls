@@ -47,4 +47,3 @@ openvpn-server:
     - require:
       - {{ openvpn_image }}
       - {{ openvpn_path }}
-      - docker
