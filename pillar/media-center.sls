@@ -13,7 +13,8 @@ dhcp:
 
 nfs:
   server:
-    exports: {}
+    exports:
+      /mnt/3TB: "kodi.dangerzone gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)"
   mount:
     3TB:
       mountpoint: "/mnt/3TB"

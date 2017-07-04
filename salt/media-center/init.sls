@@ -6,3 +6,4 @@ include:
   - media-center.kodi
   - media-center.transmission
   - nfs.server
+  - nfs.mount
