@@ -16,6 +16,7 @@ transmission-daemon:
   file.line:
     - content: "ExecStart=/usr/bin/transmission-daemon -f --log-error -g /var/lib/transmission"
     - match: ExecStart=
+    - mode: replace
 
 transmission-daemon-service:
   service.running:
