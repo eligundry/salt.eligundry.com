@@ -1,4 +1,5 @@
 hostname: kodi-{{ grains['os']|lower }}
+torrent_dir: /mnt/3TB/Torrents
 
 dhcp:
   interface: eno1
