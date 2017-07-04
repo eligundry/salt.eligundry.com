@@ -17,6 +17,6 @@ universal-ctags-build:
     - cwd: {{ repo_path }}
     - name: './autogen.sh && ./configure && make && make install'
     - watch:
-      - universal-ctags-repo
+      - git: universal-ctags-repo
     - require:
       - universal-ctags-deps
