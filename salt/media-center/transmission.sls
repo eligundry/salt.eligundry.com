@@ -6,4 +6,4 @@ transmission-daemon-service:
     - name: transmission-daemon
     - enable: True
     - require:
-      - transmission-daemon
+      - pkg: transmission-daemon
