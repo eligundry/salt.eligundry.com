@@ -1,7 +1,7 @@
-{% set openvpn_path = salt['pillar.get']('openvpn:path') %}
-{% set openvpn_server = salt['pillar.get']('openvpn:server') %}
+{% set openvpn_path = pillar['openvpn']['path'] %}
+{% set openvpn_server = salt['openvpn']['server'] %}
 {% set openvpn_image = 'kylemanna/openvpn' %}
-# {% set pihole_ip = salt['cmd.shell']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' pi-hole") %}
+{% set pihole_ip = salt['cmd.shell']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' pi-hole") %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
 {{ openvpn_path }}:
@@ -35,20 +35,20 @@
   dockerng.image_present:
     - force: {{ pillar['docker_pull_latest'] }}
 
-# openvpn-server:
-#   dockerng.running:
-#     - image: {{ openvpn_image }}
-#     - cap_add:
-#       - NET_ADMIN
-#     - port_bindings:
-#       - "1194:1194/udp"
-#     - binds:
-#       - {{ openvpn_path }}:/etc/openvpn
-#     - restart_policy: always
-#     - dns:
-#       - {{ pihole_ip }}
-#     - require:
-#       - {{ openvpn_image }}
-#       - {{ openvpn_path }}
-#       - pi-hole
-#       - docker
+openvpn-server:
+  dockerng.running:
+    - image: {{ openvpn_image }}
+    - cap_add:
+      - NET_ADMIN
+    - port_bindings:
+      - "1194:1194/udp"
+    - binds:
+      - {{ openvpn_path }}:/etc/openvpn
+    - restart_policy: always
+    # - dns:
+    #   - {{ pihole_ip }}
+    - require:
+      - {{ openvpn_image }}
+      - {{ openvpn_path }}
+      # - pi-hole
+      - docker

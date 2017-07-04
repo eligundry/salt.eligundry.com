@@ -19,6 +19,7 @@
   'product:Droplet':
     - server
     - website
+    - openvpn
   'virtual:VirtualBox':
     - match: grain
     - vagrant
