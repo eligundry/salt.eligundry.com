@@ -21,7 +21,3 @@ kodi:
     - require:
       - kodi-ppa
     {% endif %}
-
-hauppage-wintv-hvr-950q-driver:
-  pkg.installed:
-    - name: firmware-linux-nonfree
