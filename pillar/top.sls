@@ -1,0 +1,22 @@
+'base':
+  '*':
+    - system
+    - user
+    - dots
+    - repos
+    - sudoers
+    - ssh
+  'eligundry_device:thinkpad':
+    - match: grain
+    - thinkpad
+  'eligundry_device:media-center':
+    - match: grain
+    - media-center
+  'os:MacOS':
+    - match: grain
+    - macbook
+  'product:Droplet':
+    - server
+  'virtual:VirtualBox':
+    - match: grain
+    - vagrant

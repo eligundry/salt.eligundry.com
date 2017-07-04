@@ -1,0 +1,8 @@
+ipython
+jedi
+neovim
+pdbpp
+pipenv
+pylint
+pytest
+tox

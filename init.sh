@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Modified from https://github.com/rawkode/saltstack-dotfiles/blob/master/init.sh
+
 HOMEDIR=$HOME
 USERNAME=$(whoami)
 DEVICE_NAME=$1
@@ -32,15 +34,15 @@ else
 	if [ $? -ne 0 ];
 	then
 		echo "We need SaltStack ..."
-		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
-		# -d Don't enable salt-minion autostart
-		# -P Allow pip based installations
-		wget -qO- https://bootstrap.saltstack.com | $USE_SUDO sh -s -- -P -d git v2016.11.5
+		$USE_SUDO apt install -y salt-minion python-pip
 	fi
 fi
 
+# Install the dependencies.
+$USE_SUDO pip install GitPython docker-py python-gnupg
+
 # Set the user, home-directory, and state root
-$USE_SUDO salt-call --local --config=./ --state-output=changes grains.setvals "{ 'user': '$USERNAME', 'homedir': '$HOMEDIR', 'eligundry_device': '$DEVICE_NAME' }"
+$USE_SUDO salt-call --state-output=changes grains.setvals "{ 'eligundry_device': '$DEVICE_NAME' }"
 
 # Apply the high state
-$USE_SUDO salt-call --local --config=./ --state_verbose=False --state-output=mixed --log-level=quiet --retcode-passthrough state.highstate
+$USE_SUDO salt-call --retcode-passthrough state.highstate
