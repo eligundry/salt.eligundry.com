@@ -18,6 +18,13 @@ transmission-daemon:
     - match: ExecStart=
     - mode: replace
 
+debian-transmission:
+  user.present:
+    - createhome: False
+    - groups:
+      - debian-transmission
+      - users
+
 transmission-daemon-service:
   service.running:
     - name: transmission-daemon

@@ -1,5 +1,5 @@
 hostname: kodi-{{ grains['os']|lower }}
-torrent_dir: /mnt/3TB/Torrents
+data_dir: /mnt/3TB
 
 # Default Transmission settings
 transmission:
