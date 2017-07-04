@@ -1,0 +1,2 @@
+transmission-daemon:
+  pkg.installed
