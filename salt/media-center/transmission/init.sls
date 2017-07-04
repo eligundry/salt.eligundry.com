@@ -7,9 +7,15 @@ transmission-daemon:
     - user: debian-transmission
     - group: debian-transmission
     - mode: 600
+    - makedirs: True
     - template: jinja
     - require:
       - pkg: transmission-daemon
+
+/lib/systemd/system/transmission-daemon.service:
+  file.line:
+    - content: "ExecStart=/usr/bin/transmission-daemon -f --log-error -g /var/lib/transmission"
+    - match: ExecStart=
 
 transmission-daemon-service:
   service.running:
@@ -17,5 +23,6 @@ transmission-daemon-service:
     - enable: True
     - watch:
       - file: /var/lib/transmission/settings.json
+      - file: /lib/systemd/system/transmission-daemon.service
     - require:
       - pkg: transmission-daemon
