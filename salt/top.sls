@@ -1,6 +1,7 @@
 base:
   '*':
     - shared
+    - sudoers
   'kernel:Linux':
     - match: grain
     - linux
