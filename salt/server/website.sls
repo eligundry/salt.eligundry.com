@@ -21,8 +21,6 @@ eligundry.com:
       - LETSENCRYPT_EMAIL: {{ pillar['website']['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ pillar['website']['letsencrypt']['test'] }}"
       - ENABLE_IPV6: "True"
-    - port_bindings:
-      - "80:80"
     - restart_policy: always
     - require:
       - nginx-proxy
