@@ -1,7 +1,7 @@
 transmission-daemon:
   pkg.installed
 
-/etc/transmission-daemon/setting.json:
+/var/lib/transmission/settings.json:
   file.managed:
     - source: salt://media-center/transmission/settings.json
     - user: debian-transmission
@@ -16,6 +16,6 @@ transmission-daemon-service:
     - name: transmission-daemon
     - enable: True
     - watch:
-      - file: /etc/transmission-daemon/settings.json
+      - file: /var/lib/transmission/settings.json
     - require:
       - pkg: transmission-daemon
