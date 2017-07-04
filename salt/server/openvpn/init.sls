@@ -1,5 +1,5 @@
 {% set openvpn_path = pillar['openvpn']['path'] %}
-{% set openvpn_server = salt['openvpn']['server'] %}
+{% set openvpn_server = pillar['openvpn']['server'] %}
 {% set openvpn_image = 'kylemanna/openvpn' %}
 {% set pihole_ip = salt['cmd.shell']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' pi-hole") %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
