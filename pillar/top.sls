@@ -17,6 +17,7 @@
     - match: grain
     - macbook
   'eligundry_device:server':
+    - match: grain
     - server
     - website
     - openvpn
