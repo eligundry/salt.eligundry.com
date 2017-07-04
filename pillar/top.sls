@@ -16,7 +16,7 @@
   'os:MacOS':
     - match: grain
     - macbook
-  'product:Droplet':
+  'eligundry_device:server':
     - server
     - website
     - openvpn

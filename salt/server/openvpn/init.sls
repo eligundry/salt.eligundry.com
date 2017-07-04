@@ -33,7 +33,7 @@
 
 {{ openvpn_image }}:
   dockerng.image_present:
-    - force: {{ pillar['docker_pull_latest'] }}
+    - force: {{ pull_latest }}
 
 openvpn-server:
   dockerng.running:
