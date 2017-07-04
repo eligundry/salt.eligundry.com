@@ -5,6 +5,7 @@
     - dots
     - repos
     - sudoers
+    - ssh
   'eligundry_device:thinkpad':
     - match: grain
     - thinkpad
