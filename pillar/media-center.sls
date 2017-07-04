@@ -18,4 +18,4 @@ nfs:
   mount:
     3TB:
       mountpoint: "/mnt/3TB"
-      locations: "localhost:/3TB"
+      location: "localhost:/3TB"
