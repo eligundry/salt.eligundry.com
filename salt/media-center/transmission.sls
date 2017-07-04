@@ -3,6 +3,7 @@ transmission-daemon:
 
 transmission-daemon-service:
   service.running:
+    - name: transmission-daemon
     - enable: True
     - require:
       - transmission-daemon
