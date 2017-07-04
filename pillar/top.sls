@@ -1,11 +1,12 @@
 'base':
   '*':
-    - system
-    - user
+    - dev-website
     - dots
     - repos
-    - sudoers
     - ssh
+    - sudoers
+    - system
+    - user
   'eligundry_device:thinkpad':
     - match: grain
     - thinkpad
@@ -17,6 +18,7 @@
     - macbook
   'product:Droplet':
     - server
+    - website
   'virtual:VirtualBox':
     - match: grain
     - vagrant
