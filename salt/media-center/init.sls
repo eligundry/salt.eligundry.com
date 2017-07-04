@@ -5,3 +5,4 @@ include:
   - media-center.emulators
   - media-center.kodi
   - media-center.transmission
+  - nfs.server
