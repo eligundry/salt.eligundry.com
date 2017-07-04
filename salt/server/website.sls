@@ -1,7 +1,9 @@
 {% set letsencrypt_dir = '/opt/letsencrypt' %}
-{% set eligundry_image = 'eligundry/eligundry.com' %}
-{% set nginx_image = 'jwilder/nginx-proxy' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
+{% set website = pillar['website'] %}
+{% set eligundry_image = 'eligundry/eligundry.com' %}
+{% set nginx_image = 'jwilder/nginx-proxy:alpine' %}
+{% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion' %}
 
 {{ letsencrypt_dir }}:
   file.directory:
@@ -16,10 +18,10 @@ eligundry.com:
   dockerng.running:
     - image: {{ eligundry_image }}
     - environment:
-      - VIRTUAL_HOST: {{ pillar['website']['virtual_host'] }}
-      - LETSENCRYPT_HOST: {{ pillar['website']['letsencrypt']['host'] }}
-      - LETSENCRYPT_EMAIL: {{ pillar['website']['letsencrypt']['email'] }}
-      - LETSENCRYPT_TEST: "{{ pillar['website']['letsencrypt']['test'] }}"
+      - VIRTUAL_HOST: {{ website['virtual_host'] }}
+      - LETSENCRYPT_HOST: {{ website['letsencrypt']['host'] }}
+      - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
+      - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - ENABLE_IPV6: "True"
     - restart_policy: always
     - require:
@@ -30,7 +32,7 @@ eligundry.com:
   dockerng.image_present:
     - force: {{ pull_latest }}
 
-nginx-proxy:
+'nginx-proxy':
   dockerng.running:
     - image: {{ nginx_image }}
     - volumes:
@@ -45,15 +47,13 @@ nginx-proxy:
       - "443:443"
     - restart_policy: always
     - require:
-      - {{ letsencrypt_dir }}
       - {{ nginx_image }}
+      - {{ letsencrypt_dir }}
 
 # This is disabled in Vagrant because it will fail to validate certs and make
 # the dev website impossible to reach because certs and will force SSL on the
 # Nginx reverse proxy.
 {% if salt['grains.get']('virtual') != 'VirtualBox' %}
-
-{% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion' %}
 
 {{ letsencrypt_image }}:
   dockerng.image_present:
