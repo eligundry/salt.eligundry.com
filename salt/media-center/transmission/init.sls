@@ -15,5 +15,7 @@ transmission-daemon-service:
   service.running:
     - name: transmission-daemon
     - enable: True
+    - watch:
+      - file: /etc/transmission-daemon/settings.json
     - require:
       - pkg: transmission-daemon
