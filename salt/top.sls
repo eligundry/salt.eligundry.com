@@ -1,10 +1,10 @@
 base:
   '*':
     - shared
-    - sudoers
   'kernel:Linux':
     - match: grain
     - linux
+    - sudoers
   'kernel:Darwin':
     - match: grain
     - mac
