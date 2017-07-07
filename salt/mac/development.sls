@@ -69,6 +69,9 @@ vs-code:
   pkg.installed:
     - name: caskroom/cask/visual-studio-code
 
+wget:
+  pkg.installed
+
 yarn:
   pkg.installed
 
