@@ -1,5 +1,6 @@
-{{ pillar['data_dir'] }}:
+media-center-external-hdd:
   file.directory:
+    - name: {{ pillar['data_dir'] }}
     - user: {{ pillar['user']['name'] }}
     - group: users
     - dir_mode: 775
