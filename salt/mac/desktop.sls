@@ -10,6 +10,10 @@ cyberduck:
   pkg.installed:
     - name: caskroom/cask/cyberduck
 
+discord:
+  pkg.installed:
+    - name: caskroom/cask/discord
+
 dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
@@ -43,7 +47,10 @@ spotify-notifications:
     - name: caskroom/cask/spotify-notifications
 
 transmission:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - transmission
+      - caskroom/cask/transmission
 
 veracrypt:
   pkg.installed:

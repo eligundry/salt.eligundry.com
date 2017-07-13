@@ -4,4 +4,5 @@ include:
   - shared.dots
   - shared.pyenv
   - shared.nvm
+  - shared.npm
   - shared.repos

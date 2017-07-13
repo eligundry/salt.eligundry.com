@@ -15,6 +15,9 @@ iterm2:
 htop:
   pkg.installed
 
+mobile-shell:
+  pkg.installed
+
 minikube:
   pkg.installed:
     - name: caskroom/cask/minikube
@@ -65,6 +68,9 @@ vim:
 vs-code:
   pkg.installed:
     - name: caskroom/cask/visual-studio-code
+
+wget:
+  pkg.installed
 
 yarn:
   pkg.installed

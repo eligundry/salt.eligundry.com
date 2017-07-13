@@ -4,6 +4,7 @@ base:
   'kernel:Linux':
     - match: grain
     - linux
+    - sudoers
   'kernel:Darwin':
     - match: grain
     - mac
@@ -23,8 +24,12 @@ base:
     - linux-desktop.virtualbox
     - linux-desktop.vs-code
     - thinkpad
+  'eligundry_device:server':
+    - match: grain
+    - server
   'virtual:VirtualBox':
     - match: grain
     - linux-desktop
     - media-center
     - thinkpad
+    - server

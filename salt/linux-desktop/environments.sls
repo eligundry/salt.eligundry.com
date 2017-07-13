@@ -12,6 +12,7 @@ desktop-pkgs:
       - fonts-roboto
       - gimp
       - gnome-do
+      - gparted
       - qt4-qtconfig
       - redshift-gtk
       - thunderbird
@@ -24,12 +25,3 @@ desktop-pkgs:
       {% else %}
       - firefox
       {% endif %}
-
-empathy:
-  pkg.purged
-
-polari:
-  pkg.purged
-
-evolution:
-  pkg.purged

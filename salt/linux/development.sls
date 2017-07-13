@@ -4,9 +4,10 @@ cli-pkgs:
     - pkgs:
       - curl
       - htop
+      - mosh
       - silversearcher-ag
-      - tree
       - tmux
+      - tree
       - vagrant
       - vim
       - zsh
@@ -28,3 +29,6 @@ mysql:
   pkg.latest:
     - pkgs:
       - libmysqlclient-dev
+
+net-tools:
+  pkg.installed

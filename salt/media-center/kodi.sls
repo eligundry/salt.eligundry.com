@@ -15,3 +15,9 @@ kodi:
     - pkgs:
       - kodi
       - kodi-addons-dev
+      - kodi-pvr-hts
+      - wmctrl
+    {% if os != 'Debian' %}
+    - require:
+      - kodi-ppa
+    {% endif %}
