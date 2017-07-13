@@ -15,6 +15,8 @@ steam:
   pkg.installed:
     - sources:
       - steam-launcher: "https://steamcdn-a.akamaihd.net/client/installer/steam.deb"
+    - require:
+      - steam-deps
 
 steam-controller:
   file.managed:
