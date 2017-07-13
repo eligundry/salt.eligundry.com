@@ -33,6 +33,7 @@ dots:
   .xinitrc: xinitrc
   .Xresources: Xresources
   .xsessionrc: xsessionrc
+  .zshenv: zshenv
 {% endif %}
 {% if grains['kernel'] == 'Darwin' %}
   .item2_profiles.json: item2_profiles.json
