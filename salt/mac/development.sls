@@ -51,6 +51,9 @@ python:
 reattach-to-user-namespace:
   pkg.installed
 
+sshfs:
+  pkg.installed
+
 the_silver_searcher:
   pkg.installed
 
