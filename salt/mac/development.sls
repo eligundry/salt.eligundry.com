@@ -15,6 +15,10 @@ iterm2:
 htop:
   pkg.installed
 
+java:
+  pkg.installed:
+    - name: caskroom/cask/java
+
 mobile-shell:
   pkg.installed
 
@@ -26,6 +30,9 @@ mysql:
   pkg.installed
 
 neovim:
+  pkg.installed
+
+npm:
   pkg.installed
 
 php:
