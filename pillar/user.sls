@@ -7,6 +7,7 @@ user:
   gpg_keys:
     private: {}
     public: {}
+  pass: None
   {% if grains['os'] == 'MacOS' %}
   shell: /usr/local/bin/zsh
   home: /Users/eligundry
