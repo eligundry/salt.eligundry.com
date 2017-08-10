@@ -19,6 +19,9 @@ java:
   pkg.installed:
     - name: caskroom/cask/java
 
+jq:
+  pkg.installed
+
 mobile-shell:
   pkg.installed
 
