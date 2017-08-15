@@ -48,6 +48,9 @@ python:
       - python3
       - sqlite
 
+pwgen:
+  pkg.installed
+
 reattach-to-user-namespace:
   pkg.installed
 
