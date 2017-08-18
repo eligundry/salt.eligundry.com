@@ -4,6 +4,7 @@ cli-pkgs:
     - pkgs:
       - curl
       - htop
+      - jq
       - mosh
       - silversearcher-ag
       - tmux

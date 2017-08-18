@@ -1,5 +1,9 @@
 {% set codename = grains['lsb_distrib_codename'] %}
 
+{% if codename == 'buster' %}
+  {% set codename = 'stretch' %}
+{% endif %}
+
 google-cloud-sdk-ppa:
   pkgrepo.managed:
     - humanname: Google Cloud SDK

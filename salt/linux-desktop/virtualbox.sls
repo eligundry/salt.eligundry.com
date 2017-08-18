@@ -1,5 +1,9 @@
 {% set codename = grains['lsb_distrib_codename'] %}
 
+{% if codename == 'buster' %}
+  {% set codename = 'stretch' %}
+{% endif %}
+
 virtualbox-ppa:
   pkgrepo.managed:
     - humanname: VirtualBox

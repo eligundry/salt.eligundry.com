@@ -1,6 +1,10 @@
 {% set os = grains['os']|lower %}
 {% set codename = grains['lsb_distrib_codename'] %}
 
+{% if codename == 'buster' %}
+  {% set codename = 'stretch' %}
+{% endif %}
+
 docker-group:
   group.present:
     - name: docker
