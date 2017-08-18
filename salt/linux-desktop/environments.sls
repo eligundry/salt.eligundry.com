@@ -25,3 +25,8 @@ desktop-pkgs:
       {% else %}
       - firefox
       {% endif %}
+
+desktop-development-pkgs:
+  pkg.latest:
+    - pkgs:
+      - mysql-workbench
