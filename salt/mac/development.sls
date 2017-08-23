@@ -32,6 +32,10 @@ minikube:
 mysql:
   pkg.installed
 
+mysqlworkbench:
+  pkg.installed:
+    - name: caskroom/cask/mysqlworkbench
+
 neovim:
   pkg.installed
 
@@ -50,6 +54,9 @@ python:
       - python
       - python3
       - sqlite
+
+pwgen:
+  pkg.installed
 
 reattach-to-user-namespace:
   pkg.installed
