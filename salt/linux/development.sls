@@ -6,6 +6,7 @@ cli-pkgs:
       - htop
       - jq
       - mosh
+      - rustc
       - silversearcher-ag
       - tmux
       - tree
@@ -14,22 +15,28 @@ cli-pkgs:
       - zsh
 
 python:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - python
       - python3
       - python-pip
 
 php:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - composer
       - php7.0
 
 mysql:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - libmysqlclient-dev
+
+rust:
+  pkg.installed:
+    - pkgs:
+      - rustc
+      - rust-gdb
 
 net-tools:
   pkg.installed

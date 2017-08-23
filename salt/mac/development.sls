@@ -54,6 +54,9 @@ python:
 reattach-to-user-namespace:
   pkg.installed
 
+rust:
+  pkg.installed
+
 sshfs:
   pkg.installed
 
