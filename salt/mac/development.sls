@@ -42,6 +42,10 @@ neovim:
 npm:
   pkg.installed
 
+pgadmin:
+  pkg.installed:
+    - name: homebrew/php/phppgadmin
+
 php:
   pkg.installed:
     - pkgs:

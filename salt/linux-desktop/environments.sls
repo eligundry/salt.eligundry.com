@@ -30,3 +30,5 @@ desktop-development-pkgs:
   pkg.latest:
     - pkgs:
       - mysql-workbench
+      - pgadmin3
+      - postgresql-client
