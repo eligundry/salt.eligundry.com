@@ -68,6 +68,10 @@ reattach-to-user-namespace:
 rust:
   pkg.installed
 
+staruml:
+  pkg.installed:
+    - name: caskroom/cask/staruml
+
 sshfs:
   pkg.installed
 
