@@ -40,3 +40,6 @@ rust:
 
 net-tools:
   pkg.installed
+
+emacs:
+  pkg.installed

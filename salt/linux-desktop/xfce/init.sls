@@ -13,10 +13,12 @@ xfce4-dockbarx-plugin:
     - require:
       - xfce4-dockbarx-ppa
 
-xfce4-customize:
-  cmd.run:
-    - name: /srv/salt/linux-desktop/xfce/customize-xfce.sh
-    - runas: {{ user }}
-    - cwd: /home/{{ user }}
-    - require:
-      - {{ user }}
+# @TODO I kinda want to move to just a configuration file instead of a shell
+# script. Don't know if that's possible with XFCE.
+# xfce4-customize:
+#   cmd.run:
+#     - name: /srv/salt/linux-desktop/xfce/customize-xfce.sh
+#     - runas: {{ user }}
+#     - cwd: /home/{{ user }}
+#     - require:
+#       - {{ user }}

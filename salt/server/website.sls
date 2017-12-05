@@ -19,6 +19,7 @@ eligundry.com:
     - image: {{ eligundry_image }}
     - environment:
       - VIRTUAL_HOST: {{ website['virtual_host'] }}
+      - VIRTUAL_PORT: 8080
       - LETSENCRYPT_HOST: {{ website['letsencrypt']['host'] }}
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
