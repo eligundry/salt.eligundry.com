@@ -42,6 +42,10 @@ neovim:
 npm:
   pkg.installed
 
+pgadmin:
+  pkg.installed:
+    - name: homebrew/php/phppgadmin
+
 php:
   pkg.installed:
     - pkgs:
@@ -63,6 +67,10 @@ reattach-to-user-namespace:
 
 rust:
   pkg.installed
+
+staruml:
+  pkg.installed:
+    - name: caskroom/cask/staruml
 
 sshfs:
   pkg.installed
