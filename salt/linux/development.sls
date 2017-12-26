@@ -14,6 +14,12 @@ cli-pkgs:
       - vim
       - zsh
 
+go:
+  pkg.latest:
+    - pkgs:
+      - golang-1.9
+      - gocode
+
 python:
   pkg.installed:
     - pkgs:
