@@ -2,10 +2,6 @@ bearededspice:
   pkg.installed:
     - name: caskroom/cask/beardedspice
 
-caffeine:
-  pkg.installed:
-    - name: caskroom/cask/caffeine
-
 cyberduck:
   pkg.installed:
     - name: caskroom/cask/cyberduck
@@ -29,6 +25,10 @@ google-chrome:
 gpgtools:
   pkg.installed:
     - name: caskroom/cask/gpgtools
+
+keepingyouawake:
+  pkg.installed:
+    - name: caskroom/cask/keepingyouawake
 
 licecap:
   pkg.installed:
