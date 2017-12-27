@@ -12,6 +12,9 @@ iterm2:
   pkg.installed:
     - name: caskroom/cask/iterm2
 
+go:
+  pkg.installed
+
 htop:
   pkg.installed
 
