@@ -4,6 +4,10 @@ git:
       - git
       - git-lfs
 
+google-cloud-sdk:
+  pkg.installed:
+    - name: caskroom/cask/google-cloud-sdk
+
 docker:
   pkg.installed:
     - name: caskroom/cask/docker
