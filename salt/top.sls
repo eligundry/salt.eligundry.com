@@ -8,6 +8,9 @@ base:
   'kernel:Darwin':
     - match: grain
     - mac
+  'eligundry_device:personal_macbook':
+    - match: grain
+    - mac.fun
   'eligundry_device:media-center':
     - match: grain
     - linux-desktop
