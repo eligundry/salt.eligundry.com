@@ -15,3 +15,7 @@ create-react-native-app:
 gulp:
   npm.installed:
     - user: {{ user }}
+
+parcel-bundler:
+  npm.installed:
+    - user: {{ user }}
