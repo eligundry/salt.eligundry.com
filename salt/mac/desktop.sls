@@ -14,6 +14,10 @@ dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
 
+firefox:
+  pkg.installed:
+    - name: caskroom/cask/firefox
+
 fliqlo:
   pkg.installed:
     - name: caskroom/cask/fliqlo
