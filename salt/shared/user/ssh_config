@@ -1,3 +1,5 @@
+# THIS FILE IS MANAGED BY SALT!!!
+# If you need to make customizations, add them to ~/.ssh/config.local
 {% for alias, hostname in pillar['user']['ssh_aliases'].items() %}
 Host {{ alias }}
     Hostname {{ hostname }}
