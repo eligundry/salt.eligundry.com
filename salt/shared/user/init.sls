@@ -56,5 +56,6 @@ salt-master-gpg-key:
     - name: {{ pillar['salt-master-gpg']['id'] }}
     - keyserver: {{ pillar['salt-master-gpg']['server'] }}
     - user: {{ user['name'] }}
+    - gnupghome: {{ user['home'] }}/.gnupg
     - require:
       - {{ user['name'] }}

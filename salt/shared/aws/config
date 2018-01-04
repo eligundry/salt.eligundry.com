@@ -4,4 +4,3 @@
 region = {{ config['region'] }}
 output = {{ config['output'] }}
 {% endfor %}
-
