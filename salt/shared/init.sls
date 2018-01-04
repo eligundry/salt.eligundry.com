@@ -7,6 +7,7 @@ include:
   - shared.npm
   - shared.repos
   - shared.aws
+  - shared.cli
   {% if pillar['user']['pass'] %}
   - shared.pass
   {% endif %}

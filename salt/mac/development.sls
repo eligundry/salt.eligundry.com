@@ -1,8 +1,5 @@
-git:
-  pkg.installed:
-    - pkgs:
-      - git
-      - git-lfs
+git-lfs:
+  pkg.installed
 
 google-cloud-sdk:
   pkg.installed:
@@ -19,14 +16,11 @@ iterm2:
 go:
   pkg.installed
 
-htop:
-  pkg.installed
-
 java:
   pkg.installed:
     - name: caskroom/cask/java
 
-jq:
+macvim:
   pkg.installed
 
 mobile-shell:
@@ -66,9 +60,6 @@ python:
       - python3
       - sqlite
 
-pwgen:
-  pkg.installed
-
 reattach-to-user-namespace:
   pkg.installed
 
@@ -85,33 +76,15 @@ sshfs:
 the_silver_searcher:
   pkg.installed
 
-tree:
-  pkg.installed
-
-tmux:
-  pkg.installed
-
 vagrant:
   pkg.installed:
     - pkgs:
       - caskroom/cask/vagrant
       - caskroom/cask/virtualbox
 
-vim:
-  pkg.installed:
-    - pkgs:
-      - macvim
-      - vim
-
 vs-code:
   pkg.installed:
     - name: caskroom/cask/visual-studio-code
 
-wget:
-  pkg.installed
-
 yarn:
-  pkg.installed
-
-zsh:
   pkg.installed

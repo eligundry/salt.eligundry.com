@@ -2,16 +2,8 @@ cli-pkgs:
   pkg.latest:
     - comment: Bare bones CLI packages
     - pkgs:
-      - curl
-      - htop
-      - jq
       - mosh
-      - rustc
       - silversearcher-ag
-      - tmux
-      - tree
-      - vagrant
-      - vim
       - zsh
 
 go:
@@ -47,5 +39,5 @@ rust:
 net-tools:
   pkg.installed
 
-emacs:
+vagrant:
   pkg.installed
