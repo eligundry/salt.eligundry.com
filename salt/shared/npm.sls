@@ -21,4 +21,9 @@ parcel-bundler:
     - user: {{ user }}
 
 vscode-css-languageserver-bin:
-  npm.installed
+  npm.installed:
+    - user: {{ user }}
+
+javascript-typescript-langserver:
+  npm.installed:
+    - user: {{ user }}
