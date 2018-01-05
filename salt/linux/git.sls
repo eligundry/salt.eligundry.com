@@ -8,10 +8,7 @@ git-lfs-ppa:
     - key_url: https://packagecloud.io/github/git-lfs/gpgkey
     - file: /etc/apt/sources.list.d/git-lfs.list
 
-git:
-  pkg.latest:
-    - pkgs:
-      - git
-      - git-lfs
+git-lfs:
+  pkg.installed:
     - require:
       - git-lfs-ppa
