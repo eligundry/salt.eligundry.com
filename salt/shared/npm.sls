@@ -19,3 +19,6 @@ gulp:
 parcel-bundler:
   npm.installed:
     - user: {{ user }}
+
+vscode-css-languageserver-bin:
+  npm.installed
