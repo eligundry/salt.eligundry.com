@@ -1,6 +1,15 @@
 git-lfs:
   pkg.installed
 
+gnupg:
+  pkg.installed:
+    - pkgs:
+      - gnupg
+      - pinentry-mac
+  file.append:
+    - name: {{ pillar['user']['home'] }}/.gnupg/gpg-agent.conf
+    - text: 'pinentry-program /usr/local/bin/pinentry-mac'
+
 google-cloud-sdk:
   pkg.installed:
     - name: caskroom/cask/google-cloud-sdk
