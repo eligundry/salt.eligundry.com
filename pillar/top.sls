@@ -1,6 +1,6 @@
 'base':
   '*':
-    - aws
+    - defaults
     - dev-website
     - dots
     - repos

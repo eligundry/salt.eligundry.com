@@ -47,12 +47,6 @@ pgadmin:
   pkg.installed:
     - name: homebrew/php/phppgadmin
 
-php:
-  pkg.installed:
-    - pkgs:
-      - homebrew/php/php72
-      - homebrew/php/composer
-
 python:
   pkg.installed:
     - pkgs:

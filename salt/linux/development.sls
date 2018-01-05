@@ -1,13 +1,5 @@
-cli-pkgs:
-  pkg.latest:
-    - comment: Bare bones CLI packages
-    - pkgs:
-      - mosh
-      - silversearcher-ag
-      - zsh
-
 go:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - golang-1.9
       - gocode
@@ -19,11 +11,8 @@ python:
       - python3
       - python-pip
 
-php:
-  pkg.installed:
-    - pkgs:
-      - composer
-      - php7.0
+mosh:
+  pkg.installed
 
 mysql:
   pkg.installed:
@@ -37,6 +26,9 @@ rust:
       - rust-gdb
 
 net-tools:
+  pkg.installed
+
+silversearcher-ag:
   pkg.installed
 
 vagrant:
