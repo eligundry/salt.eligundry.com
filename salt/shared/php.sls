@@ -1,15 +1,13 @@
 php:
-  {% if grains['os'] == 'MacOS' %}
   pkg.installed:
     - pkgs:
+      {% if grains['os'] == 'MacOS' %}
       - homebrew/php/php72
       - homebrew/php/composer
-  {% else %}
-  pkg.installed:
-    - pkgs:
+      {% else %}
       - composer
       - php7.0
-  {% endif %}
+      {% endif %}
 
 {{ pillar['user']['home'] }}/.composer/auth.json:
   file.serialize:
@@ -18,3 +16,4 @@ php:
     - encoding: UTF-8
     - user: {{ pillar['user']['name'] }}
     - mode: 600
+    - show_changes: false
