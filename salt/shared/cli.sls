@@ -6,6 +6,8 @@ bash:
   file.append:
     - text:
       - /usr/local/bin/bash
+    - require:
+      - bash
 {% endif %}
 
 curl:

@@ -1,3 +1,9 @@
+coreutils:
+  pkg.installed:
+    - pkgs:
+      - coreutils
+      - less
+
 git-lfs:
   pkg.installed
 
