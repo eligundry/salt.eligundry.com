@@ -1,7 +1,3 @@
-autoconf:
-  pkg.installed:
-    - version: 2.64
-
 coreutils:
   pkg.installed:
     - pkgs:
