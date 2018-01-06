@@ -42,6 +42,9 @@ java:
 macvim:
   pkg.installed
 
+mas:
+  pkg.installed
+
 mobile-shell:
   pkg.installed
 
