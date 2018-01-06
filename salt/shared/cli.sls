@@ -25,6 +25,9 @@ htop:
 jq:
   pkg.installed
 
+openssh:
+  pkg.installed
+
 pwgen:
   pkg.installed
 

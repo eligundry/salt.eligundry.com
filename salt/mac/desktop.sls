@@ -30,10 +30,6 @@ google-chrome:
   pkg.installed:
     - name: caskroom/cask/google-chrome
 
-gpgtools:
-  pkg.installed:
-    - name: caskroom/cask/gpgtools
-
 keepingyouawake:
   pkg.installed:
     - name: caskroom/cask/keepingyouawake
