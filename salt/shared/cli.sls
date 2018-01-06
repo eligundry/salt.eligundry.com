@@ -1,6 +1,13 @@
 bash:
   pkg.installed
 
+{% grains['os'] == 'MacOS' -%}
+/etc/shells:
+  file.append:
+    - text:
+      - /usr/local/bin/bash
+{% endif %}
+
 curl:
   pkg.installed
 
