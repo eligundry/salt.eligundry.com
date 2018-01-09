@@ -24,6 +24,10 @@ docker:
   pkg.installed:
     - name: caskroom/cask/docker
 
+insomnia:
+  pkg.installed:
+    - name: caskroom/cask/insomnia
+
 iterm2:
   pkg.installed:
     - name: caskroom/cask/iterm2
