@@ -1,7 +1,7 @@
 bash:
   pkg.installed
 
-{% grains['os'] == 'MacOS' -%}
+{% if grains['os'] == 'MacOS' -%}
 /etc/shells:
   file.append:
     - text:
