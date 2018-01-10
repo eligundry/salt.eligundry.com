@@ -69,6 +69,10 @@ pgadmin:
   pkg.installed:
     - name: homebrew/php/phppgadmin
 
+postman:
+  pkg.installed:
+    - name: caskroom/cask/postman
+
 python:
   pkg.installed:
     - pkgs:
