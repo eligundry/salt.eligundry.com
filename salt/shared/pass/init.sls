@@ -11,3 +11,10 @@ pass:
     - require:
       - git
       - {{ home }}/.ssh/no_pass
+
+pass-git-push-after-commit:
+  file.managed:
+    - name: {{ home }}/.password-store/.git/hooks/post-commit
+    - source: salt://shared/pass/post-commit.sh
+    - user: {{ pillar['user']['name'] }}
+    - mode: 774
