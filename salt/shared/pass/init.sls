@@ -1,4 +1,4 @@
-{% if pillar['pass'] %}
+{% if salt['pillar.get']('user:pass') %}
 
 {% set home = pillar['user']['home'] %}
 {% set password_store = home + '/.password_store' %}
