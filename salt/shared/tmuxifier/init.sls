@@ -13,11 +13,11 @@ tmuxifier-session-{{ project }}:
     - makedirs: True
     - template: jinja
     - context:
-      - project: {{ project }}
-      - dir: {{ dst }}
-      - pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
-      - is_webapp: {{ tmuxifier.get('webapp', False) }}
-      - webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
+        project: {{ project }}
+        dir: {{ dst }}
+        pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
+        is_webapp: {{ tmuxifier.get('webapp', False) }}
+        webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
 
 tmuxifier-nvim-{{ project }}:
   file.managed:
@@ -27,11 +27,11 @@ tmuxifier-nvim-{{ project }}:
     - makedirs: True
     - template: jinja
     - context:
-      - project: {{ project }}
-      - dir: {{ dst }}
-      - pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
-      - is_webapp: {{ tmuxifier.get('webapp', False) }}
-      - webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
+        project: {{ project }}
+        dir: {{ dst }}
+        pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
+        is_webapp: {{ tmuxifier.get('webapp', False) }}
+        webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
 
 tmuxifier-shell-{{ project }}:
   file.managed:
@@ -41,10 +41,10 @@ tmuxifier-shell-{{ project }}:
     - makedirs: True
     - template: jinja
     - context:
-      - project: {{ project }}
-      - dir: {{ dst }}
-      - pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
-      - is_webapp: {{ tmuxifier.get('webapp', False) }}
-      - webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
+        project: {{ project }}
+        dir: {{ dst }}
+        pre_cmd: {{ tmuxifier.get('pre_cmd', False) }}
+        is_webapp: {{ tmuxifier.get('webapp', False) }}
+        webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
 
 {% endfor %}
