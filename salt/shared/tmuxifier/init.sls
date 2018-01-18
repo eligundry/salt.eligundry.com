@@ -1,6 +1,7 @@
 {% set config_dir = '~/.tmuxifier-sessions' %}
 
 {% for dst, repo in pillar['repos'].items() %}
+{% if 'tmuxifier' in repo %}
 
 {% set project = dst.split('/')[-1] %}
 {% set tmuxifier = repo['tmuxifier'] %}
@@ -47,4 +48,5 @@ tmuxifier-shell-{{ project }}:
         is_webapp: {{ tmuxifier.get('webapp', False) }}
         webapp_cmds: {{ tmuxifier.get('webapp_cmds') }}
 
+{% endif %}
 {% endfor %}
