@@ -8,6 +8,7 @@ include:
   - shared.repos
   - shared.aws
   - shared.cli
+  - shared.tmuxifier
   {% if pillar['user']['pass'] %}
   - shared.pass
   {% endif %}

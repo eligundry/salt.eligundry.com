@@ -7,13 +7,13 @@ session_root "~/Code/{{ dir }}"
 if initialize_session "{{ project }}"; then
 
   # Create a new window inline within session layout definition.
-  #new_window "misc"
+  load_window "{{ project }}-nvim"
 
   # Load a defined window layout.
-  #load_window "example"
+  load_window "{{ project }}-shell"
 
   # Select the default active window on session creation.
-  #select_window 1
+  select_window 1
 
 fi
 

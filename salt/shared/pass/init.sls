@@ -1,11 +1,14 @@
+{% if pillar['pass'] %}
+
 {% set home = pillar['user']['home'] %}
+{% set password_store = home + '/.password_store' %}
 
 pass:
   pkg.installed
 
 {{ pillar['user']['pass'] }}:
   git.latest:
-    - target: {{ home }}/.password-store
+    - target: {{ password_store }}
     - user: {{ pillar['user']['name'] }}
     - identity: {{ home }}/.ssh/no_pass
     - require:
@@ -14,7 +17,11 @@ pass:
 
 pass-git-push-after-commit:
   file.managed:
-    - name: {{ home }}/.password-store/.git/hooks/post-commit
+    - name: {{ password_store }}/.git/hooks/post-commit
     - source: salt://shared/pass/post-commit.sh
     - user: {{ pillar['user']['name'] }}
     - mode: 774
+    - require:
+      - {{ pillar['user']['pass'] }}
+
+{% endif %}
