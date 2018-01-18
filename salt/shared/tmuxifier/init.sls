@@ -22,7 +22,7 @@ tmuxifier-session-{{ project }}:
 
 tmuxifier-nvim-{{ project }}:
   file.managed:
-    - name: {{ config_dir }}/{{ project }}-nvim.session.sh
+    - name: {{ config_dir }}/{{ project }}-nvim.window.sh
     - source: salt://shared/tmuxifier/nvim.window.sh
     - user: {{ pillar['user']['name'] }}
     - makedirs: True
@@ -36,7 +36,7 @@ tmuxifier-nvim-{{ project }}:
 
 tmuxifier-shell-{{ project }}:
   file.managed:
-    - name: {{ config_dir }}/{{ project }}-project-shell.session.sh
+    - name: {{ config_dir }}/{{ project }}-project-shell.window.sh
     - source: salt://shared/tmuxifier/project-shell.window.sh
     - user: {{ pillar['user']['name'] }}
     - makedirs: True
