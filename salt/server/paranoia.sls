@@ -5,11 +5,11 @@
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
 {{ pi_hole_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
 pi-hole:
-  dockerng.running:
+  docker_container.running:
     - image: {{ pi_hole_image }}
     - cap_add:
       - NET_ADMIN
@@ -29,11 +29,11 @@ pi-hole:
       - {{ pi_hole_image }}
 
 {{ tor_privoxy_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
 tor-privoxy:
-  dockerng.running:
+  docker_containe.running:
     - image: {{ tor_privoxy_image }}
     - port_bindings:
       - "8118:8118"

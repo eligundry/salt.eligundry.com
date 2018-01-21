@@ -11,11 +11,11 @@
     - group: docker
 
 {{ eligundry_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
 eligundry.com:
-  dockerng.running:
+  docker_container.running:
     - image: {{ eligundry_image }}
     - environment:
       - VIRTUAL_HOST: {{ website['virtual_host'] }}
@@ -23,18 +23,18 @@ eligundry.com:
       - LETSENCRYPT_HOST: {{ website['letsencrypt']['host'] }}
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
-      - ENABLE_IPV6: "True"
+      - ENABLE_IPV6: "true"
     - restart_policy: always
     - require:
       - nginx-proxy
       - {{ eligundry_image }}
 
 {{ nginx_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
-'nginx-proxy':
-  dockerng.running:
+nginx-proxy:
+  docker_container.running:
     - image: {{ nginx_image }}
     - volumes:
       - /etc/nginx/conf.d
@@ -57,11 +57,11 @@ eligundry.com:
 {% if salt['grains.get']('virtual') != 'VirtualBox' %}
 
 {{ letsencrypt_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
 letsencrypt:
-  dockerng.running:
+  docker_container.running:
     - image: {{ letsencrypt_image }}
     - volumes_from:
       - nginx-proxy
@@ -69,6 +69,8 @@ letsencrypt:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - {{ letsencrypt_dir }}:/etc/nginx/certs:rw
     - restart_policy: always
+    - environment:
+      - ACME_TOS_HASH=cc88d8d9517f490191401e7b54e9ffd12a2b9082ec7a1d4cec6101f9f1647e7b
     - require:
       - {{ letsencrypt_dir }}
       - {{ letsencrypt_image }}

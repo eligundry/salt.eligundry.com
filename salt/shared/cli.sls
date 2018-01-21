@@ -1,7 +1,9 @@
+{% set isMacOS = grains['os'] == 'MacOS' %}
+
 bash:
   pkg.installed
 
-{% if grains['os'] == 'MacOS' -%}
+{% if isMacOS  -%}
 /etc/shells:
   file.append:
     - text:
@@ -27,7 +29,11 @@ jq:
 
 openssh-pkg:
   pkg.installed:
+    {% if isMacOS -%}
     - name: openssh
+    {% else -%}
+    - name: ssh
+    {% endif -%}
 
 pwgen:
   pkg.installed

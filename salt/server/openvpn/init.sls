@@ -31,11 +31,11 @@
       - {{ openvpn_path }}
 
 {{ openvpn_image }}:
-  dockerng.image_present:
+  docker_image.present:
     - force: {{ pull_latest }}
 
 openvpn-server:
-  dockerng.running:
+  docker_containe.running:
     - image: {{ openvpn_image }}
     - cap_add:
       - NET_ADMIN
