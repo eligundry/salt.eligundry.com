@@ -79,7 +79,7 @@ docker-py:
   pip.installed
 
 docker-gc:
-  dockerng.image_present:
+  docker_container.present:
     - name: spotify/docker-gc
     - require:
       - docker-py

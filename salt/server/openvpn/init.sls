@@ -35,7 +35,7 @@
     - force: {{ pull_latest }}
 
 openvpn-server:
-  docker_containe.running:
+  docker_container.running:
     - image: {{ openvpn_image }}
     - cap_add:
       - NET_ADMIN
