@@ -29,11 +29,11 @@ jq:
 
 openssh-pkg:
   pkg.installed:
-    {% if isMacOS -%}
+    {% if isMacOS %}
     - name: openssh
     {% else -%}
     - name: ssh
-    {% endif -%}
+    {% endif %}
 
 pwgen:
   pkg.installed
