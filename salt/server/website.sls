@@ -10,7 +10,7 @@
     - user: docker
     - group: docker
     - recurse: true
-    - dir_mode: 660
+    - dir_mode: 664
     - file_mode: 660
     - makedirs: true
 
