@@ -11,7 +11,7 @@
     - group: docker
     - dir_mode: 775
     - file_mode: 660
-    - makedirs: true
+    - makedirs: True
     - recurse:
       - user
       - group

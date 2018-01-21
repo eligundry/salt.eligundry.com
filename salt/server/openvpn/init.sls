@@ -8,7 +8,12 @@
     - makedirs: True
     - user: docker
     - group: docker
-    - mode: 0660
+    - dir_mode: 775
+    - file_mode: 660
+    - recurse:
+      - user
+      - group
+      - mode
 
 {{ openvpn_path }}/openvpn.conf:
   file.managed:
