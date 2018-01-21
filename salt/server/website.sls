@@ -9,7 +9,7 @@
   file.directory:
     - user: docker
     - group: docker
-    - dir_mode: 664
+    - dir_mode: 775
     - file_mode: 660
     - makedirs: true
     - recurse:
