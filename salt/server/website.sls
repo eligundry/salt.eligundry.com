@@ -9,10 +9,13 @@
   file.directory:
     - user: docker
     - group: docker
-    - recurse: true
     - dir_mode: 664
     - file_mode: 660
     - makedirs: true
+    - recurse:
+      - user
+      - group
+      - mode
 
 {{ eligundry_image }}:
   docker_image.present:
