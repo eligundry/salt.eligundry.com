@@ -9,6 +9,7 @@ include:
   - shared.aws
   - shared.cli
   - shared.tmuxifier
+  - shared.weechat
   {% if pillar['user']['pass'] %}
   - shared.pass
   {% endif %}

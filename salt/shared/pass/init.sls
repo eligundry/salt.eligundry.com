@@ -1,17 +1,10 @@
 {% if salt['pillar.get']('user:pass') %}
 
-{% set home = pillar['user']['home'] %}
+{% set home = salt['pillar.get']('user:home') %}
 {% set password_store = home + '/.password_store' %}
 
 pass:
-  pkg.installed:
-    - pkgs:
-      - pass
-      {% if grains['os'] == 'MacOS' %}
-      - caskroom/cask/qtpass
-      {% else %}
-      - qtpass
-      {% endif %}
+  pkg.installed
 
 {{ pillar['user']['pass'] }}:
   git.latest:
