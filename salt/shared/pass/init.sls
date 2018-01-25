@@ -7,11 +7,11 @@ pass:
   pkg.installed:
     - pkgs:
       - pass
-      {% if grains['os'] == 'MacOS' -%}
+      {% if grains['os'] == 'MacOS' %}
       - caskroom/cask/qtpass
-      {% else -%}
+      {% else %}
       - qtpass
-      {% endif -%}
+      {% endif %}
 
 {{ pillar['user']['pass'] }}:
   git.latest:
