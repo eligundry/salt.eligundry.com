@@ -1,5 +1,5 @@
 {% set user = pillar['user'] %}
-{% set is_linux = (grains['kernel'] == 'Linux') %}
+{% set is_linux = grains['kernel'] == 'Linux' %}
 
 {{ user['name'] }}:
   user.present:

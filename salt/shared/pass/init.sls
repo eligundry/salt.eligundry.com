@@ -4,7 +4,14 @@
 {% set password_store = home + '/.password_store' %}
 
 pass:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - pass
+      {% if grains['os'] == 'MacOS' -%}
+      - caskroom/cask/qtpass
+      {% else -%}
+      - qtpass
+      {% endif -%}
 
 {{ pillar['user']['pass'] }}:
   git.latest:
