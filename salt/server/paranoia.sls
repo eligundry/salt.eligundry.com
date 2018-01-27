@@ -2,6 +2,7 @@
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'diginc/pi-hole:alpine' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
+{% set website = pillar['website'] %}
 
 {{ pi_hole_image }}:
   docker_image.present:
@@ -16,6 +17,9 @@ pi-hole:
       - ServerIP: {{ ip_address }}
       - VIRTUAL_HOST: {{ virtual_host }}
       - VIRTUAL_PORT: '80'
+      - LETSENCRYPT_HOST: {{ virtual_host }}
+      - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
+      - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - WEBPASSWORD: {{ pillar['pi-hole']['password'] }}
     - port_bindings:
       - "53:53/tcp"
