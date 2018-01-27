@@ -1,15 +1,20 @@
-{% if salt['pillar.get']('user:pass') %}
-
+{% set pass_repo = salt['pillar.get']('user:pass') %}
+{% set user = salt['pillar.get']('user:name') %}
 {% set home = salt['pillar.get']('user:home') %}
 {% set password_store = home + '/.password_store' %}
+
+{% if pass_repo %}
 
 pass:
   pkg.installed
 
-{{ pillar['user']['pass'] }}:
+qtpass:
+  pkg.absent
+
+{{ pass_repo }}:
   git.latest:
     - target: {{ password_store }}
-    - user: {{ pillar['user']['name'] }}
+    - user: {{ user }}
     - identity: {{ home }}/.ssh/no_pass
     - require:
       - git
@@ -19,9 +24,9 @@ pass-git-push-after-commit:
   file.managed:
     - name: {{ password_store }}/.git/hooks/post-commit
     - source: salt://shared/pass/post-commit.sh
-    - user: {{ pillar['user']['name'] }}
+    - user: {{ user }}
     - mode: 774
     - require:
-      - {{ pillar['user']['pass'] }}
+      - {{ pass_repo }}
 
 {% endif %}

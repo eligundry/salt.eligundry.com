@@ -21,7 +21,6 @@ base:
     - linux-desktop.discord
     - linux-desktop.dropbox
     - linux-desktop.emojione
-    - linux-desktop.mattermost
     - linux-desktop.slack
     - linux-desktop.veracrypt
     - linux-desktop.virtualbox
