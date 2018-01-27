@@ -1,7 +1,6 @@
-{% set ip_address = salt['cmd.shell']("wget -qO- http://ipecho.net/plain") %}
+{% set ip_address = grains['ipv4_interfaces']['eth0'] %}
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'diginc/pi-hole:alpine' %}
-{% set tor_privoxy_image = 'rdsubhas/tor-privoxy-alpine' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
 {{ pi_hole_image }}:
@@ -27,18 +26,3 @@ pi-hole:
     - require:
       - docker
       - {{ pi_hole_image }}
-
-{{ tor_privoxy_image }}:
-  docker_image.present:
-    - force: {{ pull_latest }}
-
-tor-privoxy:
-  docker_containe.running:
-    - image: {{ tor_privoxy_image }}
-    - port_bindings:
-      - "8118:8118"
-      - "9050:9050"
-    - restart_policy: always
-    - require:
-      - docker
-      - {{ tor_privoxy_image }}

@@ -1,7 +1,7 @@
 {% set pass_repo = salt['pillar.get']('user:pass') %}
 {% set user = salt['pillar.get']('user:name') %}
 {% set home = salt['pillar.get']('user:home') %}
-{% set password_store = home + '/.password_store' %}
+{% set password_store = home + '/.password-store' %}
 
 {% if pass_repo %}
 
@@ -9,7 +9,7 @@ pass:
   pkg.installed
 
 qtpass:
-  pkg.absent
+  pkg.removed
 
 {{ pass_repo }}:
   git.latest:

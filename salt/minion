@@ -4,7 +4,5 @@ fileserver_backend:
   - git
 gitfs_provider: gitpython
 gitfs_base: develop
-gitfs_remotes:
-  - https://github.com/croscon/sw2.git
 gitfs_root: srv-salt/
 file_client: local
