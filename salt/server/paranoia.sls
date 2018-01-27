@@ -24,7 +24,6 @@ pi-hole:
     - port_bindings:
       - "53:53/tcp"
       - "53:53/udp"
-      - "8053:80/tcp"
     - extra_hosts:
       - 'pi-hole {{ virtual_host }}:{{ ip_address }}'
     - require:
