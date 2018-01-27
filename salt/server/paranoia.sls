@@ -1,4 +1,4 @@
-{% set ip_address = grains['ipv4_interfaces']['eth0'] %}
+{% set ip_address = salt['grains.get']('ip4_interfaces:eth0:0') %}
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'diginc/pi-hole:alpine' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
