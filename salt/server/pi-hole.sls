@@ -34,6 +34,7 @@ pi-hole:
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
+    - restart_policy: always
     - binds:
       - {{ pi_hole_dir }}:/etc/pihole
     - require:
