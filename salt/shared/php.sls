@@ -24,7 +24,7 @@ php:
 
 php:
   pkg.removed:
-    pkgs:
+    - pkgs:
       - composer
       - php7.0
 
