@@ -10,6 +10,5 @@ include:
   - shared.cli
   - shared.tmuxifier
   - shared.weechat
-  {% if pillar['user']['pass'] %}
+  - shared.php
   - shared.pass
-  {% endif %}
