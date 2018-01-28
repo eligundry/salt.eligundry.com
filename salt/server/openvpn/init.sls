@@ -50,7 +50,7 @@ openvpn-server:
     - binds:
       - {{ openvpn_path }}:/etc/openvpn
     - restart_policy: always
-    - watch
+    - watch:
       - file: {{ openvpn_path }}/openvpn.conf
     - require:
       - {{ openvpn_image }}
