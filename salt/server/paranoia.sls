@@ -21,11 +21,11 @@ pi-hole:
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
-    - port_bindings:
-      - "53:53/tcp"
-      - "53:53/udp"
-    - extra_hosts:
-      - 'pi-hole {{ virtual_host }}:{{ ip_address }}'
+    # - port_bindings:
+    #   - "53:53/tcp"
+    #   - "53:53/udp"
+    # - extra_hosts:
+    #   - 'pi-hole {{ virtual_host }}:{{ ip_address }}'
     - require:
       - docker
       - {{ pi_hole_image }}

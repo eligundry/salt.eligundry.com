@@ -24,6 +24,7 @@
     - template: jinja
     - require:
       - {{ openvpn_path }}
+      - pi-hole
 
 {{ openvpn_path }}/ovpn_env.sh:
   file.managed:
@@ -49,6 +50,8 @@ openvpn-server:
     - binds:
       - {{ openvpn_path }}:/etc/openvpn
     - restart_policy: always
+    - watch
+      - file: {{ openvpn_path }}/openvpn.conf
     - require:
       - {{ openvpn_image }}
       - {{ openvpn_path }}
