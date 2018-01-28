@@ -1,6 +1,6 @@
 include:
   - server.website
-  - server.paranoia
+  - server.pi-hole
   - server.openvpn
   {% if grains['productname'] == 'Droplet' %}
   # - server.authy

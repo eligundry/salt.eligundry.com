@@ -3,6 +3,19 @@
 {% set pi_hole_image = 'diginc/pi-hole' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 {% set website = pillar['website'] %}
+{% set pi_hole_dir = '/opt/pi-hole' %}
+
+{{ pi_hole_dir }}:
+  file.directory:
+    - user: docker
+    - group: docker
+    - dir_mode: 775
+    - file_mode: 660
+    - makedirs: True
+    - recurse:
+      - user
+      - group
+      - mode
 
 {{ pi_hole_image }}:
   docker_image.present:
@@ -21,11 +34,9 @@ pi-hole:
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
-    # - port_bindings:
-    #   - "53:53/tcp"
-    #   - "53:53/udp"
-    # - extra_hosts:
-    #   - 'pi-hole {{ virtual_host }}:{{ ip_address }}'
+    - binds:
+      - {{ pi_hole_dir }}:/etc/pihole
     - require:
       - docker
       - {{ pi_hole_image }}
+      - {{ pi_hole_dir }}
