@@ -1,3 +1,5 @@
+{% if grains['eligundry_device'] != 'server' %}
+
 php:
   pkg.installed:
     - pkgs:
@@ -17,3 +19,13 @@ php:
     - user: {{ pillar['user']['name'] }}
     - mode: 600
     - show_changes: false
+
+{% else %}
+
+php:
+  pkg.removed:
+    pkgs:
+      - composer
+      - php7.0
+
+{% endif %}
