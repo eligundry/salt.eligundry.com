@@ -17,6 +17,21 @@
       - group
       - mode
 
+{{ pi_hole_dir }}/robots.txt:
+  file.managed:
+    - user: docker
+    - group: docker
+    - contents: |
+        User-agent: *
+        Disallow: /
+    - require:
+      - {{ pi_hole_dir }}
+
+{{ pi_hole_dir }}/pihole-FTL.db:
+  file.touch:
+    - require:
+      - {{ pi_hole_dir }}
+
 {{ pi_hole_image }}:
   docker_image.present:
     - force: {{ pull_latest }}
@@ -35,9 +50,11 @@ pi-hole:
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
-    # - binds:
-    #   - {{ pi_hole_dir }}:/etc/pihole
+    - binds:
+      - {{ pi_hole_dir }}/pihole-FTL.db:/etc/pihole/pihole-FTL.db
+      - {{ pi_hole_dir }}/robots.txt:/var/www/html/pihole/robots.txt
     - require:
       - docker
       - {{ pi_hole_image }}
-      - {{ pi_hole_dir }}
+      - {{ pi_hole_dir }}/pihole-FTL.db
+      - {{ pi_hole_dir }}/robots.txt
