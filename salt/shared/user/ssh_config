@@ -1,11 +1,11 @@
 # THIS FILE IS MANAGED BY SALT!!!
 # If you need to make customizations, add them to ~/.ssh/config.local
-{%- for alias, config in pillar['user']['ssh_aliases'].items() %}
+{% for alias, config in pillar['user']['ssh_aliases'].items() %}
 Host {{ alias }}
     {%- for key, value in config.items() -%}
     {{ key }} {{ value }}
-    {%- endfor -%}
-{% endfor %}
+    {%- endfor %}
+{%- endfor %}
 
 {#- This is not working on Ubuntu 16.04 cause it's on an OpenSSH 7.2 and Include only works after 7.3 -#}
 {%- if grains['osfinger'] != 'Ubuntu-16.04' %}
