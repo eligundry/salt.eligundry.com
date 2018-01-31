@@ -2,7 +2,7 @@
 # If you need to make customizations, add them to ~/.ssh/config.local
 {% for alias, config in pillar['user']['ssh_aliases'].items() %}
 Host {{ alias }}
-    {%- for key, value in config.items() %}
+    {% for key, value in config.items() %}
     {{ key }} {{ value }}
     {% endfor %}
 {% endfor %}
