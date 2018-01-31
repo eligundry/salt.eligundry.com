@@ -1,5 +1,4 @@
 include:
-  - server.nginx
   - server.website
   - server.pi-hole
   - server.openvpn
