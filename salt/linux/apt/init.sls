@@ -12,9 +12,17 @@ unattended-upgrades:
       - apt-listchanges
       - unattended-upgrades
 
-periodic-unattended-upgrades:
+/etc/apt/apt.conf.d/02periodic:
   file.managed:
-    - name: /etc/apt/apt.conf.d/02periodic
+    - source: salt://linux/apt/periodic-upgrades
+    - user: root
+    - group: root
+    - mode: 644
+    - require:
+      - unattended-upgrades
+
+/etc/apt/apt.conf.d/50unattended-upgrades:
+  file.managed:
     - source: salt://linux/apt/periodic-upgrades
     - user: root
     - group: root
