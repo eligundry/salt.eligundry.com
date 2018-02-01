@@ -1,4 +1,5 @@
 include:
+  - server.salt
   - server.website
   - server.pi-hole
   - server.openvpn
