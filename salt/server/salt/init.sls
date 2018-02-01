@@ -8,7 +8,7 @@ salt-cloud-digital-ocean-ssh-key:
 salt-cloud-digital-ocean-provider:
   file.managed:
     - name: /etc/salt/cloud.providers.d/digital_ocean.sls
-    - source: sls://server/salt/provider.sls
+    - source: salt://server/salt/provider.sls
     - user: root
     - group: root
     - mode: 600
