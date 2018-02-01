@@ -24,3 +24,14 @@ salt-cloud-digital-ocean-provider:
         salt_master: {{ salt['pillar.get']('salt-master:host') }}
     - require:
       - salt-cloud-digital-ocean-ssh-key
+
+salt-cloud-digital-ocean-profiles:
+  file.managed:
+    - name: /etc/salt/cloud.profiles.d/digital_ocean.conf
+    - source: salt://server/salt/digital_ocean_profiles.sls
+    - user: root
+    - group: root
+    - mode: 600
+    - template: jinja
+    - defaults:
+        image: ubuntu-16-04-x64
