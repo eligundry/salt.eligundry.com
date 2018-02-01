@@ -23,7 +23,7 @@ unattended-upgrades:
 
 /etc/apt/apt.conf.d/50unattended-upgrades:
   file.managed:
-    - source: salt://linux/apt/periodic-upgrades
+    - source: salt://linux/apt/unattended-upgrades
     - user: root
     - group: root
     - mode: 644
