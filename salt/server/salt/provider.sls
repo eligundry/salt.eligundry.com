@@ -1,3 +1,4 @@
+# This file is managed by SaltStack, changes won't be persisted
 {{ name }}:
   driver: {{ driver }}
   personal_access_token: {{ token }}

@@ -1,3 +1,6 @@
+salt-cloud:
+  pkg.installed
+
 salt-cloud-digital-ocean-ssh-key:
   file.managed:
     - name: /etc/salt/pki/digital_ocean.pem
@@ -14,7 +17,7 @@ salt-cloud-digital-ocean-provider:
     - mode: 600
     - template: jinja
     - defaults:
-        name: digital_ocean
+        name: do
         driver: digital_ocean
         token: {{ salt['pillar.get']('cloud_providers:digital_ocean:token') }}
         private_key: /etc/salt/pki/digital_ocean.pem
