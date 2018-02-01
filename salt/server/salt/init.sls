@@ -10,14 +10,14 @@ salt-cloud-digital-ocean-ssh-key:
 
 salt-cloud-digital-ocean-provider:
   file.managed:
-    - name: /etc/salt/cloud.providers.d/digital_ocean.sls
+    - name: /etc/salt/cloud.providers.d/digital_ocean.conf
     - source: salt://server/salt/provider.sls
     - user: root
     - group: root
     - mode: 600
     - template: jinja
     - defaults:
-        name: do
+        name: digital_ocean
         driver: digital_ocean
         token: {{ salt['pillar.get']('cloud_providers:digital_ocean:token') }}
         private_key: /etc/salt/pki/digital_ocean.pem
