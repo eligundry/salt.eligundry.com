@@ -19,7 +19,8 @@ big-droplet:
   ipv6: true
   image: {{ image }}
 
-big-boy-droplet:
+# http://www.clickhole.com/quiz/are-you-big-jazz-boy-or-little-jazz-boy-1081
+big-jazz-boy-droplet:
   provider: digital_ocean
   size: s-8vcpu-32gb
   location: nyc3
