@@ -22,6 +22,7 @@
     - server
     - website
     - openvpn
+    - znc
   'virtual:VirtualBox':
     - match: grain
     - vagrant
