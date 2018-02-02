@@ -5,7 +5,6 @@ dots:
   .ctags: ctags
   .eslintrc: eslintrc
   .config/nvim: config/nvim
-  .config/pianobar: config/pianobar
   .dir_colors: dir_colors
   .git_template: git_template
   .gitattributes: gitattributes

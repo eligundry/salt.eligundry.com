@@ -1,6 +1,3 @@
-salt-cloud:
-  pkg.installed
-
 salt-cloud-digital-ocean-ssh-key:
   file.managed:
     - name: /etc/salt/pki/digital_ocean.pem
@@ -11,7 +8,7 @@ salt-cloud-digital-ocean-ssh-key:
 salt-cloud-digital-ocean-provider:
   file.managed:
     - name: /etc/salt/cloud.providers.d/digital_ocean.conf
-    - source: salt://server/salt/provider.sls
+    - source: salt://server/salt-cloud/digital-ocean/provider.sls
     - user: root
     - group: root
     - mode: 600
@@ -28,7 +25,7 @@ salt-cloud-digital-ocean-provider:
 salt-cloud-digital-ocean-profiles:
   file.managed:
     - name: /etc/salt/cloud.profiles.d/digital_ocean.conf
-    - source: salt://server/salt/digital_ocean_profiles.sls
+    - source: salt://server/salt-cloud/digital-ocean/profiles.sls
     - user: root
     - group: root
     - mode: 600
