@@ -35,3 +35,6 @@ base:
     - media-center
     - thinkpad
     - server
+  'productname:Droplet':
+    - match: grain
+    - server.digitalocean

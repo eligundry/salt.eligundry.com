@@ -1,5 +1,6 @@
 {% set pass_repo = salt['pillar.get']('user:pass') %}
 {% set user = salt['pillar.get']('user:name') %}
+{% set group = salt['pillar.get']('user:main_group', user) %}
 {% set home = salt['pillar.get']('user:home') %}
 {% set password_store = home + '/.password-store' %}
 
@@ -23,6 +24,7 @@ qtpass:
 {{ password_store }}:
   file.directory:
     - user: {{ user }}
+    - group: {{ group }}
     - dir_mode: 775
     - file_mode: 660
     - recurse:
@@ -37,6 +39,7 @@ pass-git-push-after-commit:
     - name: {{ password_store }}/.git/hooks/post-commit
     - source: salt://shared/pass/post-commit.sh
     - user: {{ user }}
+    - group: {{ group }}
     - mode: 774
     - require:
       - {{ pass_repo }}

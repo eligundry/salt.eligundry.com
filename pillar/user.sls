@@ -11,7 +11,9 @@ user:
   {% if grains['os'] == 'MacOS' %}
   shell: /usr/local/bin/zsh
   home: /Users/eligundry
+  main_group: staff
   {% else %}
   shell: /usr/bin/zsh
   home: /home/eligundry
+  main_group: eligundry
   {% endif %}
