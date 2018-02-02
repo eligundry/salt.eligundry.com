@@ -27,6 +27,9 @@ htop:
 jq:
   pkg.installed
 
+multitail:
+  pkg.installed
+
 openssh-pkg:
   pkg.installed:
     {% if isMacOS %}
