@@ -1,1 +1,2 @@
-user.name: vagrant
+user:
+  name: vagrant

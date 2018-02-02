@@ -11,6 +11,7 @@ neovim-ppa:
     - keyid: 8231B6DD
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/neovim.list
+    - clean_file: true
 
 neovim:
   pkg.latest:

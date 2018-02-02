@@ -20,6 +20,18 @@ qtpass:
       - git
       - {{ home }}/.ssh/no_pass
 
+{{ password_store }}:
+  file.directory:
+    - user: {{ user }}
+    - dir_mode: 775
+    - file_mode: 660
+    - recurse:
+      - user
+      - group
+      - mode
+    - require:
+      - {{ pass_repo }}
+
 pass-git-push-after-commit:
   file.managed:
     - name: {{ password_store }}/.git/hooks/post-commit
@@ -28,5 +40,6 @@ pass-git-push-after-commit:
     - mode: 774
     - require:
       - {{ pass_repo }}
+      - {{ password_store }}
 
 {% endif %}

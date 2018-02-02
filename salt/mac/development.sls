@@ -59,10 +59,10 @@ mysqlworkbench:
   pkg.installed:
     - name: caskroom/cask/mysqlworkbench
 
-neovim:
+nodejs:
   pkg.installed
 
-npm:
+neovim:
   pkg.installed
 
 pgadmin:

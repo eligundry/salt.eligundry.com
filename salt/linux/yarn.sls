@@ -4,8 +4,9 @@ yarn-ppa:
     - name: deb https://dl.yarnpkg.com/debian/ stable main
     - key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
     - file: /etc/apt/sources.list.d/yarn.list
+    - clean_file: true
 
 yarn:
-  pkg.latest:
+  pkg.installed:
     - require:
       - yarn-ppa

@@ -3,7 +3,8 @@ include:
   - shared.user
   - shared.dots
   - shared.pyenv
-  - shared.nvm
+  # I'm falling out of love with nvm
+  # - shared.nvm
   - shared.npm
   - shared.repos
   - shared.aws
