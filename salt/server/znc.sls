@@ -30,7 +30,7 @@ znc-irc-bouncer:
       - VIRTUAL_HOST: {{ znc_config['host'] }}
       - VIRTUAL_PORT: 65534
       - LETSENCRYPT_HOST: {{ znc_config['host'] }}
-      - LETSENCRYPT_EMAIL: {{ {{ znc_config['email'] }} }}
+      - LETSENCRYPT_EMAIL: {{ znc_config['email'] }}
       - LETSENCRYPT_TEST: {{ znc_config['letsencrypt_test'] }}
       - ENABLE_IPV6: "true"
     - require:
