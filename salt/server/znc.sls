@@ -26,12 +26,13 @@ znc-irc-bouncer:
       - {{ znc_dir }}:/znc-data
     - port_bindings:
       - "6667:6667"
-    - environment:
-      - VIRTUAL_HOST: {{ znc_config['host'] }}
-      - VIRTUAL_PORT: 65534
-      - LETSENCRYPT_HOST: {{ znc_config['host'] }}
-      - LETSENCRYPT_EMAIL: {{ znc_config['email'] }}
-      - LETSENCRYPT_TEST: {{ znc_config['letsencrypt_test'] }}
-      - ENABLE_IPV6: "true"
+      - "65534:65534"
+    # - environment:
+      # - VIRTUAL_HOST: {{ znc_config['host'] }}
+      # - VIRTUAL_PORT: 65534
+      # - LETSENCRYPT_HOST: {{ znc_config['host'] }}
+      # - LETSENCRYPT_EMAIL: {{ znc_config['email'] }}
+      # - LETSENCRYPT_TEST: {{ znc_config['letsencrypt_test'] }}
+      # - ENABLE_IPV6: "true"
     - require:
       - {{ znc_image }}
