@@ -54,7 +54,6 @@ pi-hole:
       - {{ pi_hole_dir }}/pihole-FTL.db:/etc/pihole/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt:/var/www/html/pihole/robots.txt
     - require:
-      - docker
       - {{ pi_hole_image }}
       - {{ pi_hole_dir }}/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt
