@@ -37,6 +37,7 @@ znc-irc-bouncer:
       - {{ znc_dir }}:/znc-data
     - port_bindings:
       - "6667:6667"
+      - "6668:6668"
     - environment:
       - VIRTUAL_HOST: {{ znc_config['host'] }}
       - VIRTUAL_PORT: 6668
