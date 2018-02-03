@@ -22,6 +22,9 @@
     - group: docker
     - makedirs: True
     - template: jinja
+    - defaults:
+        openvpn_server: {{ openvpn_server }}
+        pi_hole_ip: {{ salt['cmd.run']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' pi-hole") }}
     - require:
       - {{ openvpn_path }}
       - pi-hole

@@ -15,6 +15,17 @@
       - group
       - mode
 
+{{ znc_dir }}/configs/znc.conf:
+  file.managed:
+    - source: salt://server/znc/znc.conf
+    - template: jinja
+    - defaults:
+        proxy_ip: {{ salt['cmd.run']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' nginx-proxy") }}
+        password_hash: {{ znc_config['password']['hash'] }}
+        password_salt: {{ znc_config['password']['salt'] }}
+    - require:
+      - {{ znc_dir }}
+
 {{ znc_image }}:
   docker_image.present:
     - force: {{ pull_latest }}
@@ -28,10 +39,13 @@ znc-irc-bouncer:
       - "6667:6667"
     - environment:
       - VIRTUAL_HOST: {{ znc_config['host'] }}
-      - VIRTUAL_PORT: 6667
+      - VIRTUAL_PORT: 65534
       - LETSENCRYPT_HOST: {{ znc_config['host'] }}
       - LETSENCRYPT_EMAIL: "{{ znc_config['email'] }}"
       - LETSENCRYPT_TEST: "{{ znc_config['letsencrypt_test'] }}"
       - ENABLE_IPV6: "true"
+    - watch:
+      - file: {{ znc_dir }}/configs/znc.conf
     - require:
       - {{ znc_image }}
+      - {{ znc_dir }}/configs/znc.conf
