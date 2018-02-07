@@ -66,24 +66,18 @@ browserpass-library:
     - overwrite: true
     - user: {{ user }}
     - group: {{ group }}
-    - require:
-      - {{ home }}/.lib/browserpass
 
 browserpass-install-chrome:
   cmd.run:
     - name: echo '1' | sh {{ home }}/.lib/browserpass/install.sh
     - runas: {{ user }}
     - unless: test -f {{ home }}/.config/google-chrome/NativeMessagingHosts/com.dannyvankooten.browserpass.json
-    - require:
-      - browserpass-library
 
 browserpass-install-firefox:
   cmd.run:
     - name: echo '3' | sh {{ home }}/.lib/browserpass/install.sh
     - runas: {{ user }}
     - unless: test -f {{ home }}/.mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json
-    - require:
-      - browserpass-library
 
 {% endif %}
 
