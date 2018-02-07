@@ -43,7 +43,7 @@ znc-irc-bouncer:
       - LETSENCRYPT_HOST: {{ znc_config['host'] }}
       - LETSENCRYPT_EMAIL: "{{ znc_config['email'] }}"
       - LETSENCRYPT_TEST: "{{ znc_config['letsencrypt_test'] }}"
-      - ENABLE_IPV6: "true"
+      - ENABLE_IPV6: "false"
     - watch:
       - file: {{ znc_dir }}/configs/znc.conf
     - require:
