@@ -32,8 +32,3 @@ desktop-development-pkgs:
       - mysql-workbench
       - pgadmin3
       - postgresql-client
-
-staruml:
-  pkg.installed:
-    - sources:
-      - staruml: 'http://staruml.io/download/release/v2.8.0/StarUML-v2.8.0-64-bit.deb'
