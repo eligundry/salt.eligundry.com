@@ -61,7 +61,7 @@ pass-git-push-after-commit:
 browserpass-library:
   archive.extracted:
     - name: {{ home }}/.lib/browserpass
-    - source: 'https://github.com/dannyvankooten/browserpass/releases/download/latest/browserpass-{{ browserpass_platform }}.zip'
+    - source: 'https://github.com/dannyvankooten/browserpass/releases/download/2.0.11/browserpass-{{ browserpass_platform }}.zip'
     - skip_verify: true
     - overwrite: true
     - user: {{ user }}
