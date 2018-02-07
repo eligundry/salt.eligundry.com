@@ -24,7 +24,6 @@ qtpass:
     - identity: {{ home }}/.ssh/no_pass
     - require:
       - git
-      - {{ home }}/.ssh/no_pass
 
 {{ password_store }}:
   file.directory:
@@ -66,6 +65,7 @@ browserpass-library:
     - overwrite: true
     - user: {{ user }}
     - group: {{ group }}
+    - enforce_toplevel: false
 
 browserpass-install-chrome:
   cmd.run:
