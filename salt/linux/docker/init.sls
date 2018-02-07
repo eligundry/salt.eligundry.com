@@ -87,7 +87,7 @@ docker-gc:
 
 docker-cleanup:
   cron.present:
-    - special: {{ cleanup_frequency }}
+    - special: '{{ cleanup_frequency }}'
     - name: "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc"
     - comment: "Clear our unneeded Docker images."
     - require:
