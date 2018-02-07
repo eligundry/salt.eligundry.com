@@ -13,7 +13,7 @@ numix-ppa:
     - file: /etc/apt/sources.list.d/numix.list
 
 numix:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - numix-icon-theme
       - numix-icon-theme-square

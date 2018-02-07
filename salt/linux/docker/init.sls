@@ -1,5 +1,6 @@
 {% set os = grains['os']|lower %}
 {% set codename = grains['lsb_distrib_codename'] %}
+{% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
 
 {% if codename == 'buster' %}
   {% set codename = 'stretch' %}
@@ -86,7 +87,7 @@ docker-gc:
 
 docker-cleanup:
   cron.present:
-    - special: '@daily'
+    - special: {{ cleanup_frequency }}
     - name: "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc"
     - comment: "Clear our unneeded Docker images."
     - require:

@@ -7,7 +7,7 @@ spotify-ppa:
     - file: /etc/apt/sources.list.d/spotify.list
 
 spotify:
-  pkg.latest:
+  pkg.installed:
     - name: spotify-client
     - require:
       - spotify-ppa

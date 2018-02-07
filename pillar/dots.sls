@@ -24,8 +24,16 @@ dots:
   .zsh: zsh
   .zshrc: zshrc
 {% if grains['kernel'] == 'Linux' %}
-  .config/terminator: config/terminator
   .config/redshift.conf: config/redshift.conf
+  .config/terminator: config/terminator
+  .config/xfce4/helpers.rc: config/xfce4/helpers.rc
+  .config/xfce4/panel: config/xfce4/panel
+  .config/xfce4/terminal: config/xfce4/terminal
+  .config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml: config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
+  .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml: config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+  .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml: config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+  .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml: config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+  .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml: config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
   .gtkrc-2.0: gtkrc-2.0
   .nethackrc: nethackrc
   .Xdefaults: Xdefaults
@@ -33,8 +41,7 @@ dots:
   .Xresources: Xresources
   .xsessionrc: xsessionrc
   .zshenv: zshenv
-{% endif %}
-{% if grains['kernel'] == 'Darwin' %}
+{% elif grains['kernel'] == 'Darwin' %}
   .item2_profiles.json: item2_profiles.json
 {% endif %}
 

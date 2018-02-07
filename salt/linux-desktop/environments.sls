@@ -1,11 +1,11 @@
 desktop-environments:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - gnome
       - xfce4
 
 desktop-pkgs:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - clementine
       - evince

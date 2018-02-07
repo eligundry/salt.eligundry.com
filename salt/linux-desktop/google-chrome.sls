@@ -7,7 +7,7 @@ google-chrome-ppa:
     - file: /etc/apt/sources.list.d/google-chrome.list
 
 google-chrome:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - google-chrome-beta
       - google-chrome-stable
