@@ -15,6 +15,6 @@ dropbox-ppa:
     - file: /etc/apt/sources.list.d/dropbox.list
 
 dropbox:
-  pkg.install:
+  pkg.installed:
     - require:
       - dropbox-ppa
