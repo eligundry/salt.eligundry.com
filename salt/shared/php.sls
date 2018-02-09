@@ -1,5 +1,3 @@
-{% if grains['eligundry_device'] != 'server' %}
-
 php:
   pkg.installed:
     - pkgs:
@@ -20,12 +18,9 @@ php:
     - mode: 600
     - show_changes: false
 
-{% else %}
+{% if grains['os'] == 'Ubuntu' %}
 
-php:
-  pkg.removed:
-    - pkgs:
-      - composer
-      - php7.0
+php7.0-fpm:
+  service.disabled
 
 {% endif %}

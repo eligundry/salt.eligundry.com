@@ -13,3 +13,4 @@ include:
   - shared.weechat
   - shared.php
   - shared.pass
+  - shared.saltstack
