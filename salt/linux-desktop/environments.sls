@@ -1,34 +1,51 @@
-desktop-environments:
-  pkg.installed:
-    - pkgs:
-      - gnome
-      - xfce4
+clementine:
+  pkg.installed
 
-desktop-pkgs:
+evince:
+  pkg.installed
+
+firefox:
+  pkg.installed:
+    {% if grains['os'] == 'Debian' %}
+    - name: firefox-esr
+    {% endif %}
+
+fonts-linux:
   pkg.installed:
     - pkgs:
-      - clementine
-      - evince
       - fonts-roboto
-      - gimp
-      - gnome-do
-      - gparted
-      - qt4-qtconfig
-      - redshift-gtk
-      - thunderbird
-      - transmission
       - ttf-ancient-fonts
       - ttf-mscorefonts-installer
-      - xfce4-goodies
-      {% if grains['os'] == 'Debian' %}
-      - firefox-esr
-      {% else %}
-      - firefox
-      {% endif %}
 
-desktop-development-pkgs:
+gimp:
+  pkg.installed
+
+gnome:
+  pkg.installed
+
+gnome-do:
+  pkg.installed
+
+mysql-workbench:
+  pkg.installed
+
+qt4-qtconfig:
+  pkg.installed
+
+pgadmin3:
   pkg.installed:
     - pkgs:
-      - mysql-workbench
       - pgadmin3
       - postgresql-client
+
+redshift-gtk:
+  pkg.installed
+
+thunderbird:
+  pkg.installed
+
+transmission:
+  pkg.installed
+
+vlc:
+  pkg.installed

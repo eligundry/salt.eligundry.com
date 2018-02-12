@@ -67,3 +67,7 @@ veracrypt:
 viscosity:
   pkg.installed:
     - name: caskroom/cask/viscosity
+
+vlc:
+  pkg.installed:
+    - name: caskroom/cask/vlc
