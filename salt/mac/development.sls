@@ -87,7 +87,7 @@ rust:
   pkg.installed
 
 staruml:
-  pkg.installed:
+  pkg.removed:
     - name: caskroom/cask/staruml
 
 sshfs:
