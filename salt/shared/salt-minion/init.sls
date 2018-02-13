@@ -1,7 +1,11 @@
+{% set group = 'root' %}
+
 {% if grains['os'] == 'MacOS' %}
 
 saltstack:
   pkg.installed
+
+{% set group = 'wheel' %}
 
 {% else %}
 
