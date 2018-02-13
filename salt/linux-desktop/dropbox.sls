@@ -2,7 +2,7 @@
 {% set codename = grains['lsb_distrib_codename'] %}
 
 # Dropbox doesn't provide a release for stretch, so fallback to Jessie
-{% if codename in ('stretch', 'buster') %}
+{% if codename in [ 'stretch', 'buster' ] %}
   {% set codename = 'jessie' %}
 {% endif %}
 
@@ -15,6 +15,6 @@ dropbox-ppa:
     - file: /etc/apt/sources.list.d/dropbox.list
 
 dropbox:
-  pkg.latest:
+  pkg.installed:
     - require:
       - dropbox-ppa

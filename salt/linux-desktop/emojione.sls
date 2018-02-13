@@ -21,7 +21,7 @@ emojione-picker-ppa:
     - file: /etc/apt/sources.list.d/emojione-picker.list
 
 emojione:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - fonts-emojione-svginot
       - fonts-twemoji-svginot

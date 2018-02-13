@@ -6,7 +6,7 @@ visual-studio-code-ppa:
     - file: /etc/apt/sources.list.d/vscode.list
 
 visual-studio-code:
-  pkg.latest:
+  pkg.installed:
     - name: code
     - require:
       - visual-studio-code-ppa

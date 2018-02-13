@@ -12,7 +12,7 @@ virtualbox-ppa:
     - file: /etc/apt/sources.list.d/virtualbox.list
 
 virtualbox:
-  pkg.latest:
-    - name: virtualbox-5.1
+  pkg.installed:
+    - name: virtualbox-5.2
     - require:
       - virtualbox-ppa

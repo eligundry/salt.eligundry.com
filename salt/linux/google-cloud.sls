@@ -12,7 +12,7 @@ google-cloud-sdk-ppa:
     - file: /etc/apt/sources.list.d/google-cloud-skd.list
 
 google-cloud-sdk:
-  pkg.latest:
+  pkg.installed:
     - pkgs:
       - google-cloud-sdk
       - google-cloud-sdk-app-engine-python

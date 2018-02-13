@@ -13,6 +13,6 @@ veracrypt-ppa:
     - file: /etc/apt/sources.list.d/veracrypt.list
 
 veracrypt:
-  pkg.latest:
+  pkg.installed:
     - require:
       - veracrypt-ppa

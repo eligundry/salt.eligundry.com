@@ -1,39 +1,51 @@
-desktop-environments:
-  pkg.latest:
-    - pkgs:
-      - gnome
-      - xfce4
+clementine:
+  pkg.installed
 
-desktop-pkgs:
-  pkg.latest:
-    - pkgs:
-      - clementine
-      - evince
-      - fonts-roboto
-      - gimp
-      - gnome-do
-      - gparted
-      - qt4-qtconfig
-      - redshift-gtk
-      - thunderbird
-      - transmission
-      - ttf-ancient-fonts
-      - ttf-mscorefonts-installer
-      - xfce4-goodies
-      {% if grains['os'] == 'Debian' %}
-      - firefox-esr
-      {% else %}
-      - firefox
-      {% endif %}
+evince:
+  pkg.installed
 
-desktop-development-pkgs:
+firefox:
+  pkg.installed:
+    {% if grains['os'] == 'Debian' %}
+    - name: firefox-esr
+    {% endif %}
+
+fonts-linux:
   pkg.installed:
     - pkgs:
-      - mysql-workbench
+      - fonts-roboto
+      - ttf-ancient-fonts
+      - ttf-mscorefonts-installer
+
+gimp:
+  pkg.installed
+
+gnome:
+  pkg.installed
+
+gnome-do:
+  pkg.installed
+
+mysql-workbench:
+  pkg.installed
+
+qt4-qtconfig:
+  pkg.installed
+
+pgadmin3:
+  pkg.installed:
+    - pkgs:
       - pgadmin3
       - postgresql-client
 
-staruml:
-  pkg.installed:
-    - sources:
-      - staruml: 'http://staruml.io/download/release/v2.8.0/StarUML-v2.8.0-64-bit.deb'
+redshift-gtk:
+  pkg.installed
+
+thunderbird:
+  pkg.installed
+
+transmission:
+  pkg.installed
+
+vlc:
+  pkg.installed
