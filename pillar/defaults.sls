@@ -9,3 +9,4 @@ composer-auth:
 
 salt-master:
   host: salt.example.com
+  fingerprint: 'xxx'

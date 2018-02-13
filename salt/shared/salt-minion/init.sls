@@ -34,3 +34,14 @@ salt-minion-service:
     - enabled: true
 
 {% endif %}
+
+/etc/salt/minion:
+  file.managed:
+    - source: salt://shared/salt-minion/minion.sls
+    - user: root
+    - group: root
+    - mode: 660
+    - template: jinja
+    - defaults:
+        salt_master: {{ salt['pillar.get']('salt-master:host') }}
+        salt_master_fingerprint: {{ salt['pillar.get']('salt-master:fingerprint') }}
