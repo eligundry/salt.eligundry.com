@@ -2,8 +2,9 @@
 
 {% if grains['os'] == 'MacOS' %}
 
-saltstack:
-  pkg.installed
+salt-minion:
+  pkg.installed:
+    - name: saltstack
 
 {% set group = 'wheel' %}
 
@@ -36,6 +37,10 @@ salt-minion-service:
   service.running:
     - name: salt-minion
     - enable: true
+    - watch:
+      - file: /etc/salt/minion
+    - require:
+      - /etc/salt/minion
 
 {% endif %}
 
@@ -49,3 +54,5 @@ salt-minion-service:
     - defaults:
         salt_master: {{ salt['pillar.get']('salt-master:host') }}
         salt_master_fingerprint: {{ salt['pillar.get']('salt-master:fingerprint') }}
+    - require:
+      - salt-minion

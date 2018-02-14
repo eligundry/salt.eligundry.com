@@ -14,7 +14,7 @@ I gave a talk about the reasoning behind this at [NYC Vim][2].
 
 ## OpenVPN
 
-Here's how to add a client to the OpenVPN server, which is powered by Docker [`kylemanna/docker-openvpn`][3].
+Here's how to add a client to the OpenVPN server, which is powered by Docker and [`kylemanna/docker-openvpn`][3].
 
 ```sh
 $ export OVPN_DATA='/opt/openvpn'
