@@ -41,6 +41,7 @@ salt-minion-service:
       - file: /etc/salt/minion
     - require:
       - /etc/salt/minion
+      - salt-minion
 
 {% endif %}
 
@@ -54,5 +55,3 @@ salt-minion-service:
     - defaults:
         salt_master: {{ salt['pillar.get']('salt-master:host') }}
         salt_master_fingerprint: {{ salt['pillar.get']('salt-master:fingerprint') }}
-    - require:
-      - salt-minion
