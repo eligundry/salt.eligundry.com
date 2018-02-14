@@ -22,8 +22,8 @@ saltstack:
 saltstack-ppa:
   pkgrepo.managed:
     - humanname: SaltStack
-    - name: deb http://repo.saltstack.com/apt/{{ os }}/{{ release }}/{{ arch }}/latest {{ codename }} main
-    - keyfile: http://repo.saltstack.com/apt/{{ os }}/{{ release }}/{{ arch }}/latest/SALTSTACK-GPG-KEY.pub
+    - name: deb https://repo.saltstack.com/apt/{{ os }}/{{ release }}/{{ arch }}/latest {{ codename }} main
+    - keyfile: https://repo.saltstack.com/apt/{{ os }}/{{ release }}/{{ arch }}/latest/SALTSTACK-GPG-KEY.pub
     - file: /etc/apt/sources.list.d/saltstack.list
     - clean_file: true
 

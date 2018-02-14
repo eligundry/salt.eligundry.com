@@ -17,7 +17,6 @@ dots:
   .psqlrc: psqlrc
   .tmux: tmux
   .tmux.conf: tmux.conf
-  .weechat: weechat
   .wgetrc: wgetrc
   .vim: config/nvim
   .vimrc: config/nvim/init.vim
