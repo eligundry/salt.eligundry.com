@@ -39,9 +39,6 @@ salt-minion-service:
     - enable: true
     - watch:
       - file: /etc/salt/minion
-    - require:
-      - /etc/salt/minion
-      - salt-minion
 
 {% endif %}
 
