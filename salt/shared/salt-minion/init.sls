@@ -35,7 +35,7 @@ salt-minion:
 salt-minion-service:
   service.running:
     - name: salt-minion
-    - enabled: true
+    - enable: true
 
 {% endif %}
 
