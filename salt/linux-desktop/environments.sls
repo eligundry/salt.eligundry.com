@@ -29,6 +29,12 @@ gnome-do:
 mysql-workbench:
   pkg.installed
 
+network-manager-openvpn:
+  pkg.installed:
+    - pkgs:
+      - network-manager-openvpn
+      - openvpn
+
 qt4-qtconfig:
   pkg.installed
 
