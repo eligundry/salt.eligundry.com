@@ -52,19 +52,18 @@ docker-service-file:
     - require:
       - docker
 
-docker-service-enabled:
-  service.enabled:
-    - name: docker
-
-docker-service-running:
+docker-service:
   service.running:
     - name: docker
+    - enable: true
+    - watch:
+      - file: /etc/systemd/system/docker.service.d/docker_user.conf
 
 {% if os == 'debian' %}
-service.systemctl_reload:
-  module.run:
-    - onchanges:
-      - file: /etc/systemd/system/docker.service.d/docker_user.conf
+# service.systemctl_reload:
+#   module.run:
+#     - onchanges:
+#       - file: /etc/systemd/system/docker.service.d/docker_user.conf
 {% endif %}
 
 minikube:
@@ -77,7 +76,8 @@ minikube:
     - skip_verify: True
 
 docker-py:
-  pip.installed
+  pip.installed:
+    - name: docker
 
 docker-gc:
   docker_image.present:
