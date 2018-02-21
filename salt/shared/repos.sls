@@ -12,7 +12,7 @@
 {% if work_machine %}
 
 {{ config['git'] }}:
-  git.latest:
+  git.present:
     - target: {{ code }}/{{ target }}
     - user: {{ user }}
     - identity: {{ home }}/.ssh/no_pass
