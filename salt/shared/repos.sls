@@ -12,11 +12,11 @@
 {% if work_machine %}
 
 {{ config['git'] }}:
-  git.present:
+  git.latest:
     - target: {{ code }}/{{ target }}
     - user: {{ user }}
     - identity: {{ home }}/.ssh/no_pass
-    - onlyif: 'test ! -d {{ code }}/{{ target }}'
+    - unless: 'test -d {{ code }}/{{ target }}'
     - require:
       - git
       - {{ home }}/.ssh/no_pass
