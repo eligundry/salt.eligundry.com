@@ -1,12 +1,8 @@
-{% set group = 'root' %}
-
 {% if grains['os'] == 'MacOS' %}
 
 salt-minion:
   pkg.installed:
     - name: saltstack
-
-{% set group = 'wheel' %}
 
 {% else %}
 
@@ -46,7 +42,7 @@ salt-minion-service:
   file.managed:
     - source: salt://shared/salt-minion/minion.sls
     - user: root
-    - group: root
+    - group: {{ pillar['root-group'] }}
     - mode: 660
     - template: jinja
     - defaults:
