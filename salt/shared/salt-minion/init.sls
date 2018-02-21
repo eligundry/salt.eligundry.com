@@ -43,7 +43,7 @@ salt-minion-service:
     - source: salt://shared/salt-minion/minion.sls
     - user: root
     - group: {{ pillar['root-group'] }}
-    - mode: 660
+    - mode: 664
     - template: jinja
     - defaults:
         salt_master: {{ salt['pillar.get']('salt-master:host') }}
