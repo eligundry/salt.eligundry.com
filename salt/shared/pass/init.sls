@@ -69,7 +69,7 @@ browserpass-library:
 
 browserpass-install-chrome:
   cmd.run:
-    - name: sh -c /home/eligundry/.lib/browserpass/install.sh < <(echo "1")
+    - name: dash -c /home/eligundry/.lib/browserpass/install.sh < <(echo "1")
     - runas: {{ user }}
     - unless: test -f {{ home }}/.config/google-chrome/NativeMessagingHosts/com.dannyvankooten.browserpass.json
     - require:
@@ -77,7 +77,7 @@ browserpass-install-chrome:
 
 browserpass-install-firefox:
   cmd.run:
-    - name: sh -c /home/eligundry/.lib/browserpass/install.sh < <(echo "3")
+    - name: dash -c /home/eligundry/.lib/browserpass/install.sh < <(echo "3")
     - runas: {{ user }}
     - unless: test -f {{ home }}/.mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json
     - require:
