@@ -1,29 +1,23 @@
 {% set user = pillar['user']['name'] %}
 
 create-react-app:
-  npm.installed:
-    - user: {{ user }}
+  npm.installed
 
 create-react-native-app:
   npm.installed:
-    - user: {{ user }}
     - pkgs:
       - create-react-native-app
       - react-native-cli
       - watchman
 
 gulp:
-  npm.installed:
-    - user: {{ user }}
+  npm.installed
 
 parcel-bundler:
-  npm.installed:
-    - user: {{ user }}
+  npm.installed
 
 vscode-css-languageserver-bin:
-  npm.installed:
-    - user: {{ user }}
+  npm.installed
 
 javascript-typescript-langserver:
-  npm.installed:
-    - user: {{ user }}
+  npm.installed

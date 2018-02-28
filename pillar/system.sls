@@ -1,5 +1,5 @@
 hostname: salt.eligundry.com
-debian_ppa_codename: zesty
+debian_ppa_codename: artful
 work_machine: False
 docker_pull_latest: False
 salt-master-gpg:

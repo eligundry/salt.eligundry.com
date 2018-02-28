@@ -3,13 +3,18 @@
 bash:
   pkg.installed
 
+dash:
+  pkg.installed
+
 {% if isMacOS  -%}
 /etc/shells:
   file.append:
     - text:
       - /usr/local/bin/bash
+      - /usr/local/bin/dash
     - require:
       - bash
+      - dash
 {% endif %}
 
 curl:

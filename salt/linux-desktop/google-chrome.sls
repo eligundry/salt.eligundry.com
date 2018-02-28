@@ -5,6 +5,7 @@ google-chrome-ppa:
     - key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     - architectures: amd64
     - file: /etc/apt/sources.list.d/google-chrome.list
+    - clean_file: true
 
 google-chrome:
   pkg.installed:
