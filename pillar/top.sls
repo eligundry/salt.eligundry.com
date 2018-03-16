@@ -20,7 +20,6 @@
   'eligundry_device:server':
     - match: grain
     - server
-    - gitlab
     - website
     - openvpn
     - znc
