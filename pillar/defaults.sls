@@ -12,3 +12,6 @@ salt-master:
   fingerprint: 'xxx'
 
 root-group: root
+
+gitlab:
+  hostname: gitlab.example.com
