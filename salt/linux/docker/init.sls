@@ -49,8 +49,6 @@ docker-service-file:
     - user: root
     - group: root
     - mode: 644
-    - require:
-      - docker
 
 docker-service:
   service.running:

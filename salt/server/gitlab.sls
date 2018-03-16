@@ -44,7 +44,7 @@ gitlab:
       - LETSENCRYPT_HOST: {{ gitlab_hostname }}
       - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
       - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
-    - ports:
+    - port_bindings:
       - "2289:22"
     - volumes:
       - {{ gitlab_config }}:/etc/gitlab
