@@ -6,6 +6,18 @@
 {% set letsencrypt = pillar['letsencrypt'] %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
+{{ gitlab_config }}:
+  file.directory:
+    - user: docker
+    - group: docker
+    - dir_mode: 775
+    - file_mode: 660
+    - makedirs: True
+    - recurse:
+      - user
+      - group
+      - mode
+
 {{ gitlab_logs }}:
   file.directory:
     - user: docker
@@ -50,3 +62,9 @@ gitlab:
       - {{ gitlab_config }}:/etc/gitlab
       - {{ gitlab_data }}:/var/opt/gitlab
       - {{ gitlab_logs }}:/var/log/gitlab
+    - restart_policy: always
+    - require:
+      - {{ gitlab_image }}
+      - {{ gitlab_data }}
+      - {{ gitlab_config }}
+      - {{ gitlab_logs }}
