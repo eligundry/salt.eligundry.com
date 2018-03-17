@@ -3,6 +3,7 @@
 {% set website = pillar['website'] %}
 {% set eligundry_image = 'eligundry/eligundry.com' %}
 {% set nginx_image = 'jwilder/nginx-proxy:alpine' %}
+{% set letsencrypt = pillar['letsencrypt'] %}
 {% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion' %}
 
 {{ letsencrypt_dir }}:
@@ -27,9 +28,9 @@ eligundry.com:
     - environment:
       - VIRTUAL_HOST: {{ website['virtual_host'] }}
       - VIRTUAL_PORT: 8080
-      - LETSENCRYPT_HOST: {{ website['letsencrypt']['host'] }}
-      - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
-      - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
+      - LETSENCRYPT_HOST: {{ letsencrypt['host'] }}
+      - LETSENCRYPT_EMAIL: {{ letsencrypt['email'] }}
+      - LETSENCRYPT_TEST: "{{ letsencrypt['test'] }}"
       - ENABLE_IPV6: "true"
     - restart_policy: always
     - require:

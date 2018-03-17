@@ -3,8 +3,8 @@
 {% set gitlab_data = '/opt/gitlab/data' %}
 {% set gitlab_config = '/opt/gitlab/config' %}
 {% set gitlab_hostname = salt['pillar.get']('gitlab:hostname') %}
+{% set letsencrypt = pillar['letsencrypt'] %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
-{% set website = pillar['website'] %}
 
 {{ gitlab_logs }}:
   file.directory:
@@ -42,8 +42,8 @@ gitlab:
       - VIRTUAL_HOST: {{ gitlab_hostname }}
       - VIRTUAL_PORT: 8929
       - LETSENCRYPT_HOST: {{ gitlab_hostname }}
-      - LETSENCRYPT_EMAIL: {{ website['letsencrypt']['email'] }}
-      - LETSENCRYPT_TEST: "{{ website['letsencrypt']['test'] }}"
+      - LETSENCRYPT_EMAIL: {{ letsencrypt['email'] }}
+      - LETSENCRYPT_TEST: "{{ letsencrypt['test'] }}"
     - port_bindings:
       - "2289:22"
     - volumes:
