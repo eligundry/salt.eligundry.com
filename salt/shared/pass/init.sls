@@ -22,8 +22,6 @@ qtpass:
     - target: {{ password_store }}
     - user: {{ user }}
     - identity: {{ home }}/.ssh/no_pass
-    - require:
-      - git
 
 {{ password_store }}:
   file.directory:
