@@ -60,7 +60,7 @@ pass-git-push-after-commit:
 browserpass-library:
   archive.extracted:
     - name: {{ home }}/.lib/browserpass
-    - source: 'https://github.com/dannyvankooten/browserpass/releases/download/2.0.11/browserpass-{{ browserpass_platform }}.zip'
+    - source: 'https://github.com/dannyvankooten/browserpass/releases/download/2.0.13/browserpass-{{ browserpass_platform }}.zip'
     - skip_verify: true
     - overwrite: true
     - user: {{ user }}
@@ -69,7 +69,7 @@ browserpass-library:
 
 browserpass-install-chrome:
   cmd.run:
-    - name: dash -c {{ home }}/.lib/browserpass/install.sh < <(echo "1")
+    - name: sh -c {{ home }}/.lib/browserpass/install.sh chrome
     - runas: {{ user }}
     - unless: test -f {{ home }}/.config/google-chrome/NativeMessagingHosts/com.dannyvankooten.browserpass.json
     - require:
@@ -77,7 +77,7 @@ browserpass-install-chrome:
 
 browserpass-install-firefox:
   cmd.run:
-    - name: dash -c {{ home }}/.lib/browserpass/install.sh < <(echo "3")
+    - name: sh -c {{ home }}/.lib/browserpass/install.sh firefox
     - runas: {{ user }}
     - unless: test -f {{ home }}/.mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json
     - require:
