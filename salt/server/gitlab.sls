@@ -49,6 +49,7 @@
 gitlab:
   docker_container.running:
     - image: {{ gitlab_image }}
+    - hostname: {{ gitlab_hostname }}
     - environment:
       - VIRTUAL_HOST: {{ gitlab_hostname }}
       - VIRTUAL_PORT: 8929
