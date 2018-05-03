@@ -45,6 +45,9 @@ macvim:
 mas:
   pkg.installed
 
+mitmproxy:
+  pkg.installed
+
 mobile-shell:
   pkg.installed
 
