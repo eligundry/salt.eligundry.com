@@ -19,6 +19,9 @@ mysql:
     - pkgs:
       - libmysqlclient-dev
 
+redis:
+  pkg.installed
+
 rust:
   pkg.installed:
     - pkgs:
