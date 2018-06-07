@@ -38,10 +38,6 @@ licecap:
   pkg.installed:
     - name: caskroom/cask/licecap
 
-mailspring:
-  pkg.installed:
-    - name: caskroom/cask/mailspring
-
 slack:
   pkg.installed:
     - name: caskroom/cask/slack
