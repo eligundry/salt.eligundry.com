@@ -4,7 +4,7 @@ work_machine: True
 nfs:
   server:
     exports:
-      /mnt/1TB: "thinkpad gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)"
+      /mnt/1TB: "192.168.31.0/24(rw,sync,no_subtree_check,sec=krb5)"
   mount:
     1TB:
       mountpoint: "/mnt/1TB"
