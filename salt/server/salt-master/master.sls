@@ -683,6 +683,7 @@ gitfs_remotes:
   - git://github.com/saltstack-formulas/apt-formula.git
   - git://github.com/saltstack-formulas/nfs-formula.git
   - git://github.com/saltstack-formulas/openssh-formula.git
+  - git://github.com/saltstack-formulas/samba-formula.git
   - git://github.com/saltstack-formulas/sudoers-formula.git
   - git://github.com/saltstack-formulas/users-formula.git
   - git://github.com/eligundry/salt.eligundry.com.git:
