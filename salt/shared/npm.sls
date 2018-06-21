@@ -21,3 +21,6 @@ vscode-css-languageserver-bin:
 
 javascript-typescript-langserver:
   npm.installed
+
+jwt-cli:
+  npm.installed
