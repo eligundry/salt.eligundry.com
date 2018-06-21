@@ -18,3 +18,9 @@ samba:
         public: no
         writable: yes
         printable: no
+
+time-machine:
+  user: timemachine
+  password: password
+  dir: /mnt/1TB/time-machine
+  max_size: 300000000
