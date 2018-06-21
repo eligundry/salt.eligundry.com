@@ -4,7 +4,7 @@ work_machine: True
 samba:
   conf:
     render:
-      section_order: [ 'global', 'homes' ]
+      section_order: [ 'global', 'homes', '1TB' ]
       include_unordered_sections: yes
 
     sections:
