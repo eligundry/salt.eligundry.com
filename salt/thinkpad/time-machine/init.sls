@@ -54,6 +54,6 @@ avahi-daemon-service:
     - user: root
     - group: root
     - defaults:
-      - 'tm': tm
+      'tm': tm
     - require:
       - netatalk
