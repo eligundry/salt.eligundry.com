@@ -9,6 +9,7 @@ time-machine-user:
     - password: {{ tm['password'] }}
     - home: {{ tm['dir'] }}
     - gid_from_name: True
+    - shell: /usr/sbin/nologin
 
 {{ tm['dir'] }}:
   file.directory:
@@ -26,7 +27,7 @@ netatalk-ppa:
     - name: deb http://ppa.launchpad.net/sico/netatalk/ubuntu {{ pillar['debian_ppa_codename'] }} main
     - keyid: A859EF20
     - keyserver: keyserver.ubuntu.com
-    - file: /etc/apt/sources.list.d/neovim.list
+    - file: /etc/apt/sources.list.d/netatalk.list
     - clean_file: True
 
 netatalk:
@@ -41,11 +42,15 @@ netatalk-service:
   service.running:
     - name: netatalk
     - enabled: True
+    - require:
+      - netatalk
 
 avahi-daemon-service:
   service.enabled:
     - name: avahi-daemon
     - enabled: True
+    - require:
+      - netatalk
 
 /etc/netatalk/afp.conf:
   file.managed:
