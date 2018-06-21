@@ -31,7 +31,7 @@ netatalk-ppa:
     - clean_file: True
 
 netatalk:
-  pkg.install:
+  pkg.installed:
     - pkgs:
       - netatalk
       - avahi-daemon
@@ -42,15 +42,11 @@ netatalk-service:
   service.running:
     - name: netatalk
     - enabled: True
-    - require:
-      - netatalk
 
 avahi-daemon-service:
   service.enabled:
     - name: avahi-daemon
     - enabled: True
-    - require:
-      - netatalk
 
 /etc/netatalk/afp.conf:
   file.managed:
