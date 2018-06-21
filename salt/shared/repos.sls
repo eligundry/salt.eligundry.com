@@ -6,7 +6,7 @@
   file.directory:
     - user: {{ user }}
 
-{% for target, config in pillar['repos'].items() %}
+{% for target, config in pillar.get('repos', {}).items() %}
 
 {{ config['git'] }}:
   git.latest:
@@ -22,7 +22,7 @@
 {% endfor %}
 
 # Generate host entries for the web apps I am working on.
-{% for host, ip in pillar['hosts'].items() %}
+{% for host, ip in pillar.get('hosts', {}).items() %}
 
 host-{{ host }}:
   host.present:
