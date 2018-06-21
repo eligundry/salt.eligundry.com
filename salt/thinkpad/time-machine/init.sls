@@ -2,9 +2,6 @@
 
 {% set tm = pillar['time-machine'] %}
 
-include:
-  - linux.netatalk
-
 time-machine-user:
   user.present:
     - name: {{ tm['user'] }}
