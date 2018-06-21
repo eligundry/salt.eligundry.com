@@ -41,12 +41,12 @@ netatalk:
 netatalk-service:
   service.running:
     - name: netatalk
-    - enabled: True
+    - enable: True
 
 avahi-daemon-service:
-  service.enabled:
+  service.running:
     - name: avahi-daemon
-    - enabled: True
+    - enable: True
 
 /etc/netatalk/afp.conf:
   file.managed:
