@@ -70,7 +70,7 @@ neovim:
 
 pgadmin:
   pkg.installed:
-    - name: homebrew/php/phppgadmin
+    - name: homebrew/php/pgadmin4
 
 postman:
   pkg.installed:
