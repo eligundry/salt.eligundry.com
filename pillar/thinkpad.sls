@@ -23,4 +23,5 @@ time-machine:
   user: timemachine
   password: password
   dir: /mnt/1TB/time-machine
-  max_size: 300000000
+  max_size: 300000
+  name: thinkpad-time-machine
