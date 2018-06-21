@@ -10,10 +10,11 @@ samba:
     sections:
       homes:
         'valid users': eligundry
-        browsable: no
-        writable: yes
 
       1TB:
         comment: "The big boy"
         path: /mnt/1TB
         'valid users':  eligundry
+        public: no
+        writable: yes
+        printable: no
