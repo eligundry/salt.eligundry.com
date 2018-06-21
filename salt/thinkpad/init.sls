@@ -1,3 +1,3 @@
 include:
   - thinkpad.drivers
-  - samba
+  - samba.config
