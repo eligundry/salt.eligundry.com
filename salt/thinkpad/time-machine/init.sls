@@ -24,7 +24,7 @@ time-machine-user:
 netatalk-ppa:
   pkgrepo.managed:
     - humanname: netatalk - Open source AFP fileserver
-    - name: deb http://ppa.launchpad.net/sico/netatalk/ubuntu {{ pillar['debian_ppa_codename'] }} main
+    - name: deb http://ppa.launchpad.net/sico/netatalk/ubuntu zesty main
     - keyid: A859EF20
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/netatalk.list
