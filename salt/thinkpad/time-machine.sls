@@ -27,7 +27,7 @@ time-machine:
       - AFP_NAME: {{ tm['name'] }}
       - AFP_SIZE_LIMIT: {{ tm['max_size'] }}
     - binds:
-      - {{ tm['dir'] }}/timemachine
+      - {{ tm['dir'] }}:/timemachine
     - port_bindings:
       - "548:548"
       - "636:636"
