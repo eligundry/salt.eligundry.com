@@ -6,6 +6,13 @@
 avahi-daemon:
   pkg.installed
 
+/etc/avahi/services/afpd.service:
+  file.managed:
+    - source: https://raw.githubusercontent.com/odarriba/docker-timemachine/master/avahi/afpd.service
+    - user: root
+    - group: root
+    - skip_verify: true
+
 {{ tm['dir'] }}:
   file.directory:
     - user: docker
@@ -20,6 +27,7 @@ avahi-daemon:
 time-machine:
   docker_container.running:
     - image: {{ tm_image }}
+    - hostname: time-machine
     - restart: 'unless-stopped'
     - environment:
       - AFP_LOGIN: {{ tm['user'] }}
