@@ -46,6 +46,9 @@ openssh-pkg:
 pwgen:
   pkg.installed
 
+slurm:
+  pkg.installed
+
 tmux:
   pkg.installed
 
