@@ -22,6 +22,14 @@ mysql:
 redis:
   pkg.installed
 
+redis-server-disabled:
+  service.disabled:
+    - name: redis-server
+
+redis-server-dead:
+  service.dead:
+    - name: redis-server
+
 rust:
   pkg.installed:
     - pkgs:

@@ -21,8 +21,7 @@ avahi-daemon:
     - file_mode: 644
 
 {{ tm_image }}:
-  docker_image.present:
-    - force: true
+  docker_image.present
 
 time-machine:
   docker_container.running:
