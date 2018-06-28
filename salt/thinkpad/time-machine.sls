@@ -27,6 +27,7 @@ avahi-daemon:
 time-machine:
   docker_container.running:
     - image: {{ tm_image }}
+    - restart: 'unless-stopped'
     - hostname: time-machine
     - environment:
       - AFP_LOGIN: {{ tm['user'] }}

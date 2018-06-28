@@ -25,3 +25,9 @@ time-machine:
   dir: /mnt/1TB/time-machine
   max_size: 300000
   name: thinkpad-time-machine
+
+ddns:
+  email: eli@example.com
+  api_key: xxxxxxxxxxx
+  zone: example.com
+  subdomain: home
