@@ -15,4 +15,4 @@ ddns:
       - EMAIL: {{ ddns['email'] }}
       - API_KEY: {{ ddns['api_key'] }}
       - ZONE: {{ ddns['zone'] }}
-      - subdomain: {{ ddns['subdomain'] }}
+      - SUBDOMAIN: {{ ddns['subdomain'] }}
