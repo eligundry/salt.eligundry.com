@@ -28,7 +28,6 @@ time-machine:
   docker_container.running:
     - image: {{ tm_image }}
     - hostname: time-machine
-    - restart: 'unless-stopped'
     - environment:
       - AFP_LOGIN: {{ tm['user'] }}
       - AFP_PASSWORD: {{ tm['password'] }}
