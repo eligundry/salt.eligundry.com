@@ -68,10 +68,6 @@ nodejs:
 neovim:
   pkg.installed
 
-pgadmin:
-  pkg.installed:
-    - name: homebrew/php/pgadmin4
-
 postman:
   pkg.installed:
     - name: caskroom/cask/postman
