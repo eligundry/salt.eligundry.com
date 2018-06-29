@@ -16,7 +16,9 @@ dropbox:
 
 firefox:
   pkg.installed:
-    - name: caskroom/cask/firefox
+    - pkgs:
+      - caskroom/cask/firefox
+      - caskroom/cask/firefox-developer-edition
 
 fliqlo:
   pkg.installed:
