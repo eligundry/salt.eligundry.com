@@ -24,7 +24,12 @@
 
 {{ traefik_dir }}/traefik.toml:
   file.managed:
-    - source:
+    - source: salt://server/traefik/config.toml
+    - user: docker
+    - group: docker
+    - file_mode: 660
+    - defaults:
+      - letsencrypt: {{ letsencrypt }}
 
 {{ traefik_image }}:
   docker_image.present:
@@ -43,3 +48,5 @@ traefik:
       - "8080:8080"
     - binds:
       - /var/run/docker.sock:/var/run/docker.sock
+      - {{ traefik_dir }}/acme.json:/acme.json
+      - {{ traefik_dir }}/traefik.toml:/traefik.toml
