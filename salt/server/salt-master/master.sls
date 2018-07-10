@@ -689,6 +689,9 @@ gitfs_remotes:
   - git://github.com/eligundry/salt.eligundry.com.git:
     - root: salt
     - name: eligundry
+    - saltenv:
+      - base:
+        - ref: {{ eligundry_branch }}
 
 # The gitfs_ssl_verify option specifies whether to ignore ssl certificate
 # errors when contacting the gitfs backend. You might want to set this to
@@ -717,7 +720,7 @@ pillar_roots:
 
 ext_pillar:
   - git:
-    - master https://github.com/eligundry/salt.eligundry.com.git:
+    - {{ eligundry_branch }} https://github.com/eligundry/salt.eligundry.com.git:
       - env: base
       - root: pillar
 
