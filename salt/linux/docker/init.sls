@@ -19,6 +19,7 @@ docker-user:
     - createhome: True
     - fullname: Moby Dock
     - empty_password: True
+    - shell: /usr/sbin/nologin
     - require:
       - docker-group
 
@@ -57,13 +58,6 @@ docker-service:
     - watch:
       - file: /etc/systemd/system/docker.service.d/docker_user.conf
 
-{% if os == 'debian' %}
-# service.systemctl_reload:
-#   module.run:
-#     - onchanges:
-#       - file: /etc/systemd/system/docker.service.d/docker_user.conf
-{% endif %}
-
 minikube:
   file.managed:
     - comment: "Local Kubernetes Server"
@@ -86,7 +80,7 @@ docker-gc:
 docker-cleanup:
   cron.present:
     - special: '{{ cleanup_frequency }}'
-    - name: "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc:ro spotify/docker-gc"
+    - name: "docker run --rm --userns host -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
     - comment: "Clear our unneeded Docker images."
     - require:
       - docker-gc
