@@ -27,7 +27,5 @@ time-machine:
   name: thinkpad-time-machine
 
 ddns:
-  email: eli@example.com
-  api_key: xxxxxxxxxxx
   zone: example.com
   subdomain: home

@@ -1,5 +1,6 @@
 # Setup DDNS for my apartment using Cloudflare
 
+{% set cloudflare = pillar['cloudflare'] %}
 {% set ddns = pillar['ddns'] %}
 {% set ddns_image = 'oznu/cloudflare-ddns:latest' %}
 
@@ -7,12 +8,12 @@
   docker_image.present:
     - force: true
 
-ddns:
+cloudflare_ddns:
   docker_container.running:
     - image: {{ ddns_image }}
     - restart: 'unless-stopped'
     - environment:
-      - EMAIL: {{ ddns['email'] }}
-      - API_KEY: {{ ddns['api_key'] }}
+      - EMAIL: {{ cloudflare['email'] }}
+      - API_KEY: {{ cloudflare['api_key'] }}
       - ZONE: {{ ddns['zone'] }}
       - SUBDOMAIN: {{ ddns['subdomain'] }}

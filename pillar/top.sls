@@ -8,6 +8,7 @@
     - user
   'eligundry_device:thinkpad':
     - match: grain
+    - cloudflare
     - repos
     - thinkpad
   'eligundry_device:media-center':
@@ -19,6 +20,7 @@
     - macbook
   'eligundry_device:server':
     - match: grain
+    - cloudflare
     - server
     - website
     - openvpn
