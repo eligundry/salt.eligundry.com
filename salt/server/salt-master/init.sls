@@ -9,7 +9,7 @@ salt-master:
     - mode: 660
     - defaults:
       - salt_master: {{ pillar['salt-master'] }}
-      - eligundry_branch: {{ pillar['salt_master']['branch'] }}
+      - eligundry_branch: {{ pillar['salt-master']['branch'] }}
 
 salt-master-service:
   service.running:
