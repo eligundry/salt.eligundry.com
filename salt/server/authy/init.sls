@@ -5,8 +5,6 @@
     - group: root
     - mode: 600
     - template: jinja
-    - require:
-      - salt_gpg
 
 authy-ssh:
   cmd.run:
@@ -15,7 +13,3 @@ authy-ssh:
     - comment: "Install the authy-ssh module."
     - creates:
       - /usr/local/bin/authy-ssh
-    - require:
-      - curl
-      - ssh
-      - /usr/local/bin/authy-ssh.conf

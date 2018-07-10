@@ -27,7 +27,7 @@ eligundry.com:
 # {% set letsencrypt_dir = '/opt/letsencrypt' %}
 # {% set nginx_image = 'jwilder/nginx-proxy:alpine' %}
 # {% set letsencrypt = pillar['letsencrypt'] %}
-# {% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion' %}
+# {% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion:latest' %}
 #
 # {{ letsencrypt_dir }}:
 #   file.directory:

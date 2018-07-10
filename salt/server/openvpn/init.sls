@@ -1,6 +1,6 @@
 {% set openvpn_path = pillar['openvpn']['path'] %}
 {% set openvpn_server = pillar['openvpn']['server'] %}
-{% set openvpn_image = 'kylemanna/openvpn' %}
+{% set openvpn_image = 'kylemanna/openvpn:latest' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
 {{ openvpn_path }}:
