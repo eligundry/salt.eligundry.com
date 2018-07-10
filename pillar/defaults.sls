@@ -10,6 +10,7 @@ composer-auth:
 salt-master:
   host: salt.example.com
   fingerprint: 'xxx'
+  branch: master
 
 root-group: root
 
