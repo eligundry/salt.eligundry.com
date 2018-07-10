@@ -1,2 +1,0 @@
-salt-master:
-  pkg.installed

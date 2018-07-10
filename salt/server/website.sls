@@ -1,10 +1,10 @@
 {% set letsencrypt_dir = '/opt/letsencrypt' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 {% set website = pillar['website'] %}
-{% set eligundry_image = 'eligundry/eligundry.com' %}
+{% set eligundry_image = 'eligundry/eligundry.com:latest' %}
 {% set nginx_image = 'jwilder/nginx-proxy:alpine' %}
 {% set letsencrypt = pillar['letsencrypt'] %}
-{% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion' %}
+{% set letsencrypt_image = 'jrcs/letsencrypt-nginx-proxy-companion:latest' %}
 
 {{ letsencrypt_dir }}:
   file.directory:
