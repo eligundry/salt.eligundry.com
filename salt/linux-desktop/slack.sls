@@ -1,3 +1,6 @@
+libcurl3:
+  pkg.installed
+
 slack:
   pkg.installed:
     - sources:
