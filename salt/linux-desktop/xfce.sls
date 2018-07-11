@@ -1,10 +1,8 @@
-{% set user = pillar['user']['name'] %}
-
 xfce4:
-  pkg.installed
-
-xfce4-goodies:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - xfce4
+      - xfce4-goodies
 
 xfce4-dockbarx-ppa:
   pkgrepo.managed:
