@@ -1,3 +1,9 @@
+audacious:
+  pkg.installed:
+    - pkgs:
+      - audacious
+      - audacious-plugins
+
 clementine:
   pkg.installed
 
