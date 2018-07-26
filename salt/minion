@@ -1,8 +1,0 @@
-master: localhost
-fileserver_backend:
-  - roots
-  - git
-gitfs_provider: gitpython
-gitfs_base: develop
-gitfs_root: srv-salt/
-file_client: local
