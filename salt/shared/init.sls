@@ -15,3 +15,4 @@ include:
   - shared.php
   - shared.pass
   - shared.salt-minion
+  - shared.talentinc
