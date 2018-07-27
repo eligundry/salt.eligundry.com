@@ -6,6 +6,7 @@
     - sudoers
     - system
     - user
+    - talentinc
   'eligundry_device:thinkpad':
     - match: grain
     - repos
