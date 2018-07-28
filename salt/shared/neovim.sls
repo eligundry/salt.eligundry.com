@@ -31,4 +31,4 @@ npm-languageserver-pkgs:
 
 python-language-server:
   pip.installed:
-    - python-language-server[all]
+    - name: python-language-server[all]
