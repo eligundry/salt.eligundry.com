@@ -5,7 +5,6 @@ include:
   - linux.google-cloud
   - linux.highstate
   - linux.mistakes
-  - linux.neovim
   - linux.nodejs
   - linux.yarn
   - openssh.config

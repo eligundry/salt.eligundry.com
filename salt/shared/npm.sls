@@ -9,15 +9,6 @@ npm-build-tools:
       - watchman
     - force_reinstall: true
 
-npm-languageserver-pkgs:
-  npm.installed:
-    - pkgs:
-      - neovim
-      - vscode-css-languageserver-bin
-      - javascript-typescript-langserver
-      - dockerfile-language-server-nodejs
-    - force_reinstall: true
-
 npm-cli-tools:
   npm.installed:
     - pkgs:

@@ -1,3 +1,5 @@
+{% if grains['kernel'] == 'Linux' %}
+
 {% set codename = grains['lsb_distrib_codename'] %}
 
 {% if grains['os'] == 'Debian' %}
@@ -13,7 +15,20 @@ neovim-ppa:
     - file: /etc/apt/sources.list.d/neovim.list
     - clean_file: true
 
+{% endif %}
+
 neovim:
-  pkg.latest:
-    - require:
-      - neovim-ppa
+  pkg.latest
+
+npm-languageserver-pkgs:
+  npm.installed:
+    - pkgs:
+      - neovim
+      - vscode-css-languageserver-bin
+      - javascript-typescript-langserver
+      - dockerfile-language-server-nodejs
+    - force_reinstall: true
+
+python-language-server:
+  pip.installed:
+    - python-language-server[all]

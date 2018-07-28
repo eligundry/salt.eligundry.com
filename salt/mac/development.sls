@@ -65,9 +65,6 @@ mysqlworkbench:
 nodejs:
   pkg.installed
 
-neovim:
-  pkg.installed
-
 postman:
   pkg.installed:
     - name: caskroom/cask/postman
