@@ -18,7 +18,7 @@ neovim-ppa:
 {% endif %}
 
 neovim:
-  pkg.latest
+  pkg.installed
 
 npm-languageserver-pkgs:
   npm.installed:
