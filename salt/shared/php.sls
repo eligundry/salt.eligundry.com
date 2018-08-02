@@ -3,6 +3,11 @@ php:
     - pkgs:
       - composer
       - php
+      {% if grains['os'] == 'Debian' %}
+      - php-curl
+      - php-mbstring
+      - php-xml
+      {% endif %}
 
 composer-auth-file:
   file.serialize:
