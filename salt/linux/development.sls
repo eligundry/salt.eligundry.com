@@ -17,6 +17,8 @@ mosh:
 mysql:
   pkg.installed:
     - pkgs:
+      - mycli
+      - mariadb-client
       - libmysqlclient-dev
 
 redis:
