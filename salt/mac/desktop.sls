@@ -40,6 +40,10 @@ licecap:
   pkg.installed:
     - name: caskroom/cask/licecap
 
+numi:
+  pkg.installed:
+    - name: caskroom/cask/numi
+
 slack:
   pkg.installed:
     - name: caskroom/cask/slack
