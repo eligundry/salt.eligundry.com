@@ -2,7 +2,6 @@
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'diginc/pi-hole:latest' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
-{% set letsencrypt = pillar['letsencrypt'] %}
 {% set pi_hole_dir = '/opt/pi-hole' %}
 
 {{ pi_hole_dir }}:
