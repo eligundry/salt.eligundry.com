@@ -3,6 +3,9 @@ include:
   - server.salt-master
   - server.salt-cloud
   - server.salt-master
+  # Swapped to https-portal from the nginx-proxy
+  - server.https-portal
+  # - server.nginx-proxy
   - server.website
   # Disable Gitlab for the time being
   # - server.gitlab
