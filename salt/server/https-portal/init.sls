@@ -30,7 +30,7 @@ https-portal:
     - image: {{ https_portal_image }}
     - environment:
       - STAGE: {{ data['stage'] }}
-      - DOMAINS: {{ ', '.join([(domain + ' -> ' + internal) for domain, internal in data['domains'].items()]) }}
+      - DOMAINS: {{ ', '.join(data['domains']) }}
     - port_bindings:
       - "80:80"
       - "443:443"
