@@ -33,7 +33,10 @@ iterm2:
     - name: caskroom/cask/iterm2
 
 go:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - go
+      - dep
 
 java:
   pkg.installed:
