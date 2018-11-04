@@ -8,6 +8,7 @@ https-portal-stopped:
   docker_container.absent:
     - names:
       - https-portal
+    - force: True
 
 {{ letsencrypt_dir }}:
   file.directory:

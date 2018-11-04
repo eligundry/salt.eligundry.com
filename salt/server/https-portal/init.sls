@@ -8,6 +8,7 @@ nginx-proxy-stopped:
     - names:
       - nginx-proxy
       - letsencrypt
+    - force: True
 
 {{ https_portal_dir }}:
   file.directory:
