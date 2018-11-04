@@ -21,7 +21,7 @@
   'eligundry_device:server':
     - match: grain
     - server
-    - https_portal
+    - https-portal
     - website
     - openvpn
     - znc
