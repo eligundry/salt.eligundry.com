@@ -5,7 +5,7 @@
   docker_image.present:
     - force: {{ pull_latest }}
 
-eligundry.com:
+eligundry-website:
   docker_container.running:
     - image: {{ eligundry_image }}
     - restart_policy: always

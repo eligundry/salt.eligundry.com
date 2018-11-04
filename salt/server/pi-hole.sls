@@ -45,9 +45,6 @@ pi-hole:
       - ServerIP: {{ ip_address }}
       - VIRTUAL_HOST: {{ virtual_host }}
       - VIRTUAL_PORT: '80'
-      - LETSENCRYPT_HOST: {{ virtual_host }}
-      - LETSENCRYPT_EMAIL: {{ letsencrypt['email'] }}
-      - LETSENCRYPT_TEST: "{{ letsencrypt['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
     - binds:
