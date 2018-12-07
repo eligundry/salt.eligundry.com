@@ -1,7 +1,7 @@
 go:
   pkg.installed:
     - pkgs:
-      - golang-1.9
+      - golang-1.11
       - gocode
 
 python:
