@@ -2,7 +2,6 @@
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'diginc/pi-hole:latest' %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
-{% set letsencrypt = pillar['letsencrypt'] %}
 {% set pi_hole_dir = '/opt/pi-hole' %}
 
 {{ pi_hole_dir }}:
@@ -45,11 +44,12 @@ pi-hole:
       - ServerIP: {{ ip_address }}
       - VIRTUAL_HOST: {{ virtual_host }}
       - VIRTUAL_PORT: '80'
-      - LETSENCRYPT_HOST: {{ virtual_host }}
-      - LETSENCRYPT_EMAIL: {{ letsencrypt['email'] }}
-      - LETSENCRYPT_TEST: "{{ letsencrypt['test'] }}"
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
+    - networks:
+      - https-portal-network:
+        - aliases:
+          - pi-hole
     - binds:
       - {{ pi_hole_dir }}/pihole-FTL.db:/etc/pihole/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt:/var/www/html/pihole/robots.txt
@@ -57,3 +57,4 @@ pi-hole:
       - {{ pi_hole_image }}
       - {{ pi_hole_dir }}/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt
+      - https-portal-network

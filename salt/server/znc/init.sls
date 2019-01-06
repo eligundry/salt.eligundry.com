@@ -20,7 +20,7 @@
     - source: salt://server/znc/znc.conf
     - template: jinja
     - defaults:
-        proxy_ip: {{ salt['cmd.run']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' nginx-proxy") }}
+        proxy_ip: {{ salt['cmd.run']("docker inspect --format '{{ .NetworkSettings.IPAddress }}' https-portal") }}
         password_hash: {{ znc_config['password']['hash'] }}
         password_salt: {{ znc_config['password']['salt'] }}
     - require:
