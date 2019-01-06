@@ -40,7 +40,7 @@ https-portal:
       - "80:80"
       - "443:443"
     - network:
-      - https-portal-network
+      - https-portal-network:
         - aliases:
           - https-portal
     - binds:
