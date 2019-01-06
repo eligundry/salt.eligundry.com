@@ -46,6 +46,10 @@ pi-hole:
       - VIRTUAL_PORT: '80'
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
+    - network:
+      - https-portal-network
+        - aliases:
+          - pi-hole
     - binds:
       - {{ pi_hole_dir }}/pihole-FTL.db:/etc/pihole/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt:/var/www/html/pihole/robots.txt
@@ -53,3 +57,4 @@ pi-hole:
       - {{ pi_hole_image }}
       - {{ pi_hole_dir }}/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt
+      - https-portal-network

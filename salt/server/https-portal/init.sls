@@ -26,6 +26,10 @@ nginx-proxy-stopped:
   docker_image.present:
     - force: {{ pull_latest }}
 
+https-portal-network:
+  docker_network.present:
+    - driver: bridge
+
 https-portal:
   docker_container.running:
     - image: {{ https_portal_image }}
@@ -35,8 +39,13 @@ https-portal:
     - port_bindings:
       - "80:80"
       - "443:443"
+    - network:
+      - https-portal-network
+        - aliases:
+          - https-portal
     - binds:
       - {{ https_portal_dir }}:/var/lib/https-portal
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
+      - https-portal-network
