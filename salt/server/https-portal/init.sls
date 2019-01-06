@@ -39,7 +39,7 @@ https-portal:
     - port_bindings:
       - "80:80"
       - "443:443"
-    - network:
+    - networks:
       - https-portal-network:
         - aliases:
           - https-portal

@@ -46,7 +46,7 @@ pi-hole:
       - VIRTUAL_PORT: '80'
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
-    - network:
+    - networks:
       - https-portal-network:
         - aliases:
           - pi-hole

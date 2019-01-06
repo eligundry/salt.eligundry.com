@@ -9,7 +9,7 @@ eligundry-website:
   docker_container.running:
     - image: {{ eligundry_image }}
     - restart_policy: always
-    - network:
+    - networks:
       - https-portal-network:
         - aliases:
           - eligundry-website
