@@ -50,6 +50,9 @@ pgadmin3:
       - pgadmin3
       - postgresql-client
 
+peek:
+  pkg.installed
+
 redshift-gtk:
   pkg.installed
 
