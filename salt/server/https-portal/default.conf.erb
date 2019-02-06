@@ -1,5 +1,5 @@
 server {
-    listen       [::]80;
+    listen       [::]:80;
     server_name  <%= domain.name %>;
 
     <% if domain.redirect_target_url %>
