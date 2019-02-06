@@ -52,7 +52,7 @@ nginx-proxy-stopped:
 https-portal-network:
   docker_network.present:
     - driver: bridge
-    - enable_ipv6: true
+    # - enable_ipv6: true
 
 https-portal:
   docker_container.running:
