@@ -1,5 +1,6 @@
 {% set https_portal_image = 'steveltn/https-portal' %}
 {% set https_portal_dir = '/opt/https-portal' %}
+{% set https_portal_config_dir = '/opt/https-portal-configs' %}
 {% set data = pillar['https-portal'] %}
 {% set pull_latest = pillar['docker_pull_latest'] %}
 
@@ -16,11 +17,33 @@ nginx-proxy-stopped:
     - group: docker
     - dir_mode: 755
     - file_mode: 660
-    - makedirs: True
+    - makedirs: true
     - recurse:
       - user
       - group
       - mode
+
+{{ https_portal_config_dir }}:
+  file.directory:
+    - user: docker
+    - group: docker
+    - dir_mode: 755
+    - file_mode: 660
+    - makedirs: true
+    - recurse:
+      - user
+      - group
+      - mode
+
+{% for filename in ['default.conf.erb', 'default.ssl.conf.erb', 'nginx.conf.erb'] %}
+
+{{ https_portal_config_dir }}/{{ filename }}:
+  file.managed:
+    - source: salt://server/https-portal/{{ filename }}
+    - user: docker
+    - group: docker
+
+{% endfor %}
 
 {{ https_portal_image }}:
   docker_image.present:
@@ -45,6 +68,7 @@ https-portal:
           - https-portal
     - binds:
       - {{ https_portal_dir }}:/var/lib/https-portal
+      - {{ https_portal_config_dir }}:/var/lib/nginx-conf
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
