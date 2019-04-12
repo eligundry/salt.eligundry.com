@@ -16,5 +16,11 @@ yarn-ppa:
   pkgrepo.absent:
     - name: yarn
 
+/etc/apt/sources.list.d/yarn.list:
+  file.absent
+
+/etc/apt/sources.list.d/yarn.list.save:
+  file.absent
+
 yarn:
   pkg.purged
