@@ -56,10 +56,13 @@ pass-git-push-after-commit:
     - group: {{ group }}
     - makedirs: true
 
+{% set browserpass_path_fragment = 'browserpass-' + browserpass_platform + '-' + browserpass_native_version %}
+{% set prefix = home + '/.lib/browserpass/' + browserpass_path_fragment %}
+
 browserpass-library:
   archive.extracted:
     - name: {{ home }}/.lib/browserpass
-    - source: 'https://github.com/browserpass/browserpass-native/releases/download/{{ browserpass_native_version }}/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }}.tar.gz'
+    - source: 'https://github.com/browserpass/browserpass-native/releases/download/{{ browserpass_native_version }}/{{ browserpass_path_fragment }}.tar.gz'
     - skip_verify: true
     - overwrite: true
     - user: {{ user }}
@@ -70,7 +73,7 @@ browserpass-library:
 
 browserpass-install-{{ browser }}-native-host:
   cmd.run:
-    - name: cd {{ home }}/.lib/browserpass/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }} && make hosts-{{ browser }}-user
+    - name: cd {{ prefix }} && make PREFIX={{ prefix }} hosts-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-library
@@ -79,7 +82,7 @@ browserpass-install-{{ browser }}-native-host:
 
 browserpass-install-{{ browser }}:
   cmd.run:
-    - name: cd {{ home }}/.lib/browserpass/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }} && make policies-{{ browser }}-user
+    - name: cd {{ prefix }} && make PREFIX={{ prefix }} policies-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-install-{{ browser }}-native-host
