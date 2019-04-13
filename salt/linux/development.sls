@@ -1,7 +1,7 @@
 go:
   pkg.installed:
     - pkgs:
-      - golang-1.11
+      - golang
       - gocode
 
 python:
@@ -20,6 +20,9 @@ mysql:
       - mycli
       - mariadb-client
       - libmysqlclient-dev
+
+ngrep:
+  pkg.installed
 
 redis:
   pkg.installed
