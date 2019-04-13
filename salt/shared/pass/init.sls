@@ -66,7 +66,7 @@ browserpass-library:
     - group: {{ group }}
     - enforce_toplevel: false
 
-{% for browser in ['chrome', firefox] %}
+{% for browser in ['chrome', 'firefox'] %}
 
 browserpass-install-{{ browser }}-native-host:
   cmd.run:
