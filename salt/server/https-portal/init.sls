@@ -57,6 +57,7 @@ https-portal:
   docker_container.running:
     - image: {{ https_portal_image }}
     - environment:
+      - ACCESS_LOG: 'on'
       - STAGE: {{ data['stage'] }}
       - DOMAINS: {{ ', '.join(data['domains']) }}
     - port_bindings:
