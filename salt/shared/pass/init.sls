@@ -4,9 +4,10 @@
 {% set home = salt['pillar.get']('user:home') %}
 {% set password_store = home + '/.password-store' %}
 {% set browserpass_platform = 'linux64' %}
+{% set browserpass_native_version = '3.0.5' %}
 
 {% if grains['os'] == 'MacOS' %}
-  {% set browserpass_platform = 'darwinx64' %}
+  {% set browserpass_platform = 'darwin64' %}
 {% endif %}
 
 {% if pass_repo %}
@@ -58,28 +59,34 @@ pass-git-push-after-commit:
 browserpass-library:
   archive.extracted:
     - name: {{ home }}/.lib/browserpass
-    - source: 'https://github.com/dannyvankooten/browserpass/releases/download/2.0.22/browserpass-{{ browserpass_platform }}.zip'
+    - source: 'https://github.com/browserpass/browserpass-native/releases/download/{{ browserpass_native_version }}/browserpass-{{ browserpass_platform }}{{ browserpass_native_version }}.tar.gz'
     - skip_verify: true
     - overwrite: true
     - user: {{ user }}
     - group: {{ group }}
     - enforce_toplevel: false
 
-browserpass-install-chrome:
+{% for browser in ['chrome', firefox] %}
+
+browserpass-install-{{ browser }}-native-host:
   cmd.run:
-    - name: {{ home }}/.lib/browserpass/install.sh chrome
+    - name: cd {{ home }}/.lib/browserpass && make hosts-{{ browser }}-user
     - runas: {{ user }}
-    - unless: test -f {{ home }}/.config/google-chrome/NativeMessagingHosts/com.dannyvankooten.browserpass.json
     - require:
       - browserpass-library
 
-browserpass-install-firefox:
+{% if browser != 'firefox' %}
+
+browserpass-install-{{ browser }}:
   cmd.run:
-    - name: {{ home }}/.lib/browserpass/install.sh firefox
+    - name: cd {{ home }}/.lib/browserpass && make policies-{{ browser }}-user
     - runas: {{ user }}
-    - unless: test -f {{ home }}/.mozilla/native-messaging-hosts/com.dannyvankooten.browserpass.json
     - require:
-      - browserpass-library
+      - browserpass-install-{{ browser }}-native-host
+
+{% endif %}
+
+{% endfor %}
 
 {% endif %}
 
