@@ -9,6 +9,7 @@ include:
   - server.website
   # Disable Gitlab for the time being
   # - server.gitlab
+  - server.docker-webui
   - server.pi-hole
   - server.openvpn
   - server.znc
