@@ -70,7 +70,7 @@ browserpass-library:
 
 browserpass-install-{{ browser }}-native-host:
   cmd.run:
-    - name: cd {{ home }}/.lib/browserpass && make hosts-{{ browser }}-user
+    - name: cd {{ home }}/.lib/browserpass/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }} && make hosts-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-library
@@ -79,7 +79,7 @@ browserpass-install-{{ browser }}-native-host:
 
 browserpass-install-{{ browser }}:
   cmd.run:
-    - name: cd {{ home }}/.lib/browserpass && make policies-{{ browser }}-user
+    - name: cd {{ home }}/.lib/browserpass/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }} && make policies-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-install-{{ browser }}-native-host
