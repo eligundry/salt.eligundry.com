@@ -47,7 +47,7 @@ pi-hole:
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
     - networks:
-      - https-portal-network:
+      - https-portal-network-test:
         - aliases:
           - pi-hole
     - binds:

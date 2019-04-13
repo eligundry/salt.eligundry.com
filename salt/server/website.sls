@@ -10,7 +10,7 @@ eligundry-website:
     - image: {{ eligundry_image }}
     - restart_policy: always
     - networks:
-      - https-portal-network:
+      - https-portal-network-test:
         - aliases:
           - eligundry-website
     - require:
