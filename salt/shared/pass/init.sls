@@ -59,7 +59,7 @@ pass-git-push-after-commit:
 browserpass-library:
   archive.extracted:
     - name: {{ home }}/.lib/browserpass
-    - source: 'https://github.com/browserpass/browserpass-native/releases/download/{{ browserpass_native_version }}/browserpass-{{ browserpass_platform }}{{ browserpass_native_version }}.tar.gz'
+    - source: 'https://github.com/browserpass/browserpass-native/releases/download/{{ browserpass_native_version }}/browserpass-{{ browserpass_platform }}-{{ browserpass_native_version }}.tar.gz'
     - skip_verify: true
     - overwrite: true
     - user: {{ user }}
