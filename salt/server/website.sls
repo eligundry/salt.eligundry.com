@@ -15,4 +15,4 @@ eligundry-website:
           - eligundry-website
     - require:
       - {{ eligundry_image }}
-      - https-portal-network
+      - https-portal-network-test

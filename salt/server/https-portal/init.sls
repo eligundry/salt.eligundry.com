@@ -72,4 +72,4 @@ https-portal:
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
-      - https-portal-network
+      - https-portal-network-test

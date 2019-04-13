@@ -57,4 +57,4 @@ pi-hole:
       - {{ pi_hole_image }}
       - {{ pi_hole_dir }}/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt
-      - https-portal-network
+      - https-portal-network-test
