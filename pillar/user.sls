@@ -8,6 +8,9 @@ user:
     private: {}
     public: {}
   pass: None
+  github:
+    username: None
+    access_token: None
   {% if grains['os'] == 'MacOS' %}
   shell: /usr/local/bin/zsh
   home: /Users/eligundry

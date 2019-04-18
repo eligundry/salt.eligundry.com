@@ -1,9 +1,3 @@
-go:
-  pkg.installed:
-    - pkgs:
-      - golang
-      - gocode
-
 python:
   pkg.installed:
     - pkgs:
