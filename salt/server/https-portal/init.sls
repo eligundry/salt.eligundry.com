@@ -69,7 +69,7 @@ https-portal:
           - https-portal
     - binds:
       - {{ https_portal_dir }}:/var/lib/https-portal
-      - {{ https_portal_config_dir }}:/var/lib/nginx-conf
+      # - {{ https_portal_config_dir }}:/var/lib/nginx-conf
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
