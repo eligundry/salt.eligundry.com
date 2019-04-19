@@ -47,7 +47,7 @@ pi-hole:
       - WEBPASSWORD: "{{ pillar['pi-hole']['password'] }}"
     - restart_policy: always
     - networks:
-      - https-portal-network-test:
+      - https-portal-network:
         - aliases:
           - pi-hole
     - binds:
@@ -57,4 +57,4 @@ pi-hole:
       - {{ pi_hole_image }}
       - {{ pi_hole_dir }}/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt
-      - https-portal-network-test
+      - https-portal-network
