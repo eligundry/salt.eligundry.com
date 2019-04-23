@@ -28,3 +28,8 @@ gocode:
     - defaults:
         github_username: {{ salt['pillar.get']('user:github:username') }}
         github_access_token: {{ salt['pillar.get']('user:github:access_token') }}
+
+{{ user['home'] }}/Code/go:
+  file.directory:
+    - user: {{ user['name'] }}
+    - recurse: true

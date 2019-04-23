@@ -72,6 +72,8 @@ python:
       - python
       - python3
       - sqlite
+      - xz
+      - zlib
 
 reattach-to-user-namespace:
   pkg.installed
