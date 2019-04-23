@@ -37,7 +37,6 @@ gocode:
     - makedirs: true
     - recurse:
       - user
-      - group
 
 {{ code }}/go/src:
   file.directory:
@@ -45,7 +44,6 @@ gocode:
     - makedirs: true
     - recurse:
       - user
-      - group
 
 {% for key, repo in pillar['go-repos'].items()  %}
 
