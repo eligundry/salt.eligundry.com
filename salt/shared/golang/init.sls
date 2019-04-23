@@ -31,10 +31,21 @@ gocode:
         github_username: {{ salt['pillar.get']('user:github:username') }}
         github_access_token: {{ salt['pillar.get']('user:github:access_token') }}
 
+{{ code }}/go:
+  file.directory:
+    - user: {{ user['name'] }}
+    - makedirs: true
+    - recurse:
+      - user
+      - group
+
 {{ code }}/go/src:
   file.directory:
     - user: {{ user['name'] }}
     - makedirs: true
+    - recurse:
+      - user
+      - group
 
 {% for key, repo in pillar['go-repos'].items()  %}
 
