@@ -17,3 +17,4 @@ include:
   - shared.pass
   - shared.salt-minion
   - shared.talentinc
+  - shared.golang
