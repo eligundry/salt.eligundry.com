@@ -34,7 +34,6 @@ gocode:
 {{ code }}/go/src:
   file.directory:
     - user: {{ user['name'] }}
-    - recurse: true
     - makedirs: true
 
 {% for key, repo in pillar['go-repos'].items()  %}
@@ -44,7 +43,7 @@ gocode:
     - name: {{ repo['git'] }}
     - target: {{ code }}/go/src/{{ repo['path'] }}
     - identity: {{ home }}/.ssh/no_pass
-    - user:: {{ user['name'] }}
+    - user: {{ user['name'] }}
     - unless: 'test -d {{ code }}/go/src/{{ repo['path'] }}'
 
 {% endfor %}
