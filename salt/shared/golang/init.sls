@@ -44,6 +44,7 @@ gocode:
     - name: {{ repo['git'] }}
     - target: {{ code }}/go/src/{{ repo['path'] }}
     - identity: {{ home }}/.ssh/no_pass
+    - user:: {{ user['name'] }}
     - unless: 'test -d {{ code }}/go/src/{{ repo['path'] }}'
 
 {% endfor %}
