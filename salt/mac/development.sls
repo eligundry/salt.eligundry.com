@@ -5,7 +5,7 @@ coreutils:
       - less
 
 git-lfs:
-  pkg.absent
+  pkg.removed
 
 gnupg:
   pkg.installed:
@@ -25,7 +25,7 @@ docker:
     - name: caskroom/cask/docker
 
 insomnia:
-  pkg.absent:
+  pkg.removed:
     - name: caskroom/cask/insomnia
 
 iterm2:
