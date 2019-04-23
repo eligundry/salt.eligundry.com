@@ -48,10 +48,6 @@ slack:
   pkg.installed:
     - name: caskroom/cask/slack
 
-soundflower:
-  pkg.installed:
-    - name: caskroom/cask/soundflower
-
 spotify:
   pkg.installed:
     - name: caskroom/cask/spotify
