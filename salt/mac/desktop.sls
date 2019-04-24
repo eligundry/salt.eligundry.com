@@ -10,6 +10,10 @@ discord:
   pkg.installed:
     - name: caskroom/cask/discord
 
+disk-inventory-x:
+  pkg.installed:
+    - name: caskroom/cask/disk-inventory-x
+
 dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
