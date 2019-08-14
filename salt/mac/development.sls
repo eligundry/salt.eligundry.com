@@ -36,8 +36,10 @@ java:
   pkg.installed:
     - name: caskroom/cask/java
 
+# This cannot work with terminal vim.
+# I also don't use the vim GUI at all.
 macvim:
-  pkg.installed
+  pkg.absent
 
 mas:
   pkg.installed
