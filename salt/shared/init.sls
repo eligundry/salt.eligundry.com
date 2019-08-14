@@ -10,8 +10,6 @@ include:
   - shared.repos
   - shared.aws
   - shared.cli
-  # @TODO Do I still need this?
-  # - shared.tmuxifier
   - shared.weechat
   - shared.php
   - shared.pass
