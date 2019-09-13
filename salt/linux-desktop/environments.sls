@@ -10,12 +10,6 @@ clementine:
 evince:
   pkg.installed
 
-firefox:
-  pkg.installed:
-    {% if grains['os'] == 'Debian' %}
-    - name: firefox-esr
-    {% endif %}
-
 fonts-linux:
   pkg.installed:
     - pkgs:
