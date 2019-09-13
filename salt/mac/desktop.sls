@@ -10,6 +10,10 @@ discord:
   pkg.installed:
     - name: caskroom/cask/discord
 
+disk-inventory-x:
+  pkg.installed:
+    - name: caskroom/cask/disk-inventory-x
+
 dropbox:
   pkg.installed:
     - name: caskroom/cask/dropbox
@@ -47,10 +51,6 @@ numi:
 slack:
   pkg.installed:
     - name: caskroom/cask/slack
-
-soundflower:
-  pkg.installed:
-    - name: caskroom/cask/soundflower
 
 spotify:
   pkg.installed:

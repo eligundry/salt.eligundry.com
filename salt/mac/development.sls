@@ -5,7 +5,7 @@ coreutils:
       - less
 
 git-lfs:
-  pkg.installed
+  pkg.removed
 
 gnupg:
   pkg.installed:
@@ -25,7 +25,7 @@ docker:
     - name: caskroom/cask/docker
 
 insomnia:
-  pkg.installed:
+  pkg.removed:
     - name: caskroom/cask/insomnia
 
 iterm2:
@@ -36,8 +36,10 @@ java:
   pkg.installed:
     - name: caskroom/cask/java
 
+# This cannot work with terminal vim.
+# I also don't use the vim GUI at all.
 macvim:
-  pkg.installed
+  pkg.absent
 
 mas:
   pkg.installed
@@ -72,6 +74,8 @@ python:
       - python
       - python3
       - sqlite
+      - xz
+      - zlib
 
 reattach-to-user-namespace:
   pkg.installed

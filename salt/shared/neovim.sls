@@ -27,6 +27,8 @@ npm-languageserver-pkgs:
       - vscode-css-languageserver-bin
       - javascript-typescript-langserver
       - dockerfile-language-server-nodejs
+      - tslint
+      - typescript
     - force_reinstall: true
 
 python-language-server:
