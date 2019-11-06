@@ -20,17 +20,7 @@ neovim-ppa:
 neovim:
   pkg.installed
 
-npm-languageserver-pkgs:
+neovim-js:
   npm.installed:
-    - pkgs:
-      - neovim
-      - vscode-css-languageserver-bin
-      - javascript-typescript-langserver
-      - dockerfile-language-server-nodejs
-      - tslint
-      - typescript
+    - name: neovim
     - force_reinstall: true
-
-python-language-server:
-  pip.installed:
-    - name: python-language-server[all]

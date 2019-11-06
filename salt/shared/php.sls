@@ -18,6 +18,7 @@ composer-auth-file:
     - user: {{ pillar['user']['name'] }}
     - mode: 600
     - show_changes: false
+    - makedirs: true
 
 {% if grains['os'] == 'Ubuntu' %}
 
