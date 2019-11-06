@@ -39,7 +39,7 @@ else
 fi
 
 # Install the dependencies.
-$USE_SUDO pip install GitPython docker-py python-gnupg
+$USE_SUDO pip install GitPython docker python-gnupg
 
 # Set the user, home-directory, and state root
 $USE_SUDO salt-call --state-output=changes grains.setvals "{ 'eligundry_device': '$DEVICE_NAME' }"
