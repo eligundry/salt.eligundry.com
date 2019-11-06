@@ -45,7 +45,7 @@ gocode:
     - recurse:
       - user
 
-{% for key, repo in pillar['go-repos'].items()  %}
+{% for key, repo in salt['pillar.get']('go-repos', {}).items()  %}
 
 {{ key }}-go-repo:
   git.latest:
