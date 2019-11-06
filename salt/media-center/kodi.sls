@@ -4,7 +4,7 @@
 kodi-ppa:
   pkgrepo.managed:
     - humanname: Kodi Media Center
-    - name: deb http://ppa.launchpad.net/team-xbmc/ppa/ubuntu zesty main
+    - name: deb http://ppa.launchpad.net/team-xbmc/ppa/ubuntu {{ pillar['debian_ppa_codename'] }} main
     - keyid: 91E7EE5E
     - keyserver: keyserver.ubuntu.com
     - file: /etc/apt/sources.list.d/kodi.list

@@ -1,10 +1,5 @@
 {% set os = grains['os']|lower %}
-{% set codename = grains['lsb_distrib_codename'] %}
 {% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
-
-{% if codename == 'buster' %}
-  {% set codename = 'stretch' %}
-{% endif %}
 
 docker-group:
   group.present:
@@ -23,24 +18,20 @@ docker-user:
     - require:
       - docker-group
 
-docker-ppa:
-  pkgrepo.managed:
-    - humanname: Docker
-    - name: deb https://apt.dockerproject.org/repo {{ os }}-{{ codename }} main
-    - keyid: 58118E89F3A912897C070ADBF76221572C52609D
-    - keyserver: p80.pool.sks-keyservers.net
-    - file: /etc/apt/sources.list.d/docker.list
-
 docker:
   pkg.installed:
     - pkgs:
+      - docker.io
+      - docker-compose
+
+old-docker-pkgs:
+  pkg.absent:
+    - pkgs:
       - docker
       - docker-engine
-      {% if os == 'debian' %}
-      - docker-compose
-      {% endif %}
-    - require:
-      - docker-ppa
+
+/etc/apt/sources.list.d/docker.list:
+  file.absent
 
 docker-service-file:
   file.managed:
