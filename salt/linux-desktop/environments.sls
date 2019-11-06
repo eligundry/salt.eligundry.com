@@ -26,9 +26,6 @@ gnome:
 gnome-do:
   pkg.installed
 
-mysql-workbench:
-  pkg.installed
-
 network-manager-openvpn:
   pkg.installed:
     - pkgs:
