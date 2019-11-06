@@ -1,4 +1,3 @@
-{% set os = grains['os']|lower %}
 {% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
 
 docker-group:
