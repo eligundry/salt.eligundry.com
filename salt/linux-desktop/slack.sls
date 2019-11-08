@@ -1,4 +1,4 @@
-{% set slack_version = '3.3.7' %}
+{% set slack_version = '4.1.2' %}
 
 slack:
   pkg.installed:
