@@ -40,6 +40,12 @@ docker-service-file:
     - user: root
     - group: root
     - mode: 644
+    - defaults:
+        dockerd_path: /usr/bin/dockerd
+    {% if grains['os'] == 'Debian' %}
+    - context:
+        dockerd_path: /usr/sbin/dockerd
+    {% endif %}
 
 docker-service:
   service.running:
