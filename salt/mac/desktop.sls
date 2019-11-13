@@ -1,3 +1,7 @@
+background-music:
+  pkg.installed:
+    - name: caskroom/cask/background-music
+
 bearededspice:
   pkg.installed:
     - name: caskroom/cask/beardedspice
