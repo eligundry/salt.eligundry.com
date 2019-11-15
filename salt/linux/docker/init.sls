@@ -40,6 +40,7 @@ docker-service-file:
     - user: root
     - group: root
     - mode: 644
+    - template: jinja
     - defaults:
         dockerd_path: /usr/bin/dockerd
     {% if grains['os'] == 'Debian' %}
