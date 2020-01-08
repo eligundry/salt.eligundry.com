@@ -5,22 +5,6 @@
 golang:
   pkg.installed
 
-{% if grains['os'] == 'MacOS' %}
-
-dep:
-  pkg.installed
-
-{% else %}
-
-dep:
-  pkg.installed:
-    - name: go-dep
-
-gocode:
-  pkg.installed
-
-{% endif %}
-
 {{ home }}/.netrc:
   file.managed:
     - user: {{ user['name'] }}
