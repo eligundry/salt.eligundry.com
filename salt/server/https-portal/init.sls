@@ -69,6 +69,7 @@ https-portal:
           - https-portal
     - binds:
       - {{ https_portal_dir }}:/var/lib/https-portal
+      - {{ https_portal_dir }}/eligundry.com.ssl.conf.erb:/var/lib/https-portal/www.eligundry.com.ssl.conf.erb
       # - {{ https_portal_config_dir }}:/var/lib/nginx-conf
     - restart_policy: always
     - require:
