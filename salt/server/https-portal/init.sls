@@ -35,7 +35,7 @@ nginx-proxy-stopped:
       - group
       - mode
 
-{% for filename in ['default.conf.erb', 'default.ssl.conf.erb', 'nginx.conf.erb'] %}
+{% for filename in ['default.conf.erb', 'default.ssl.conf.erb', 'nginx.conf.erb', 'eligundry.com.ssl.conf.erb'] %}
 
 {{ https_portal_config_dir }}/{{ filename }}:
   file.managed:
