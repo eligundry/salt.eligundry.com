@@ -71,6 +71,7 @@ https-portal:
       - {{ https_portal_dir }}:/var/lib/https-portal
       - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/eligundry.com.ssl.conf.erb
       - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/www.eligundry.com.ssl.conf.erb
+      - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/beta.eligundry.com.ssl.conf.erb
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
