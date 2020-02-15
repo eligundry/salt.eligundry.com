@@ -355,6 +355,9 @@ user: root
 #
 #sudo_acl: False
 
+# Allow Linux users to authenticate with the API via PAM
+auth.pam.service: login
+
 # The external auth system uses the Salt auth modules to authenticate and
 # validate users to access areas of the Salt system.
 external_auth:
