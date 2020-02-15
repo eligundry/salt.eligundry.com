@@ -357,10 +357,14 @@ user: root
 
 # The external auth system uses the Salt auth modules to authenticate and
 # validate users to access areas of the Salt system.
-#external_auth:
-#  pam:
-#    fred:
-#      - test.*
+external_auth:
+  pam:
+    {{ pillar['user']['name'] }}:
+      - '.*'
+  {% for user in pillar['salt-api']['users'] -%}
+    {{ user['name'] }}:
+      - '.*'
+  {% endfor %}
 #
 # Time (in seconds) for a newly generated token to live. Default: 12 hours
 #token_expire: 43200
