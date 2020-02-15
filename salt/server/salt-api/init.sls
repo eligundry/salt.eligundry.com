@@ -21,9 +21,6 @@ salt-api-{{ user['name'] }}:
 salt-api:
   pkg.installed
 
-CherryPy:
-  pip.installed
-
 {{ docker_host_image }}:
   docker_image.present:
     - force: {{ pull_latest }}
