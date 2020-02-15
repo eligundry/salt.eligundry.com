@@ -15,6 +15,7 @@ salt-api-{{ user['name'] }}:
     - name: {{ user['name'] }}
     - password: {{ user['password'] }}
     - createhome: false
+    - shell: /bin/bash
 {% endfor %}
 
 salt-api:
