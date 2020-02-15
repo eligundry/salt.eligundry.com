@@ -369,7 +369,6 @@ external_auth:
 # REST API 4 Salt
 rest_cherrypy:
   port: 6969
-  host: 127.0.0.1
   disable_ssl: true
   enable_sessions: false
 

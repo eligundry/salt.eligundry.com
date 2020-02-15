@@ -15,7 +15,6 @@ salt-api-{{ user['name'] }}:
     - name: {{ user['name'] }}
     - password: {{ user['password'] }}
     - createhome: false
-    - shell: /usr/sbin/nologin
 {% endfor %}
 
 salt-api:
