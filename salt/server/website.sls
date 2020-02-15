@@ -1,3 +1,6 @@
+include:
+  - server.https-portal
+
 {% set pull_latest = pillar['docker_pull_latest'] %}
 {% set eligundry_image = 'eligundry/eligundry.com:latest' %}
 {% set beta_image = 'eligundry/website.eligundry.com:latest' %}
