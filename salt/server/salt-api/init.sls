@@ -10,8 +10,12 @@
 # from the reverse proxy to the API that way.
 
 {% for user in pillar['salt-api']['users'] %}
-docker-user:
+salt-api-{{ user['name'] }}:
   user.present:
+    - name: {{ user['name'] }}
+    - password: {{ user['password'] }}
+    - createhome: false
+    - shell: /usr/sbin/nologin
 {% endfor %}
 
 salt-api:
