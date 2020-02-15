@@ -31,6 +31,9 @@ CherryPy:
 docker-host:
   docker_container.running:
     - image: {{ docker_host_image }}
+    - cap_add:
+      - NET_ADMIN
+      - NET_RAW
     - networks:
       - https-portal-network:
         - aliases:
