@@ -31,7 +31,6 @@ docker-host:
     - cap_add:
       - NET_ADMIN
       - NET_RAW
-    - network_mode: host
     - networks:
       - https-portal-network:
         - aliases:
