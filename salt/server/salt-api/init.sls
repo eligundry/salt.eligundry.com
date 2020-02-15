@@ -32,6 +32,7 @@ docker-host:
       - NET_ADMIN
       - NET_RAW
     - networks:
+      - host: {}
       - https-portal-network:
         - aliases:
           - docker-host

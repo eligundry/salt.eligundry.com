@@ -371,6 +371,7 @@ rest_cherrypy:
   port: 6969
   host: 127.0.0.1
   disable_ssl: true
+  enable_sessions: false
 
 # Time (in seconds) for a newly generated token to live. Default: 12 hours
 #token_expire: 43200
