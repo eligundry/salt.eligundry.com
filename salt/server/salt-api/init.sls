@@ -20,23 +20,6 @@ salt-api-{{ user['name'] }}:
 salt-api:
   pkg.installed
 
-{{ docker_host_image }}:
-  docker_image.present:
-    - force: {{ pull_latest }}
-
-docker-host:
-  docker_container.running:
-    - image: {{ docker_host_image }}
-    - cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    - networks:
-      - https-portal-network:
-        - aliases:
-          - docker-host
-    - require:
-      - https-portal-network
-
 salt-api-service:
   service.running:
     - name: salt-api
