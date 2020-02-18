@@ -35,7 +35,7 @@ nginx-proxy-stopped:
       - group
       - mode
 
-{% for filename in ['default.conf.erb', 'default.ssl.conf.erb', 'nginx.conf.erb', 'eligundry.com.ssl.conf.erb'] %}
+{% for filename in ['default.conf.erb', 'default.ssl.conf.erb', 'nginx.conf.erb', 'eligundry.com.ssl.conf.erb', 'salt.eligundry.ninja.ssl.conf.erb'] %}
 
 {{ https_portal_config_dir }}/{{ filename }}:
   file.managed:
@@ -72,6 +72,7 @@ https-portal:
       - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/eligundry.com.ssl.conf.erb
       - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/www.eligundry.com.ssl.conf.erb
       - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/beta.eligundry.com.ssl.conf.erb
+      - {{ https_portal_config_dir }}/salt.eligundry.ninja.ssl.conf.erb:/var/lib/nginx-conf/salt.eligundry.ninja.ssl.conf.erb
     - restart_policy: always
     - require:
       - {{ https_portal_image }}
