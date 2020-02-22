@@ -7,7 +7,7 @@
     - system
     - user
     - talentinc
-  'eligundry_device:thinkpad':
+  'eligundry_device:thinkpad|nuc':
     - match: grain
     - repos
     - thinkpad

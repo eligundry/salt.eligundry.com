@@ -15,7 +15,7 @@ base:
     - match: grain
     - linux-desktop
     - media-center
-  'eligundry_device:thinkpad':
+  'eligundry_device:nuc|thinkpad':
     - match: grain
     - linux-desktop
     - linux-desktop.discord
@@ -25,6 +25,9 @@ base:
     - linux-desktop.veracrypt
     - linux-desktop.virtualbox
     - linux-desktop.vs-code
+    - thinkpad.ddns
+  'eligundry_device:thinkpad':
+    - match: grain
     - thinkpad
   'eligundry_device:server':
     - match: grain
