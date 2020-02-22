@@ -1,4 +1,4 @@
-{% set version = '2.0.2' %}
+{% set version = '2.1.1' %}
 
 playerctl:
   pkg.installed:
