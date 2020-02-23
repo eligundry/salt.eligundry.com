@@ -7,6 +7,7 @@
     - system
     - user
     - talentinc
+    - fonts
   'eligundry_device:thinkpad':
     - match: grain
     - repos

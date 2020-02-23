@@ -1,3 +1,6 @@
+{% set fonts_dir = pillar['user']['name'] + '/.fonts' %}
+{% set user = pillar['user']['name'] %}
+
 fonts-roboto:
   pkg.installed
 
@@ -12,3 +15,21 @@ fontforge:
     - pkgs:
       - fontforge
       - python-fontforge
+
+{{ fonts_dir }}:
+  file.directory:
+    - user: {{ user }}
+
+{% for family, weights in salt['pillar.get']('fonts').items() %}
+{% for weight, url in weights %}
+
+{{ fonts_dir }}/{{ family }}/{{ weight }}.otf:
+  file.managed:
+    - source: {{ url }}
+    - user: {{ user }}
+    - makedirs: true
+    - require:
+      - {{ fonts_dir }}
+
+{% endfor %}
+{% endfor %}
