@@ -6,3 +6,4 @@ include:
   - linux-desktop.spotify
   - linux-desktop.steam
   - linux-desktop.xfce
+  - linux-desktop.postgresql

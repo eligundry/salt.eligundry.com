@@ -32,12 +32,6 @@ network-manager-openvpn:
 qt4-qtconfig:
   pkg.installed
 
-pgadmin3:
-  pkg.installed:
-    - pkgs:
-      - pgadmin3
-      - postgresql-client
-
 peek:
   pkg.installed
 
