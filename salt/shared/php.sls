@@ -27,6 +27,14 @@ php7.0-fpm:
 
 {% endif %}
 
+{% if grains['os'] == 'Debian' %}
+
+apache2:
+  service.dead: {}
+  service.disabled: {}
+
+{% endif %}
+
 psysh-php-manual:
   file.managed:
     - name: {{ pillar['user']['home'] }}/.local/share/psysh/php_manual.sqlite
