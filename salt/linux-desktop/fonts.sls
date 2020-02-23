@@ -21,7 +21,7 @@ fontforge:
     - user: {{ user }}
 
 {% for family, weights in salt['pillar.get']('fonts').items() %}
-{% for weight, url in weights %}
+{% for weight, url in weights.items() %}
 
 {{ fonts_dir }}/{{ family }}/{{ weight }}.otf:
   file.managed:
