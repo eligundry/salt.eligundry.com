@@ -8,4 +8,7 @@ ttf-mscorefonts-installer:
   pkg.installed
 
 fontforge:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - fontforge
+      - fontforge-python
