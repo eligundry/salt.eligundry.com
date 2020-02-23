@@ -6,5 +6,3 @@ numix:
       {% if grains['os'] == 'Debian' %}
       - numix-icon-theme-circle
       {% endif %}
-    - require:
-      - numix-ppa
