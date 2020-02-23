@@ -28,9 +28,6 @@ qt4-qtconfig:
 peek:
   pkg.installed
 
-redshift-gtk:
-  pkg.installed
-
 thunderbird:
   pkg.installed
 
