@@ -20,7 +20,6 @@ base:
     - linux-desktop
     - linux-desktop.discord
     - linux-desktop.dropbox
-    - linux-desktop.emojione
     - linux-desktop.slack
     - linux-desktop.vs-code
     - thinkpad.ddns
@@ -29,7 +28,6 @@ base:
     - linux-desktop
     - linux-desktop.discord
     - linux-desktop.dropbox
-    - linux-desktop.emojione
     - linux-desktop.slack
     - linux-desktop.vs-code
     - thinkpad
