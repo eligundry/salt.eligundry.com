@@ -4,7 +4,7 @@
 {% set home = salt['pillar.get']('user:home') %}
 {% set password_store = home + '/.password-store' %}
 {% set browserpass_platform = 'linux64' %}
-{% set browserpass_native_version = '3.0.5' %}
+{% set browserpass_native_version = '3.0.6' %}
 
 {% if grains['os'] == 'MacOS' %}
   {% set browserpass_platform = 'darwin64' %}
