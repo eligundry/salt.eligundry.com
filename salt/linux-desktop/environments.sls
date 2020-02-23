@@ -23,9 +23,6 @@ gimp:
 gnome:
   pkg.installed
 
-gnome-do:
-  pkg.installed
-
 network-manager-openvpn:
   pkg.installed:
     - pkgs:
