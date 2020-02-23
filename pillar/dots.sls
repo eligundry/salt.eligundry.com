@@ -40,6 +40,7 @@ dots:
   .Xresources: Xresources
   .xsessionrc: xsessionrc
   .zshenv: zshenv
+  .themes/eligundry/gnome-shell/gnome-shell.css: themes/eligundry/gnome-shell/gnome-shell.css
 {% elif grains['kernel'] == 'Darwin' %}
   .item2_profiles.json: item2_profiles.json
 {% endif %}
