@@ -1,4 +1,4 @@
-{% set fonts_dir = pillar['user']['name'] + '/.fonts' %}
+{% set fonts_dir = pillar['user']['home'] + '/.fonts' %}
 {% set user = pillar['user']['name'] %}
 
 fonts-roboto:
