@@ -13,7 +13,6 @@ mysql:
     - pkgs:
       - mycli
       - mariadb-client
-      - libmysqlclient-dev
 
 ngrep:
   pkg.installed
