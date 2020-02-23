@@ -28,6 +28,7 @@ fontforge:
     - source: {{ url }}
     - user: {{ user }}
     - makedirs: true
+    - skip_verify: true
     - require:
       - {{ fonts_dir }}
 
