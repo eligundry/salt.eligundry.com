@@ -1,4 +1,5 @@
-{% set fonts_dir = pillar['user']['home'] + '/.fonts' %}
+{% set home = pillar['user']['home'] %}
+{% set fonts_dir = home + '/.fonts' %}
 {% set user = pillar['user']['name'] %}
 
 fonts-roboto:
@@ -15,6 +16,11 @@ fontforge:
     - pkgs:
       - fontforge
       - python-fontforge
+
+{{ home }}/.config/fontconfig/fonts.conf:
+  file.managed:
+    - source: salt://linux-desktop/fonts/fonts.conf
+    - user: {{ user }}
 
 {{ fonts_dir }}:
   file.directory:
