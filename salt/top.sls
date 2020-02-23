@@ -22,7 +22,6 @@ base:
     - linux-desktop.dropbox
     - linux-desktop.emojione
     - linux-desktop.slack
-    - linux-desktop.veracrypt
     - linux-desktop.vs-code
     - thinkpad.ddns
   'eligundry_device:thinkpad':
@@ -32,7 +31,6 @@ base:
     - linux-desktop.dropbox
     - linux-desktop.emojione
     - linux-desktop.slack
-    - linux-desktop.veracrypt
     - linux-desktop.vs-code
     - thinkpad
   'eligundry_device:server':
