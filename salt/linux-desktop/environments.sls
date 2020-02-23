@@ -10,13 +10,6 @@ clementine:
 evince:
   pkg.installed
 
-fonts-linux:
-  pkg.installed:
-    - pkgs:
-      - fonts-roboto
-      - ttf-ancient-fonts
-      - ttf-mscorefonts-installer
-
 gimp:
   pkg.installed
 

@@ -1,4 +1,5 @@
 include:
+  - linux-desktop.fonts
   - linux-desktop.environments
   - linux-desktop.google-chrome
   - linux-desktop.numix
