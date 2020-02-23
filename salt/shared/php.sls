@@ -29,9 +29,13 @@ php7.0-fpm:
 
 {% if grains['os'] == 'Debian' %}
 
-apache2:
-  service.dead: {}
-  service.disabled: {}
+apache2-service-stopped:
+  service.dead:
+    - name: apache2
+
+apache2-service-disabled:
+  service.disabled: 
+    - name: apache2
 
 {% endif %}
 

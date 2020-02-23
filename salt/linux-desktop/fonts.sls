@@ -11,4 +11,4 @@ fontforge:
   pkg.installed:
     - pkgs:
       - fontforge
-      - fontforge-python
+      - python-fontforge
