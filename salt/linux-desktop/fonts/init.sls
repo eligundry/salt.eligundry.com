@@ -21,6 +21,7 @@ fontforge:
   file.managed:
     - source: salt://linux-desktop/fonts/fonts.conf
     - user: {{ user }}
+    - makedirs: true
 
 {{ fonts_dir }}:
   file.directory:
