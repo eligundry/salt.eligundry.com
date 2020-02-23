@@ -7,6 +7,7 @@ slack-ppa:
     - name: deb https://packagecloud.io/slacktechnologies/slack/{{ os }}/ {{ codename }} main
     - key_url: https://packagecloud.io/slacktechnologies/slack/gpgkey
     - file: /etc/apt/sources.list.d/slack.list
+    - clean_file: true
 
 slack:
   pkg.installed
