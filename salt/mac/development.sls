@@ -43,7 +43,7 @@ java:
 # This cannot work with terminal vim.
 # I also don't use the vim GUI at all.
 macvim:
-  pkg.absent
+  pkg.removed
 
 mas:
   pkg.installed

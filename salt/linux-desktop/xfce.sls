@@ -7,9 +7,8 @@ xfce4:
 xfce4-dockbarx-ppa:
   pkgrepo.managed:
     - humanname: XFCE4 DockbarX Plugin
-    - name: deb http://ppa.launchpad.net/dockbar-main/ppa/ubuntu zesty main
-    - keyid: 38BD81CA
-    - keyserver: keyserver.ubuntu.com
+    - name: deb http://ppa.launchpad.net/xuzhen666/dockbarx/ubuntu bionic main 
+    - key_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x77d026e2eead66bd'
     - file: /etc/apt/sources.list.d/dockbarx.list
 
 xfce4-dockbarx-plugin:

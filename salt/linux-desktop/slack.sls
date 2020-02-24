@@ -13,6 +13,7 @@ slack-ppa:
     - clean_file: true
 
 slack:
-  pkg.installed
+  pkg.installed:
+    - name: slack-desktop
 
 {% endif %}

@@ -24,7 +24,7 @@ docker:
       - docker-compose
 
 old-docker-pkgs:
-  pkg.absent:
+  pkg.removed:
     - pkgs:
       - docker
       - docker-engine

@@ -12,6 +12,3 @@ nodejs:
   pkg.installed:
     - require:
       - node-ppa
-
-node-gyp:
-  pkg.installed
