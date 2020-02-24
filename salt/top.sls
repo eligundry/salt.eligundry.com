@@ -22,7 +22,8 @@ base:
     - linux-desktop.dropbox
     - linux-desktop.slack
     - linux-desktop.vs-code
-    - thinkpad.ddns
+    - linux-desktop.ddns
+    - nuc
   'eligundry_device:thinkpad':
     - match: grain
     - linux-desktop
