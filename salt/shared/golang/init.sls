@@ -11,7 +11,7 @@ golang:
 
 golang-from-source:
   archive.extracted:
-    - name: /usr/local/go
+    - name: /usr/local
     - source: https://dl.google.com/go/go1.14.linux-amd64.tar.gz
     - skip_verify: true
     - overwrite: true
