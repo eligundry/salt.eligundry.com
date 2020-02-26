@@ -2,8 +2,29 @@
 {% set home = user['home'] %}
 {% set code = home + '/Code' %}
 
+# Debian is currently pinned at go 1.11, but I need 1.12 or higher, so I need to
+# install from source
+{% if grains['os'] == 'Debian' %}
+
+golang:
+  pkg.removed
+
+golang-from-source:
+  archive.extracted:
+    - name: /usr/local/go
+    - source: https://dl.google.com/go/go1.14.linux-amd64.tar.gz
+    - skip_verify: true
+    - overwrite: true
+    - user: root
+    - group: root
+
+{% else %}
+
 golang:
   pkg.installed
+
+{% endif %}
+
 
 {{ home }}/.netrc:
   file.managed:
