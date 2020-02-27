@@ -5,7 +5,13 @@
 fonts-roboto:
   pkg.installed
 
+# Used to be that you needed to install this to get emoji. It looked terrible
+# but it was the only option. But now, times have changed and emojis are first
+# class citizens.
 ttf-ancient-fonts:
+  pkg.removed
+
+fonts-noto-color-emoji:
   pkg.installed
 
 ttf-mscorefonts-installer:
