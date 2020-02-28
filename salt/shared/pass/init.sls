@@ -69,11 +69,25 @@ browserpass-library:
     - group: {{ group }}
     - enforce_toplevel: false
 
+browserpass-configure:
+  cmd.run:
+    - name: cd {{ prefix }} && make PREFIX=/usr/local BIN=browserpass-linux64 install
+    - runas: {{ user }}
+    - require:
+      - browserpass-library
+
+browserpass-install:
+  cmd.run:
+    - name: cd {{ prefix }} && make PREFIX=/usr/local BIN=browserpass-linux64 install
+    - runas: root
+    - require:
+      - browserpass-library
+
 {% for browser in ['chrome', 'firefox'] %}
 
 browserpass-install-{{ browser }}-native-host:
   cmd.run:
-    - name: cd {{ prefix }} && make PREFIX={{ prefix }} hosts-{{ browser }}-user
+    - name: cd {{ prefix }} && make PREFIX=/usr/local hosts-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-library
@@ -82,7 +96,7 @@ browserpass-install-{{ browser }}-native-host:
 
 browserpass-install-{{ browser }}:
   cmd.run:
-    - name: cd {{ prefix }} && make PREFIX={{ prefix }} policies-{{ browser }}-user
+    - name: cd {{ prefix }} && make PREFIX=/usr/local policies-{{ browser }}-user
     - runas: {{ user }}
     - require:
       - browserpass-install-{{ browser }}-native-host
