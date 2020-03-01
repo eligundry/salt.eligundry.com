@@ -12,4 +12,7 @@ bluetooth:
     - pkgs:
       - bluez-firmware
 
+nvidia-driver:
+  pkg.installed
+
 {% endif %}
