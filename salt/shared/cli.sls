@@ -29,6 +29,9 @@ git:
 htop:
   pkg.installed
 
+httpie:
+  pkg.installed
+
 jq:
   pkg.installed
 
