@@ -15,4 +15,7 @@ bluetooth:
 nvidia-driver:
   pkg.installed
 
+firmware-misc-nonfree:
+  pkg.installed
+
 {% endif %}
