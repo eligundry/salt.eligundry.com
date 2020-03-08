@@ -7,7 +7,7 @@ nvidia-driver:
     - group: root
     - makedirs: true
     - contents: |
-      Section "Device"
-        Identifier "nvidia 960"
-        Driver "nvidia"
-      EndSection
+        Section "Device"
+          Identifier "nvidia 960"
+          Driver "nvidia"
+        EndSection
