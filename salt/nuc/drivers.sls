@@ -1,5 +1,3 @@
-{% if grains['os'] == 'Debian' %}
-
 intel-microcode:
   pkg.installed
 
@@ -12,10 +10,5 @@ bluetooth:
     - pkgs:
       - bluez-firmware
 
-nvidia-driver:
-  pkg.installed
-
 firmware-misc-nonfree:
   pkg.installed
-
-{% endif %}
