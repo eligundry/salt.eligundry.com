@@ -9,6 +9,8 @@ nvidia-driver:
     - makedirs: true
 
 # https://egpu.io/forums/thunderbolt-linux-setup/a-script-to-change-xorg-config/
+# After setting up, run:
+# sudo gswitch egpu
 gswitch-ppa:
   pkgrepo.managed:
     - humanname: gswitch - app to switch between external and internal GPUs
