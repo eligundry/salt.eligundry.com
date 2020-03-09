@@ -1,7 +1,7 @@
 nvidia-driver:
   pkg.installed
 
-/etc/X11/xorg.conf.d/20-egpu.conf:
+/etc/X11/xorg.conf.egpu:
   file.managed:
     - source: salt://nuc/egpu/xorg.conf
     - user: root
