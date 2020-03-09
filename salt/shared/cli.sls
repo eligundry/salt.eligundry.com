@@ -3,6 +3,9 @@
 bash:
   pkg.installed
 
+bc:
+  pkg.installed
+
 dash:
   pkg.installed
 
