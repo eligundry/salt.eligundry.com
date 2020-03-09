@@ -69,7 +69,7 @@ docker-py:
     - name: docker
 
 docker-gc:
-  docker_image.present:
+  docker_image.absent:
     - name: spotify/docker-gc
     - require:
       - docker-py
@@ -77,7 +77,7 @@ docker-gc:
 docker-cleanup:
   cron.present:
     - special: '{{ cleanup_frequency }}'
-    - name: "docker run --rm --userns host -v /var/run/docker.sock:/var/run/docker.sock -v /etc:/etc spotify/docker-gc"
+    - name: "docker image prune -f && docker volume prune -f && docker container prune -f"
     - comment: "Clear our unneeded Docker images."
     - require:
       - docker-gc
