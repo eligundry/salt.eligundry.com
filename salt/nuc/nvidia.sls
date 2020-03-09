@@ -8,6 +8,6 @@ nvidia-driver:
     - makedirs: true
     - contents: |
         Section "Device"
-          Identifier "nvidia 960"
+          Identifier "nvidia"
           Driver "nvidia"
         EndSection
