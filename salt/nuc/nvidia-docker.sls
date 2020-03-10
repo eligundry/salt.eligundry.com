@@ -13,7 +13,7 @@ nvidia-docker-repo:
 
 {{ filename }}:
   file.append:
-    text:
+    - text:
       - 'deb https://nvidia.github.io/nvidia-container-runtime/debian10/$(ARCH) /'
       - 'deb https://nvidia.github.io/nvidia-docker/debian10/$(ARCH) /'
 
