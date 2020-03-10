@@ -21,3 +21,10 @@ nvidia-container-toolkit:
   pkg.installed:
     - require:
       - nvidia-docker-repo
+
+nvidia-compute-packages:
+  pkg.installed:
+    - pkgs:
+      - nvidia-smi
+      - nvidia-cuda-toolkit
+      - nvidia-cuda-dev
