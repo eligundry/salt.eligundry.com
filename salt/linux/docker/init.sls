@@ -3,7 +3,7 @@
 docker-ppa:
   pkgrepo.managed:
     - humanname: 'Docker offical PPA'
-    - name: deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ grains[lsb_distrib_codename'] }} stable
+    - name: 'deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ grains['lsb_distrib_codename'] }} stable'
     - key_url: https://download.docker.com/linux/debian/gpg
     - file: /etc/apt/sources.list.d/docker.list
 
