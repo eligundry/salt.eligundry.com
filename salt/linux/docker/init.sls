@@ -1,5 +1,12 @@
 {% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
 
+docker-ppa:
+  pkgrepo.managed:
+    - humanname: 'Docker offical PPA'
+    - name: deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ grains[lsb_distrib_codename'] }} stable
+    - key_url: https://download.docker.com/linux/debian/gpg
+    - file: /etc/apt/sources.list.d/docker.list
+
 docker-group:
   group.present:
     - name: docker
@@ -20,14 +27,19 @@ docker-user:
 docker:
   pkg.installed:
     - pkgs:
-      - docker.io
-      - docker-compose
+      - docker-ce
+      - docker-ci-cli
+      - containerd.io
+    - require:
+      - docker-ppa
 
 old-docker-pkgs:
   pkg.removed:
     - pkgs:
       - docker
       - docker-engine
+      - docker.io
+      - docker-compose
 
 /etc/apt/sources.list.d/docker.list:
   file.absent
