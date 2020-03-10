@@ -26,6 +26,9 @@ curl:
 emacs:
   pkg.installed
 
+graphviz:
+  pkg.installed
+
 git:
   pkg.installed
 
