@@ -28,7 +28,7 @@ docker:
   pkg.installed:
     - pkgs:
       - docker-ce
-      - docker-ci-cli
+      - docker-ce-cli
       - containerd.io
     - require:
       - docker-ppa
