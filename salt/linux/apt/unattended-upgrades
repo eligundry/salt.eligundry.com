@@ -10,6 +10,13 @@ Unattended-Upgrade::Allowed-Origins {
 //      "${distro_id}:${distro_codename}-updates";
 //      "${distro_id}:${distro_codename}-proposed";
 //      "${distro_id}:${distro_codename}-backports";
+        // Below is some custom software that I always want up to date
+        "Google LLC:stable";
+        "Dropbox.com:${distro_codename}";
+        "vscode stable:stable";
+        "Spotify LTD:stable";
+        "packagecloud.io/slacktechnologies/slack:jessie";
+        "LP-PPA-neovim-ppa-unstable:bionic";
 };
 
 // List of packages to not update (regexp are supported)
