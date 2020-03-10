@@ -41,9 +41,6 @@ old-docker-pkgs:
       - docker.io
       - docker-compose
 
-/etc/apt/sources.list.d/docker.list:
-  file.absent
-
 docker-service-file:
   file.managed:
     - name: /etc/systemd/system/docker.service.d/docker_user.conf
@@ -55,10 +52,6 @@ docker-service-file:
     - template: jinja
     - defaults:
         dockerd_path: /usr/bin/dockerd
-    {% if grains['os'] == 'Debian' %}
-    - context:
-        dockerd_path: /usr/sbin/dockerd
-    {% endif %}
 
 docker-service:
   service.running:
@@ -91,5 +84,3 @@ docker-cleanup:
     - special: '{{ cleanup_frequency }}'
     - name: "docker image prune -f && docker volume prune -f && docker container prune -f"
     - comment: "Clear our unneeded Docker images."
-    - require:
-      - docker-gc
