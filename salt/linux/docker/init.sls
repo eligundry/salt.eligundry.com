@@ -30,6 +30,7 @@ docker:
       - docker-ce
       - docker-ce-cli
       - containerd.io
+      - docker-compose
     - require:
       - docker-ppa
 
@@ -39,7 +40,6 @@ old-docker-pkgs:
       - docker
       - docker-engine
       - docker.io
-      - docker-compose
 
 docker-service-file:
   file.managed:
