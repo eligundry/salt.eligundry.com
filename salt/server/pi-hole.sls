@@ -1,3 +1,6 @@
+include:
+  - server.https-portal
+
 {% set ip_address = salt['grains.get']('ip4_interfaces:eth0:0') %}
 {% set virtual_host = pillar['pi-hole']['virtual_host'] %}
 {% set pi_hole_image = 'pihole/pihole:latest' %}
