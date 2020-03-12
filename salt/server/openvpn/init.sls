@@ -1,3 +1,6 @@
+include:
+  - server.pi-hole
+
 {% set openvpn_path = pillar['openvpn']['path'] %}
 {% set openvpn_server = pillar['openvpn']['server'] %}
 {% set openvpn_image = 'kylemanna/openvpn:latest' %}
