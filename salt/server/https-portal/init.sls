@@ -42,6 +42,7 @@ nginx-proxy-stopped:
   'eligundry.com.ssl.conf.erb', 
   'salt.eligundry.ninja.ssl.conf.erb',
   'json-errors.conf',
+  'json-error-locations.conf',
 ] %}
 
 {{ https_portal_config_dir }}/{{ filename }}:
