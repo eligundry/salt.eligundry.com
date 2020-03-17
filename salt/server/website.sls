@@ -59,6 +59,9 @@ eligundry-api:
   docker_container.running:
     - image: {{ api_image }}
     - restart_policy: always
+    - environment:
+      - AUTH_USER: '{{ salt['pillar.get']('website:basic_auth:username') }}'
+      - AUTH_PASSWORD: '{{ salt['pillar.get']('website:basic_auth:password') }}'
     - networks:
       - https-portal-network:
         - aliases:

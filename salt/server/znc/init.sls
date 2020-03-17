@@ -1,3 +1,6 @@
+include:
+  - server.https-portal
+
 {% set znc_image = 'znc:latest' %}
 {% set znc_dir = '/opt/znc' %}
 {% set znc_config = pillar['znc'] %}
