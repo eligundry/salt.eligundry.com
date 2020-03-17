@@ -9,6 +9,7 @@ bluetooth:
   pkg.installed:
     - pkgs:
       - bluez-firmware
+      - blueman
 
 firmware-misc-nonfree:
   pkg.installed
