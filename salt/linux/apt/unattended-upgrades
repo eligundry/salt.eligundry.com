@@ -17,6 +17,7 @@ Unattended-Upgrade::Allowed-Origins {
         "Spotify LTD:stable";
         "packagecloud.io/slacktechnologies/slack:jessie";
         "LP-PPA-neovim-ppa-unstable:bionic";
+        "Docker:${distro_codename}";
 };
 
 // List of packages to not update (regexp are supported)
