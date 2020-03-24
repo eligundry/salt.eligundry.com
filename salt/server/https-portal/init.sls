@@ -68,7 +68,7 @@ https-portal:
       - ACCESS_LOG: 'on'
       - STAGE: {{ data['stage'] }}
       - DOMAINS: {{ ', '.join(data['domains']) }}
-      # - HSTS_MAX_AGE: '31536000'
+      - HSTS_MAX_AGE: '31536000'
     - port_bindings:
       - "80:80"
       - "443:443"
