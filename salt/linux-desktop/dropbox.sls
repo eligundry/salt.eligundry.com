@@ -1,6 +1,10 @@
 {% set os = grains['os']|lower %}
 {% set codename = grains['lsb_distrib_codename'] %}
 
+{% if codename == 'bullseye' %}
+  {% set codename = 'buster' %}
+{% endif %}
+
 dropbox-ppa:
   pkgrepo.managed:
     - humanname: Dropbox
