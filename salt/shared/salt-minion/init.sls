@@ -11,6 +11,14 @@ salt-minion:
 {% set arch = grains['osarch'] %}
 {% set codename = grains['oscodename'] %}
 
+{% if codename == 'bullseye' %}
+  {% set codename = 'buster' %}
+{% endif %}
+
+{% if release == 'latest' %}
+  {% set release = '10' %}
+{% endif %}
+
 saltstack-ppa:
   pkgrepo.managed:
     - humanname: SaltStack

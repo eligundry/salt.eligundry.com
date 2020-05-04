@@ -1,5 +1,4 @@
 {% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
-
 {% set codename = grains['lsb_distrib_codename'] %}
 
 {% if codename == 'bullseye' %}
@@ -9,7 +8,7 @@
 docker-ppa:
   pkgrepo.managed:
     - humanname: 'Docker offical PPA'
-    - name: 'deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ codename }} stable'
+    - name: 'deb [arch=amd64] https://download.docker.com/linux/{{ codename }} {{ grains['lsb_distrib_codename'] }} stable'
     - key_url: https://download.docker.com/linux/debian/gpg
     - file: /etc/apt/sources.list.d/docker.list
 
