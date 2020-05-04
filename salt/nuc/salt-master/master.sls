@@ -655,7 +655,7 @@ fileserver_backend:
 # be one of the following: pygit2, gitpython, or dulwich. If unset, then each
 # will be tried in that same order, and the first one with a compatible
 # version installed will be the provider that is used.
-gitfs_provider: gitpython
+gitfs_provider: pygit2
 
 # Along with gitfs_password, is used to authenticate to HTTPS remotes.
 # gitfs_user: ''

@@ -1,8 +1,8 @@
 include:
-  - server.salt-master
-  - server.salt-cloud
-  - server.salt-master
-  - server.salt-api
+  - nuc.salt-master
+  - nuc.salt-cloud
+  - nuc.salt-master
+  - nuc.salt-api
 {% if grains['os'] == 'Debian' %}
   - nuc.drivers
   - nuc.egpu
