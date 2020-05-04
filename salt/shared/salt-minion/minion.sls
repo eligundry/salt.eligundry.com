@@ -1,4 +1,3 @@
 # This file is managed by SaltStack, changes will be overwritten!
-master: {{ salt_master }}
-master_finger: '{{ salt_master_fingerprint }}'
+master: 127.0.0.1
 file_client: remote
