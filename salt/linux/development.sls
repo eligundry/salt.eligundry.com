@@ -1,9 +1,8 @@
 python:
   pkg.installed:
     - pkgs:
-      - python
       - python3
-      - python-pip
+      - python3-pip
 
 mosh:
   pkg.installed
