@@ -30,6 +30,9 @@
     - user: {{ pillar['user']['name'] }}
     - group: {{ pillar['user']['name'] }}
 
+dropbox_settings:
+  docker_volume.present
+
 {{ dropbox_image }}:
   docker_image.present:
     - force: true
@@ -43,4 +46,5 @@ dropbox:
       - DBOX_GID: '1000'
       - DBOX_SKIP_UPDATE: 'True'
     - volumes:
-      - {{ dropbox_path }}:/dbox/Dropbox
+      - {{ dropbox_path }}:/opt/dropbox/Dropbox
+      - dropbox_settings:/opt/dropbox/.dropbox
