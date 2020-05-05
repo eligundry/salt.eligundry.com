@@ -14,6 +14,7 @@ awscli:
     - template: jinja
     - source: salt://shared/aws/credentials
     - makedirs: true
+    - show_changes: false
     - require:
       - {{ user }}
 
