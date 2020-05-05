@@ -41,5 +41,6 @@ dropbox:
     - environment:
       - DBOX_UID: '1000'
       - DBOX_GID: '1000'
+      - DBOX_SKIP_UPDATE: 'True'
     - volumes:
       - {{ dropbox_path }}:/dbox/Dropbox
