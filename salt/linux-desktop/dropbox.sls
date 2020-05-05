@@ -32,7 +32,7 @@
 
 {{ dropbox_image }}:
   docker_image.present:
-    - force: {{ pull_latest }}
+    - force: true
 
 dropbox:
   docker_container.running:
