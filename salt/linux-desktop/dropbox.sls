@@ -42,8 +42,8 @@ dropbox:
     - image: {{ dropbox_image }}
     - restart_policy: always
     - environment:
-      - DBOX_UID: '1000'
-      - DBOX_GID: '1000'
+      - DROPBOX_UID: '1000'
+      - DROPBOX_GID: '1000'
     - binds:
       - {{ dropbox_path }}:/opt/dropbox/Dropbox
       - dropbox_settings:/opt/dropbox/.dropbox
