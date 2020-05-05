@@ -22,7 +22,7 @@
 #     - require:
 #       - dropbox-ppa
 
-{% set dropbox_image = 'janeczku/dropbox' %}
+{% set dropbox_image = 'otherguy/dropbox' %}
 {% set dropbox_path = pillar['user']['home'] + '/Dropbox' %}
 
 {{ dropbox_path }}:
