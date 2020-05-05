@@ -1,6 +1,13 @@
 {% set user = pillar['user'] %}
 {% set is_linux = grains['kernel'] == 'Linux' %}
 
+{% if is_linux %}
+
+include:
+  - linux.docker
+
+{% endif %}
+
 {{ user['name'] }}:
   user.present:
     - fullname: {{ user['fullname'] }}
