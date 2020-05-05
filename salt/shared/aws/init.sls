@@ -1,3 +1,6 @@
+include:
+  shared.user
+
 {% set user = pillar['user']['name'] %}
 {% set home = pillar['user']['home'] %}
 
