@@ -1,4 +1,7 @@
-# This is being annoying
+# This is being annoying in Debian bullseye
+# Honestly, I don't event need a GUI for this.
+# Let's do it through Docker!
+#
 # {% set os = grains['os']|lower %}
 # {% set codename = grains['lsb_distrib_codename'] %}
 #
@@ -19,12 +22,24 @@
 #     - require:
 #       - dropbox-ppa
 
-{% set version = '2020.03.04' %}
+{% set dropbox_image = 'janeczku/dropbox' %}
+{% set dropbox_path = pillar['user']['home'] + '/Dropbox' %}
 
-/etc/apt/sources.list.d/dropbox.list:
-  file.absent
+{{ dropbox_path }}:
+  file.directory:
+    - user: {{ pillar['user']['name'] }}
+    - group: {{ pillar['user']['name'] }}
+
+{{ dropbox_image }}:
+  docker_image.present:
+    - force: {{ pull_latest }}
 
 dropbox:
-  pkg.installed:
-    - sources:
-      - dropbox: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_{{ version}}_amd64.deb
+  docker_container.running:
+    - image: {{ dropbox_image }}
+    - restart_policy: always
+    - environment:
+      - DBOX_UID: '1000'
+      - DBOX_GID: '1000'
+    - volumes:
+      - {{ dropbox_path }}:/dbox/Dropbox
