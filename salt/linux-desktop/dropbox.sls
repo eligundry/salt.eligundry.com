@@ -44,7 +44,6 @@ dropbox:
     - environment:
       - DBOX_UID: '1000'
       - DBOX_GID: '1000'
-      - DBOX_SKIP_UPDATE: 'True'
     - binds:
       - {{ dropbox_path }}:/opt/dropbox/Dropbox
       - dropbox_settings:/opt/dropbox/.dropbox
