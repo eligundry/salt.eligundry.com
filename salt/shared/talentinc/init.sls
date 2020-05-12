@@ -10,7 +10,7 @@
         username: {{ salt['pillar.get']('talentinc:db:username') }}
         password: {{ salt['pillar.get']('talentinc:db:password') }}
 
-{% grains['os'] == 'Debian' %}
+{% if grains['os'] == 'Debian' %}
 
 {% set bluejeans_version = '2.1.2' %}
 
