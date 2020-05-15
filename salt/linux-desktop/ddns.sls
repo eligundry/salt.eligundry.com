@@ -7,12 +7,16 @@
   docker_image.present:
     - force: true
 
-ddns:
+{% for entry in ddns %}
+
+'ddns-{{ entry['rrtype'] }}-{{ entry['subdomain'] }}.{{ entry['zone'] }}':
   docker_container.running:
     - image: {{ ddns_image }}
     - restart: 'unless-stopped'
     - environment:
-      - EMAIL: {{ ddns['email'] }}
-      - API_KEY: {{ ddns['api_key'] }}
-      - ZONE: {{ ddns['zone'] }}
-      - SUBDOMAIN: {{ ddns['subdomain'] }}
+      - API_KEY: {{ entry['api_key'] }}
+      - ZONE: {{ entry['zone'] }}
+      - SUBDOMAIN: {{ entry['subdomain'] }}
+      - RRTYPE: {{ entry['rrtype'] }}
+
+{% endfor %}
