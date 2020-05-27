@@ -11,10 +11,6 @@ base:
   'eligundry_device:personal_macbook':
     - match: grain
     - mac.fun
-  'eligundry_device:media-center':
-    - match: grain
-    - linux-desktop
-    - media-center
   'eligundry_device:nuc':
     - match: grain
     - linux-desktop

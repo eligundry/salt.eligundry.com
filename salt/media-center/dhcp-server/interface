@@ -1,7 +1,0 @@
-# Assign a static IP for this DHCP server through eth0:
-auto {{ interface }}
-iface {{ interface }} inet static
-    address {{ base }}.2
-    netmask 255.255.255.0
-    broadcast {{ base }}.254
-    gateway {{ base }}.1
