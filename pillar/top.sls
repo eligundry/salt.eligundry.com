@@ -29,7 +29,6 @@
     - https-portal
     - website
     - openvpn
-    - znc
   'virtual:VirtualBox':
     - match: grain
     - vagrant

@@ -34,7 +34,6 @@ base:
   'virtual:VirtualBox':
     - match: grain
     - linux-desktop
-    - media-center
     - thinkpad
     - server
   'productname:Droplet':

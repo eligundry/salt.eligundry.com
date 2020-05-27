@@ -4,4 +4,3 @@ include:
   - server.website
   - server.pi-hole
   - server.openvpn
-  - server.znc
