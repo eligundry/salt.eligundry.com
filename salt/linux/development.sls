@@ -27,12 +27,6 @@ redis-server-dead:
   service.dead:
     - name: redis-server
 
-rust:
-  pkg.installed:
-    - pkgs:
-      - rustc
-      - rust-gdb
-
 net-tools:
   pkg.installed
 
