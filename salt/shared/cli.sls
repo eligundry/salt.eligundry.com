@@ -55,6 +55,9 @@ openssh-pkg:
 pwgen:
   pkg.installed
 
+shellcheck:
+  pkg.installed
+
 slurm:
   pkg.installed
 
