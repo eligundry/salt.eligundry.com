@@ -30,6 +30,7 @@ include:
     - mode: 600
     - contents_pillar: user:ssh_keys:{{ name }}
     - show_changes: False
+    - makedirs: True
 
 {% endfor %}
 
