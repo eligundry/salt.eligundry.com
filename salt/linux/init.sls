@@ -6,5 +6,6 @@ include:
   - linux.mistakes
   - linux.nodejs
   - linux.rust
+  - linux.tailscale
   - linux.yarn
   - openssh.config
