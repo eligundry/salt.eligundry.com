@@ -1,3 +1,3 @@
 # This file is managed by SaltStack, changes will be overwritten!
-master: 127.0.0.1
+master: salt-master.eligundry.ninja
 file_client: remote

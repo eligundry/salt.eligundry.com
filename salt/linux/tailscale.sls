@@ -12,3 +12,4 @@ tailscale:
   pkg.installed
 
 # To bring up run `sudo tailscale up`
+# @TODO make sure the systemd unit is running
