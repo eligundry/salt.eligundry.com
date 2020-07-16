@@ -12,7 +12,7 @@
 #default_include: master.d/*.conf
 
 # The address of the interface to bind to:
-interface: {{ pillar['salt-master']['interface'] }}
+interface: {{ salt_master['interface'] }}
 
 # Whether the master should listen for IPv6 connections. If this is set to True,
 # the interface option must be adjusted, too. (For example: "interface: '::'")
