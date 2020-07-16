@@ -35,7 +35,7 @@ include:
 {% if 'rsa.pub' in name %}
 "{{ user['name'] }} - {{ name }} - ssh_auth":
   ssh_auth.present:
-    - name: {{ name }}
+    - name: {{ user['ssh_keys'][name] }}
     - user: {{ user['name'] }}
     - enc: 'ssh-rsa'
     - require:
