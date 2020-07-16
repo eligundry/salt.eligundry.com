@@ -32,7 +32,7 @@ include:
     - show_changes: False
     - makedirs: True
 
-{% if '.pub' in name %}
+{% if 'rsa.pub' in name %}
 "{{ user['name'] }} - {{ name }} - ssh_auth":
   ssh_auth.present:
     - name: {{ name }}
