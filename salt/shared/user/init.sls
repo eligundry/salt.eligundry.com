@@ -32,17 +32,17 @@ include:
     - show_changes: False
     - makedirs: True
 
-{% endfor %}
-
-{% if 'id_rsa.pub' in user['ssh_keys'] %}
-{{ user['name'] }}_ssh_auth:
+{% if '.pub' in name %}
+"{{ user['name'] }} - {{ name }} - ssh_auth":
   ssh_auth.present:
-    - name: {{ user['ssh_keys']['id_rsa.pub'] }}
+    - name: {{ name }}
     - user: {{ user['name'] }}
     - enc: 'ssh-rsa'
     - require:
       - {{ user['name'] }}
 {% endif %}
+
+{% endfor %}
 
 {{ user['home'] }}/.ssh/config:
   file.managed:
