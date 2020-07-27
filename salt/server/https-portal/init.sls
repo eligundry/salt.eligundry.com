@@ -1,4 +1,4 @@
-{% set https_portal_image = 'steveltn/https-portal' %}
+{% set https_portal_image = 'steveltn/https-portal:latest' %}
 {% set https_portal_dir = '/opt/https-portal' %}
 {% set https_portal_config_dir = '/opt/https-portal-configs' %}
 {% set data = pillar['https-portal'] %}
