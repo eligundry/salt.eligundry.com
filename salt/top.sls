@@ -19,7 +19,7 @@ base:
     - linux-desktop.slack
     - linux-desktop.vs-code
     - linux-desktop.ddns
-    - linux.virtualbox
+    - linux-desktop.virtualbox
     - nuc
   'eligundry_device:thinkpad':
     - match: grain
