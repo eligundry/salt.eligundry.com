@@ -1,5 +1,9 @@
 {% set codename = grains['lsb_distrib_codename'] %}
 
+{% if codename == 'bullseye' %}
+  {% set codename = 'buster' %}
+{% endif %}
+
 virtualbox-ppa:
   pkgrepo.managed:
     - humanname: VirtualBox
@@ -9,6 +13,6 @@ virtualbox-ppa:
 
 virtualbox:
   pkg.installed:
-    - name: virtualbox-5.2
+    - name: virtualbox-6.1
     - require:
       - virtualbox-ppa
