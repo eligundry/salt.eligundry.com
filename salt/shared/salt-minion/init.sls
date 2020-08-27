@@ -15,7 +15,7 @@ salt-minion:
   {% set codename = 'buster' %}
 {% endif %}
 
-{% if release == 'latest' %}
+{% if release == 'latest' or release == 'testing' %}
   {% set release = '10' %}
 {% endif %}
 
