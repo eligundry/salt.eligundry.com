@@ -1,5 +1,5 @@
 {% set codename = grains['lsb_distrib_codename'] %}
-{% set apt_source = 'deb http://download.virtualbox.org/virtualbox/debian ' + {{ codename }} + ' non-free contrib' %}
+{% set apt_source = 'deb http://download.virtualbox.org/virtualbox/debian ' + codename + ' non-free contrib' %}
 {% set package_name = 'virtualbox-6.1' %}
 
 {% if codename == 'bullseye' %}
