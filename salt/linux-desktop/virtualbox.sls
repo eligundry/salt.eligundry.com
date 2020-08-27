@@ -2,7 +2,7 @@
 {% set apt_source = 'deb http://download.virtualbox.org/virtualbox/debian ' + codename + ' non-free contrib' %}
 {% set package_name = 'virtualbox-6.1' %}
 
-{% if codename == 'bullseye' %}
+{% if codename == 'bullseye' || codename == 'sid' %}
   {% set apt_source = 'deb http://httpredir.debian.org/debian/ sid main contrib non-free' %}
   {% set package_name = 'virtualbox' %}
 {% endif %}
