@@ -22,7 +22,7 @@ salt-minion:
 saltstack-ppa:
   pkgrepo.managed:
     - humanname: SaltStack
-    - name: deb https://repo.saltstack.com/py3/{{ os }}/{{ release }}/{{ arch }}/latest {{ codename }} main
+    - name: deb http://repo.saltstack.com/py3/{{ os }}/{{ release }}/{{ arch }}/latest {{ codename }} main
     - keyfile: https://repo.saltstack.com/py3/{{ os }}/{{ release }}/{{ arch }}/latest/SALTSTACK-GPG-KEY.pub
     - file: /etc/apt/sources.list.d/saltstack.list
     - clean_file: true
