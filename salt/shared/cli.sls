@@ -6,9 +6,6 @@ bash:
 bc:
   pkg.installed
 
-dash:
-  pkg.installed
-
 {% if isMacOS  -%}
 /etc/shells:
   file.append:

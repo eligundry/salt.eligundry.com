@@ -4,10 +4,6 @@ coreutils:
       - coreutils
       - less
 
-dash:
-  pkg.installed:
-    - name: caskroom/cask/dash
-
 git-lfs:
   pkg.removed
 
