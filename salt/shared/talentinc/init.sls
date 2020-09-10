@@ -12,11 +12,7 @@
 
 {% if grains['os'] == 'Debian' %}
 
-{% set bluejeans_version = '2.1.2' %}
-
 bluejeans:
-  pkg.installed:
-    - sources:
-      - bluejeans: 'https://swdl.bluejeans.com/desktop-app/linux/2.1.2/BlueJeans.deb'
+  pkg.absent
 
 {% endif %}
