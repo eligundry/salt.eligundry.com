@@ -1,3 +1,7 @@
+include:
+  - shared.cli
+  - shared.user
+
 {% set home = pillar['user']['home'] %}
 {% set code = home + '/Code' %}
 {% set user = pillar['user']['name'] %}
