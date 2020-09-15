@@ -55,6 +55,19 @@ beta-eligundry-website:
       - group
       - mode
 
+database-migration:
+  docker_container.run:
+    - image: {{ api_image }}
+    - replace: true
+    - binds:
+      - {{ api_data_dir }}:/opt/data
+    - environment:
+      - GOOSE_DRIVER: sqlite3
+      - GOOSE_DBSTRING: /opt/data/api.db
+    - command: goose up
+    - require:
+      - {{ api_image }}
+
 eligundry-api:
   docker_container.running:
     - image: {{ api_image }}
@@ -62,6 +75,11 @@ eligundry-api:
     - environment:
       - AUTH_USER: '{{ salt['pillar.get']('website:basic_auth:username') }}'
       - AUTH_PASSWORD: '{{ salt['pillar.get']('website:basic_auth:password') }}'
+      - DO_SPACES_ENDPOINT: {{ salt['pillar.get']('digitalocean:spaces:endpoint') }}
+      - DO_SPACES_BUCKET: {{ salt['pillar.get']('digitalocean:spaces:bucket') }}
+      - DO_ACCESS_KEY: {{ salt['pillar.get']('digitalocean:spaces:access_key') }}
+      - DO_SECRET_KEY: {{ salt['pillar.get']('digitalocean:spaces:secret_key') }}
+      - DO_CDN_URL: {{ salt['pillar.get']('digitalocean:spaces:cdn_url') }}
     - networks:
       - https-portal-network:
         - aliases:
