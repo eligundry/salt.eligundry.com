@@ -65,7 +65,7 @@ database-migration:
       - GOOSE_DRIVER: sqlite3
       - GOOSE_DBSTRING: /opt/data/api.db
     - entrypoint: ''
-    - command: goose up
+    - command: 'cd /src/migrations && goose up'
     - require:
       - {{ api_image }}
 
