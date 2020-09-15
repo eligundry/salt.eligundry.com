@@ -68,6 +68,7 @@ https-portal:
       - ACCESS_LOG: 'on'
       - STAGE: {{ data['stage'] }}
       - DOMAINS: {{ ', '.join(data['domains']) }}
+      - CLIENT_MAX_BODY_SIZE: 32M
       # - HSTS_MAX_AGE: '31536000'
     - port_bindings:
       - "80:80"
