@@ -3,7 +3,7 @@ salt-master:
 
 /etc/salt/master:
   file.managed:
-    - source: salt://nuc/salt-master/master.sls
+    - source: salt://server/salt-master/master.sls
     - user: root
     - group: root
     - mode: 660
