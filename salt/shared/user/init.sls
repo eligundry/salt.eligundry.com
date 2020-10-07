@@ -62,6 +62,9 @@ include:
 # SaltStack can't import GPG keys on MacOS, for some reason. Import this key
 # manually.
 {% if grains['os'] != 'MacOS' %}
+python3-gnupg:
+  pkg.installed
+
 salt-master-gpg-key:
   gpg.present:
     - name: {{ pillar['salt-master-gpg']['id'] }}
@@ -70,4 +73,5 @@ salt-master-gpg-key:
     - gnupghome: {{ user['home'] }}/.gnupg
     - require:
       - {{ user['name'] }}
+      - python3-gnupg
 {% endif %}
