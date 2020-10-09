@@ -6,5 +6,6 @@ nvm-repo:
     - name: https://github.com/creationix/nvm.git
     - target: {{ home }}/.nvm
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - {{ user }}

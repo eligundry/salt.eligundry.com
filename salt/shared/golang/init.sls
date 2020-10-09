@@ -58,6 +58,7 @@ golang:
     - target: {{ code }}/go/src/{{ repo['path'] }}
     - identity: {{ home }}/.ssh/no_pass
     - user: {{ user['name'] }}
+    - identity: {{ home }}/.ssh/no_pass
     - unless: 'test -d {{ code }}/go/src/{{ repo['path'] }}'
 
 {% endfor %}

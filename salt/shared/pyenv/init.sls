@@ -26,6 +26,7 @@ pyenv:
     - name: https://github.com/pyenv/pyenv.git
     - target: {{ pyenv_path }}
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - {{ user }}
 
@@ -34,6 +35,7 @@ pyenv-default-packages:
     - name: https://github.com/jawshooah/pyenv-default-packages.git
     - target: {{ pyenv_path }}/plugins/pyenv-default-packages
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - pyenv
 
@@ -59,6 +61,7 @@ pyenv-virtualenv:
     - name:  https://github.com/pyenv/pyenv-virtualenv.git
     - target: {{ pyenv_path }}/plugins/pyenv-virtualenv
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - pyenv
 
@@ -67,5 +70,6 @@ pyenv-virtualenvwrapper:
     - name: https://github.com/pyenv/pyenv-virtualenvwrapper.git
     - target: {{ pyenv_path }}/plugins/.pyenv-virtualenvwrapper
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - pyenv
