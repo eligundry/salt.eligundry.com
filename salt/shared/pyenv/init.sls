@@ -1,4 +1,5 @@
 {% set user = pillar['user']['name'] %}
+{% set home = pillar['user']['home'] %}
 {% set pyenv_path = pillar['user']['home'] + '/.pyenv' %}
 
 pyenv-dependencies:
