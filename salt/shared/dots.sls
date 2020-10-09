@@ -22,6 +22,7 @@ dots-lib-{{ target }}:
     - name: {{ repo }}
     - target: {{ lib }}/{{ target }}
     - user: {{ user }}
+    - identity: {{ home }}/.ssh/no_pass
     - require:
       - {{ lib }}
 
