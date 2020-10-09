@@ -23,7 +23,7 @@ cron-digital-ocean-spaces-bucket:
 cron-digital-ocean-spaces-endpoint:
   cron.env_present:
     - name: DO_SPACES_ENDPOINT
-    - value: {{ salt['pillar.get']('digitalocean:spaces:endpoint') }}
+    - value: "https://{{ salt['pillar.get']('digitalocean:spaces:endpoint') }}"
     - user: root
 
 {{ backup_scripts_dir }}:
