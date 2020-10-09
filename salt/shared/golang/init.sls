@@ -17,6 +17,7 @@ golang-from-source:
     - overwrite: true
     - user: root
     - group: root
+    - trim_output: 1
 
 {% else %}
 
