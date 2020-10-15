@@ -21,4 +21,6 @@ polychromatic-ppa:
 
 polychromatic:
   pkg.installed:
-    - require: openrazer
+    - require: 
+      - openrazer
+      - polychromatic-ppa
