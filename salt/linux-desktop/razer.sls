@@ -10,3 +10,15 @@ openrazer:
     - name: openrazer-meta
     - require:
       - openrazer-ppa
+
+polychromatic-ppa:
+  pkgrepo.managed:
+    - humanname: Polychromatic - GUI to style Razer devices
+    - name: 'deb http://ppa.launchpad.net/polychromatic/stable/ubuntu focal main'
+    - keyid: 96B9CD7C22E2C8C5
+    - keyserver: keyserver.ubuntu.com
+    - file: /etc/apt/sources.list.d/polychromatic.list
+
+polychromatic:
+  pkg.installed:
+    - require: openrazer
