@@ -8,3 +8,4 @@ include:
   - linux-desktop.steam
   - linux-desktop.xfce
   - linux-desktop.postgres
+  - linux-desktop.razer
