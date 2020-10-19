@@ -17,12 +17,6 @@ fonts-noto-color-emoji:
 ttf-mscorefonts-installer:
   pkg.installed
 
-fontforge:
-  pkg.installed:
-    - pkgs:
-      - fontforge
-      - python-fontforge
-
 {{ home }}/.config/fontconfig/fonts.conf:
   file.managed:
     - source: salt://linux-desktop/fonts/fonts.conf
