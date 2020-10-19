@@ -10,9 +10,12 @@ google-chrome-ppa:
 google-chrome:
   pkg.installed:
     - pkgs:
-      - google-chrome-beta
       - google-chrome-stable
-      - google-chrome-unstable
-      - chromium
     - require:
       - google-chrome-ppa
+
+uninstall-other-chromes:
+  pkg.removed:
+    - pkgs:
+      - google-chrome-beta
+      - google-chrome-unstable
