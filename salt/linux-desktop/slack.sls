@@ -3,7 +3,6 @@
 
 {% if os == 'debian' %}
   {% set codename = 'jessie' %}
-{% endif %}
 
 slack-ppa:
   pkgrepo.managed:
@@ -17,3 +16,9 @@ slack:
   pkg.installed:
     - name: slack-desktop
 
+{% else %}
+
+slack:
+  snap.installed
+
+{% endif %}
