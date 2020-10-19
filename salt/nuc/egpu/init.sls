@@ -1,5 +1,9 @@
+{% if grains['osfullname'] == 'Debian' %}
+
 nvidia-driver:
   pkg.installed
+
+{% endif %}
 
 /etc/X11/xorg.conf.egpu:
   file.managed:
