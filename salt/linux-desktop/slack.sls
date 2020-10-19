@@ -1,8 +1,9 @@
 {% set os = grains['os']|lower %}
+{% set codename = grains['lsb_distrib_codename'] %}
 
 {% if os == 'debian' %}
-
-{% set codename = 'jessie' %}
+  {% set codename = 'jessie' %}
+{% endif %}
 
 slack-ppa:
   pkgrepo.managed:
@@ -16,4 +17,3 @@ slack:
   pkg.installed:
     - name: slack-desktop
 
-{% endif %}
