@@ -7,6 +7,7 @@ openrazer-ppa:
     {% else %}
     - name: 'deb http://ppa.launchpad.net/openrazer/stable/ubuntu {{ grains['oscodename'] }} main'
     - keyid: 903936CAB6049E2E6C33D5D8073E051D7B2AEE37
+    - keyserver: keyserver.ubuntu.com
     {% endif %}
     - file: /etc/apt/sources.list.d/openrazer.list
 
