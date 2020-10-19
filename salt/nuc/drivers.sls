@@ -1,3 +1,5 @@
+{% if grains['osfullname'] == 'Debian' %}
+
 intel-microcode:
   pkg.installed
 
@@ -13,3 +15,5 @@ bluetooth:
 
 firmware-misc-nonfree:
   pkg.installed
+
+{% endif %}
