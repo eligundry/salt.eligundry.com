@@ -1,8 +1,13 @@
 openrazer-ppa:
   pkgrepo.managed:
     - humanname: OpenRazer
+    {% if grains['osfullname'] == 'Debian' %}
     - name: 'deb http://download.opensuse.org/repositories/hardware:/razer/Debian_{{ grains['lsb_distrib_release']|capitalize }}/ /'
     - key_url: https://download.opensuse.org/repositories/hardware:razer/Debian_Unstable/Release.key
+    {% else %}
+    - name: 'deb http://ppa.launchpad.net/openrazer/stable/ubuntu {{ grains['oscodename'] }} main'
+    - keyid: 903936CAB6049E2E6C33D5D8073E051D7B2AEE37
+    {% endif %}
     - file: /etc/apt/sources.list.d/openrazer.list
 
 openrazer:
