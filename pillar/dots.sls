@@ -33,6 +33,7 @@ dots:
   .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml: config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
   .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml: config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
   .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml: config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+  .config/kitty: config/kitty
   .gtkrc-2.0: gtkrc-2.0
   .nethackrc: nethackrc
   .Xdefaults: Xdefaults
