@@ -53,10 +53,10 @@ pi-hole:
       - https-portal-network:
         - aliases:
           - pi-hole
-    - port_bindings:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
+    # - port_bindings:
+    #   - "53:53/tcp"
+    #   - "53:53/udp"
+    #   - "67:67/udp"
     - binds:
       - {{ pi_hole_dir }}/pihole-FTL.db:/etc/pihole/pihole-FTL.db
       - {{ pi_hole_dir }}/robots.txt:/var/www/html/pihole/robots.txt
