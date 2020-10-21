@@ -1,3 +1,5 @@
+{% set user = salt['pillar.get']('user') %}
+
 openrazer-ppa:
   pkgrepo.managed:
     - humanname: OpenRazer
@@ -30,3 +32,12 @@ polychromatic:
     - require: 
       - openrazer
       - polychromatic-ppa
+
+disable-battery-notification:
+  file.managed:
+    - name: {{ user['home'] }}/.config/openrazer/razer.conf
+    - user: {{ user['name'] }}
+    - group: {{ user['name'] }}
+    - makedirs: true
+    - contents: |
+        mouse_batter_notifier = True
