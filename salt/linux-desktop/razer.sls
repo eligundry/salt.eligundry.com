@@ -40,4 +40,10 @@ disable-battery-notification:
     - group: {{ user['name'] }}
     - makedirs: true
     - contents: |
-        mouse_batter_notifier = True
+        mouse_battery_notifier = True
+
+quiet-down-battery-notifications:
+  file.replace:
+    - name: /usr/lib/python3/dist-packages/openrazer_daemon/misc/battery_notifier.py
+    - pattern: 'INTERVAL_FREQ = 60 \* 10'
+    - repl: 'INTERVAL_FREQ = 60 * 60'
