@@ -44,6 +44,10 @@ dots:
   .item2_profiles.json: item2_profiles.json
 {% endif %}
 
+dots_absent:
+  .git_template: git_template
+  .ctags: ctags
+
 dots_libs:
   zplug: https://github.com/zplug/zplug.git
   base16-shell: https://github.com/chriskempson/base16-shell.git

@@ -40,3 +40,12 @@ dots-lib-{{ target }}:
       - dots-repo
 
 {% endfor %}
+
+{% for dst, src in pillar['dots_absent'].items() %}
+
+{{ home }}/{{ dst }}:
+  file.absent:
+    - require:
+      - dots-repo
+
+{% endfor %}
