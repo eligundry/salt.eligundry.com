@@ -2,11 +2,9 @@ dots:
   .bash_profile: bash_profile
   .bashrc: bashrc
   .commonprofile: commonprofile
-  .ctags: ctags
   .eslintrc: eslintrc
   .config/nvim: config/nvim
   .dir_colors: dir_colors
-  .git_template: git_template
   .gitattributes: gitattributes
   .gitconfig: gitconfig
   .gitexcludes: gitexcludes
