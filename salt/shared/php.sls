@@ -3,11 +3,9 @@ php:
     - pkgs:
       - composer
       - php
-      {% if grains['os'] == 'Debian' %}
       - php-curl
       - php-mbstring
       - php-xml
-      {% endif %}
 
 composer-auth-file:
   file.serialize:
@@ -20,24 +18,20 @@ composer-auth-file:
     - show_changes: false
     - makedirs: true
 
-{% if grains['os'] == 'Ubuntu' %}
-
 php7.0-fpm:
   service.disabled
 
-{% endif %}
+phpsessionclean.timer:
+  service.disabled: {}
+  service.dead: {}
 
-{% if grains['os'] == 'Debian' %}
+phpsessionclean.service:
+  service.disabled: {}
+  service.dead: {}
 
-apache2-service-stopped:
-  service.dead:
-    - name: apache2
-
-apache2-service-disabled:
-  service.disabled: 
-    - name: apache2
-
-{% endif %}
+apache2:
+  service.disabled: {}
+  service.dead: {}
 
 psysh-php-manual:
   file.managed:
