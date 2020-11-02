@@ -52,4 +52,5 @@ dots_libs:
   zplug: https://github.com/zplug/zplug.git
   base16-shell: https://github.com/chriskempson/base16-shell.git
   base16-terminal-app: https://github.com/korzhyk/base16-terminal-app.git
+  base16-kitty: https://github.com/kdrag0n/base16-kitty.git
   pipes: https://github.com/pipeseroni/pipes.sh.git
