@@ -21,17 +21,13 @@ composer-auth-file:
 php7.0-fpm:
   service.disabled
 
-phpsessionclean.timer:
-  service.disabled: {}
-  service.dead: {}
+{% for service in ['phpsessionclean.timer', 'phpsessionclean.service', 'apache2'] %}
 
-phpsessionclean.service:
-  service.disabled: {}
-  service.dead: {}
+{{ service }}:
+  service.disabled: []
+  service.dead: []
 
-apache2:
-  service.disabled: {}
-  service.dead: {}
+{% endfor %}
 
 psysh-php-manual:
   file.managed:
