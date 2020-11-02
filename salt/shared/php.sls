@@ -24,10 +24,12 @@ php7.0-fpm:
 {% for service in ['phpsessionclean.timer', 'phpsessionclean.service', 'apache2'] %}
 
 {{ service }}-disabled:
-  service.disabled
+  service.disabled:
+    - name: {{ service }}
 
 {{ service }}-dead:
-  service.dead
+  service.dead:
+    - name: {{ service }}
 
 {% endfor %}
 
