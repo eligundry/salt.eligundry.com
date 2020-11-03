@@ -62,7 +62,7 @@ gitfs_remotes:
     - name: dots
     - saltenv:
       - base:
-        - ref: saltstack-embedding
+        - ref: master
 
 # Use the pillar in this repo as a base
 pillar_roots:
@@ -74,7 +74,7 @@ ext_pillar:
     - {{ eligundry_branch }} https://github.com/eligundry/salt.eligundry.com.git:
       - env: base
       - root: pillar
-    - saltstack-embedding https://github.com/eligundry/dots.git:
+    - master https://github.com/eligundry/dots.git:
       - env: base
       - root: saltstack/pillar
 
