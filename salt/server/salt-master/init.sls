@@ -1,7 +1,7 @@
 salt-master:
   pkg.installed
 
-/etc/salt/master.d/overrides.sls:
+/etc/salt/master.d/overrides.conf:
   file.managed:
     - source: salt://server/salt-master/master.sls
     - user: root
@@ -25,4 +25,4 @@ salt-master-service:
     - enable: true
     - watch:
       - file: /etc/salt/master
-      - file: /etc/salt/master.d/overrides.sls
+      - file: /etc/salt/master.d/overrides.conf
