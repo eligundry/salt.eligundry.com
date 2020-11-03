@@ -4,6 +4,8 @@ fonts:
     medium: 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Medium/complete/Fira%20Code%20Medium%20Nerd%20Font%20Complete.ttf'
     light: 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Light/complete/Fira%20Code%20Light%20Nerd%20Font%20Complete.ttf'
     bold: 'https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Bold/complete/Fira%20Code%20Bold%20Nerd%20Font%20Complete.ttf'
+    regular-italic: 'https://github.com/Avi-D-coder/fira-mono-italic/raw/master/distr/otf/Fira%20Mono-Regular%20Italic.otf'
+    bold-italic: 'https://github.com/Avi-D-coder/fira-mono-italic/raw/master/distr/otf/Fira%20Mono-Bold%20Italic.otf'
   OperatorMonoNerdFont:
     bold-italic: 'https://github.com/piq9117/operator-mono-nerdfont/raw/master/Operator%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete.otf'
     bold: 'https://github.com/piq9117/operator-mono-nerdfont/raw/master/Operator%20Mono%20Bold%20Nerd%20Font%20Complete.otf'
