@@ -20,3 +20,11 @@ user:
   home: /home/eligundry
   main_group: eligundry
   {% endif %}
+
+dots:
+  name: eligundry
+  {% if grains['os'] == 'MacOS' %}
+  home: /Users/eligundry
+  {% else %}
+  home: /home/eligundry
+  {% endif %}
