@@ -60,6 +60,9 @@ gitfs_remotes:
   - git://github.com/eligundry/salt.eligundry.com.git:
     - root: saltstack/salt
     - name: dots
+    - saltenv:
+      - base:
+        - ref: saltstack-embedding
 
 # Use the pillar in this repo as a base
 pillar_roots:
