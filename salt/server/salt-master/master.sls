@@ -57,7 +57,7 @@ gitfs_remotes:
     - saltenv:
       - base:
         - ref: {{ eligundry_branch }}
-  - git://github.com/eligundry/salt.eligundry.com.git:
+  - git://github.com/eligundry/dots.git:
     - root: saltstack
     - name: dots
     - saltenv:

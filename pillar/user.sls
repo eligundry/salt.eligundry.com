@@ -22,7 +22,7 @@ user:
   {% endif %}
 
 dots:
-  name: eligundry
+  user: eligundry
   {% if grains['os'] == 'MacOS' %}
   home: /Users/eligundry
   {% else %}
