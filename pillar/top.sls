@@ -1,7 +1,6 @@
 'base':
   '*':
     - defaults
-    # - dots
     - ssh
     - sudoers
     - system
