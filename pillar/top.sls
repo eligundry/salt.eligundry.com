@@ -1,34 +1,34 @@
 'base':
   '*':
-    - .defaults
-    - .ssh
-    - .sudoers
-    - .system
-    - .user
-    - .talentinc
-    - .fonts
+    - defaults
+    - ssh
+    - sudoers
+    - system
+    - user
+    - talentinc
+    - fonts
     - dots
   'eligundry_device:thinkpad':
     - match: grain
-    - .repos
-    - .thinkpad
+    - repos
+    - thinkpad
   'eligundry_device:nuc':
     - match: grain
-    - .repos
-    - .thinkpad
+    - repos
+    - thinkpad
   'eligundry_device:media-center':
     - match: grain
-    - .media-center
+    - media-center
   'os:MacOS':
     - match: grain
-    - .repos
-    - .macbook
+    - repos
+    - macbook
   'eligundry_device:server':
     - match: grain
-    - .server
-    - .https-portal
-    - .website
-    - .openvpn
+    - server
+    - https-portal
+    - website
+    - openvpn
   'virtual:VirtualBox':
     - match: grain
-    - .vagrant
+    - vagrant
