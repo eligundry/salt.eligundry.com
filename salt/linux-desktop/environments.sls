@@ -16,6 +16,9 @@ gimp:
 gnome:
   pkg.installed
 
+kitty:
+  pkg.installed
+
 network-manager-openvpn:
   pkg.installed:
     - pkgs:
