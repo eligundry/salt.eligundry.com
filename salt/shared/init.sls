@@ -1,7 +1,8 @@
 include:
   - shared.system
   - shared.user
-  - shared.dots
+  # Moving this to the dots repo
+  # - shared.dots
   - shared.pyenv
   - shared.neovim
   # I'm falling out of love with nvm
