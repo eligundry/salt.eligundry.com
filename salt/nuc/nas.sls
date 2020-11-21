@@ -3,8 +3,8 @@ nfs-common:
 
 /mnt/queensbridge:
   mount.mounted:
-    device: queensbridge:/nfs/eligundry
-    fstype: nfs
-    mkmnt: true
-    persist: true
-    mount: true
+    - device: queensbridge:/nfs/eligundry
+    - fstype: nfs
+    - mkmnt: true
+    - persist: true
+    - mount: true
