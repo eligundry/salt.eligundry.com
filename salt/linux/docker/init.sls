@@ -9,7 +9,7 @@ docker-ppa:
   pkgrepo.managed:
     - humanname: 'Docker offical PPA'
     - name: 'deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ codename }} stable'
-    - key_url: https://download.docker.com/linux/debian/gpg
+    - key_url: https://download.docker.com/linux/{{ grains['os']|lower }}/gpg
     - file: /etc/apt/sources.list.d/docker.list
     - clean_file: true
 
