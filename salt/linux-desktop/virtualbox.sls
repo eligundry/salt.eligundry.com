@@ -8,6 +8,8 @@
 {% endif %}
 
 
+{% if codename != 'groovy' %}
+
 virtualbox-ppa:
   pkgrepo.managed:
     - humanname: VirtualBox
@@ -20,3 +22,5 @@ virtualbox:
     - name: {{ package_name }}
     - require:
       - virtualbox-ppa
+
+{% endif %}
