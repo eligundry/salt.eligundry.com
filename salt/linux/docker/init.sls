@@ -5,6 +5,10 @@
   {% set codename = 'buster' %}
 {% endif %}
 
+{% if codename == "groovy" %}
+  {% set codename = "focal" %}
+{% endif %}
+
 docker-ppa:
   pkgrepo.managed:
     - humanname: 'Docker offical PPA'
