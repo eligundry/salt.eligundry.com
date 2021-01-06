@@ -9,3 +9,4 @@ include:
   - linux-desktop.xfce
   - linux-desktop.postgres
   - linux-desktop.razer
+  - linux-desktop.zoom
