@@ -26,7 +26,6 @@ firefox:
   pkg.installed:
     - pkgs:
       - homebrew/cask/firefox
-      - homebrew/cask/firefox-developer-edition
 
 fliqlo:
   pkg.installed:
@@ -60,19 +59,11 @@ spotify:
   pkg.installed:
     - name: homebrew/cask/spotify
 
-spotify-notifications:
-  pkg.installed:
-    - name: homebrew/cask/spotify-notifications
-
 transmission:
   pkg.installed:
     - pkgs:
       - transmission
       - homebrew/cask/transmission
-
-veracrypt:
-  pkg.installed:
-    - name: homebrew/cask/veracrypt
 
 viscosity:
   pkg.installed:

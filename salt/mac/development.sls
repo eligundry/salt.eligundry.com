@@ -36,11 +36,6 @@ java:
   pkg.installed:
     - name: homebrew/cask/java
 
-# This cannot work with terminal vim.
-# I also don't use the vim GUI at all.
-macvim:
-  pkg.removed
-
 mas:
   pkg.installed
 
@@ -92,12 +87,6 @@ sshfs:
 
 the_silver_searcher:
   pkg.installed
-
-vagrant:
-  pkg.installed:
-    - pkgs:
-      - homebrew/cask/vagrant
-      - homebrew/cask/virtualbox
 
 vs-code:
   pkg.installed:
