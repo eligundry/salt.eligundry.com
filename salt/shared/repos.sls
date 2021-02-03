@@ -15,7 +15,9 @@ include:
 {{ config['git'] }}:
   git.latest:
     - target: {{ code }}/{{ target }}
+    {% if grains['os'] == 'MacOS' and grains['osmajorrelease'] == 11 %}
     - user: {{ user }}
+    {% endif %}
     - identity: {{ home }}/.ssh/no_pass
     - unless: 'test -d {{ code }}/{{ target }}'
     - require:
