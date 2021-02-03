@@ -15,7 +15,9 @@ qtpass:
 {{ pass_repo }}:
   git.latest:
     - target: {{ password_store }}
+    {% if grains['os'] != 'MacOS' %}
     - user: {{ user }}
+    {% endif %}
     - identity: {{ home }}/.ssh/no_pass
 
 {{ password_store }}:
