@@ -1,8 +1,4 @@
 repos:
-  bucketstore:
-    git: git@github.com:eligundry/bucketstore.git
-  dj-reddit:
-    git: git@github.com:eligundry/dj-reddit.git
   eligundry.com:
     git: git@github.com:eligundry/eligundry.com.git
   salt.eligundry.com:
