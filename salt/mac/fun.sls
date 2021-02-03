@@ -1,11 +1,11 @@
 steam:
   pkg.installed:
-    - name: caskroom/cask/steam
+    - name: homebrew/cask/steam
 
 openemu:
   pkg.installed:
-    - name: caskroom/cask/openemu
+    - name: homebrew/cask/openemu
 
 battle-net:
   pkg.installed:
-    - name: caskroom/cask/battle-net
+    - name: homebrew/cask/battle-net

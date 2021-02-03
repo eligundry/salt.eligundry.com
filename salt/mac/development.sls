@@ -18,23 +18,23 @@ gnupg:
 
 google-cloud-sdk:
   pkg.installed:
-    - name: caskroom/cask/google-cloud-sdk
+    - name: homebrew/cask/google-cloud-sdk
 
 docker:
   pkg.installed:
-    - name: caskroom/cask/docker
+    - name: homebrew/cask/docker
 
 insomnia:
   pkg.removed:
-    - name: caskroom/cask/insomnia
+    - name: homebrew/cask/insomnia
 
 iterm2:
   pkg.installed:
-    - name: caskroom/cask/iterm2
+    - name: homebrew/cask/iterm2
 
 java:
   pkg.installed:
-    - name: caskroom/cask/java
+    - name: homebrew/cask/java
 
 # This cannot work with terminal vim.
 # I also don't use the vim GUI at all.
@@ -52,21 +52,21 @@ mobile-shell:
 
 minikube:
   pkg.installed:
-    - name: caskroom/cask/minikube
+    - name: homebrew/cask/minikube
 
 mysql:
   pkg.installed
 
 mysqlworkbench:
   pkg.installed:
-    - name: caskroom/cask/mysqlworkbench
+    - name: homebrew/cask/mysqlworkbench
 
 nodejs:
   pkg.installed
 
 postman:
   pkg.installed:
-    - name: caskroom/cask/postman
+    - name: homebrew/cask/postman
 
 python:
   pkg.installed:
@@ -85,7 +85,7 @@ rust:
 
 staruml:
   pkg.removed:
-    - name: caskroom/cask/staruml
+    - name: homebrew/cask/staruml
 
 sshfs:
   pkg.installed
@@ -96,12 +96,12 @@ the_silver_searcher:
 vagrant:
   pkg.installed:
     - pkgs:
-      - caskroom/cask/vagrant
-      - caskroom/cask/virtualbox
+      - homebrew/cask/vagrant
+      - homebrew/cask/virtualbox
 
 vs-code:
   pkg.installed:
-    - name: caskroom/cask/visual-studio-code
+    - name: homebrew/cask/visual-studio-code
 
 yarn:
   pkg.installed

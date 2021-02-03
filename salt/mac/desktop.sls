@@ -1,83 +1,83 @@
 background-music:
   pkg.installed:
-    - name: caskroom/cask/background-music
+    - name: homebrew/cask/background-music
 
 bearededspice:
   pkg.installed:
-    - name: caskroom/cask/beardedspice
+    - name: homebrew/cask/beardedspice
 
 cyberduck:
   pkg.installed:
-    - name: caskroom/cask/cyberduck
+    - name: homebrew/cask/cyberduck
 
 discord:
   pkg.installed:
-    - name: caskroom/cask/discord
+    - name: homebrew/cask/discord
 
 disk-inventory-x:
   pkg.installed:
-    - name: caskroom/cask/disk-inventory-x
+    - name: homebrew/cask/disk-inventory-x
 
 dropbox:
   pkg.installed:
-    - name: caskroom/cask/dropbox
+    - name: homebrew/cask/dropbox
 
 firefox:
   pkg.installed:
     - pkgs:
-      - caskroom/cask/firefox
-      - caskroom/cask/firefox-developer-edition
+      - homebrew/cask/firefox
+      - homebrew/cask/firefox-developer-edition
 
 fliqlo:
   pkg.installed:
-    - name: caskroom/cask/fliqlo
+    - name: homebrew/cask/fliqlo
 
 gimp:
   pkg.installed:
-    - name: caskroom/cask/gimp
+    - name: homebrew/cask/gimp
 
 google-chrome:
   pkg.installed:
-    - name: caskroom/cask/google-chrome
+    - name: homebrew/cask/google-chrome
 
 keepingyouawake:
   pkg.installed:
-    - name: caskroom/cask/keepingyouawake
+    - name: homebrew/cask/keepingyouawake
 
 licecap:
   pkg.installed:
-    - name: caskroom/cask/licecap
+    - name: homebrew/cask/licecap
 
 numi:
   pkg.installed:
-    - name: caskroom/cask/numi
+    - name: homebrew/cask/numi
 
 slack:
   pkg.installed:
-    - name: caskroom/cask/slack
+    - name: homebrew/cask/slack
 
 spotify:
   pkg.installed:
-    - name: caskroom/cask/spotify
+    - name: homebrew/cask/spotify
 
 spotify-notifications:
   pkg.installed:
-    - name: caskroom/cask/spotify-notifications
+    - name: homebrew/cask/spotify-notifications
 
 transmission:
   pkg.installed:
     - pkgs:
       - transmission
-      - caskroom/cask/transmission
+      - homebrew/cask/transmission
 
 veracrypt:
   pkg.installed:
-    - name: caskroom/cask/veracrypt
+    - name: homebrew/cask/veracrypt
 
 viscosity:
   pkg.installed:
-    - name: caskroom/cask/viscosity
+    - name: homebrew/cask/viscosity
 
 vlc:
   pkg.installed:
-    - name: caskroom/cask/vlc
+    - name: homebrew/cask/vlc
