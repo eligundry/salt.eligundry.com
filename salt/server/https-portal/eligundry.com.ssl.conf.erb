@@ -15,68 +15,45 @@ server {
        add_header Strict-Transport-Security "max-age=<%= ENV['HSTS_MAX_AGE'] %>" always;
     <% end %>
 
-    # Let's get an A from securityheaders.com
-    # add_header X-Frame-Options "SAMEORIGIN";
-    # add_header X-Content-Type-Options "nosniff";
-    # add_header Content-Security-Policy "default-src https:; script-src 'unsafe-inline'";
-    # add_header Referrer-Policy "same-origin";
-    # add_header Feature-Policy: "sync-xhr 'none'";
-
     # Prevent Nginx from leaking the first TLS config
     if ($host != $server_name) {
         return 444;
     }
 
-    <% if domain.access_restriction %>
-        <% domain.access_restriction.each do |ip| %>
-            allow <%= ip %>;
-        <% end %>
-        deny all;
-    <% end %>
-
-    <% if domain.basic_auth_enabled? %>
-        auth_basic "Password";
-        auth_basic_user_file <%= domain.htaccess_path %>;
-    <% end %>
-
-    <% if domain.upstream %>
+    # Serve the HTML from DigitalOcean Spaces
+    # All non html assets
     location / {
-        <% if ENV['DYNAMIC_UPSTREAM'] && ENV['DYNAMIC_UPSTREAM'].downcase == 'true' %>
-        set $backend <%= domain.upstream %>;
-        proxy_pass $backend;
-        <% else %>
-        proxy_pass <%= domain.upstream %>;
-        <% end %>
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        resolver 1.1.1.1 [::1]:5353 valid=30s;
+        set $cdn_url "https://cdn.eligundry.com/site/";
+        proxy_pass $cdn_url;
+        proxy_set_header Host "cdn.eligundry.com";
+        # Without this, SSL handshakes fail?
+        # https://stackoverflow.com/a/52199403
+        proxy_ssl_server_name on;
+        # proxy_hide_header Strict-Transport-Security;
+    }
 
-        <% if ENV['WEBSOCKET'] && ENV['WEBSOCKET'].downcase == 'true' %>
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_read_timeout 2h;
-        <% end %>
+    # index.html
+    location = / {
+        resolver 1.1.1.1 [::1]:5353 valid=30s;
+        set $cdn_url "https://cdn.eligundry.com/site/";
+        proxy_pass $cdn_url/index.html;
+        proxy_set_header Host "cdn.eligundry.com";
+        proxy_ssl_server_name on;
+        # proxy_hide_header Strict-Transport-Security;
     }
-    <% elsif domain.redirect_target_url %>
-    location / {
-      return    301 <%= domain.redirect_target_url %>$request_uri;
+
+    # All other HTML pages
+    location ~ /(?<req_path>.+) {
+        resolver 1.1.1.1 [::1]:5353 valid=30s;
+        set $cdn_url "https://cdn.eligundry.com/site/";
+        proxy_pass $cdn_url/$req_path/index.html;
+        proxy_set_header Host "cdn.eligundry.com";
+        proxy_ssl_server_name on;
+        # proxy_hide_header Strict-Transport-Security;
     }
-    <% else %>
-    location / {
-        root   <%= domain.www_root %>;
-        index  index.html;
-    }
-    <% end %>
 
     include /etc/nginx/json-error-locations.conf;
-
-    location = /img/last.fm.jpg {
-        proxy_pass "http://www.tapmusic.net/collage.php?user=eli_pwnd&type=7day&size=3x3";
-        proxy_set_header Host "www.tapmusic.net";
-        expires 24h;
-    }
 
     location /api {
         include /etc/nginx/json-errors.conf;
