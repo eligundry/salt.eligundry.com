@@ -82,6 +82,7 @@ eligundry-api:
       - DO_ACCESS_KEY: {{ salt['pillar.get']('digitalocean:spaces:access_key') }}
       - DO_SECRET_KEY: {{ salt['pillar.get']('digitalocean:spaces:secret_key') }}
       - DO_CDN_URL: {{ salt['pillar.get']('digitalocean:spaces:cdn_url') }}
+      - GITHUB_TOKEN: {{ salt['pillar.get']('github:token') }}
     - networks:
       - https-portal-network:
         - aliases:
