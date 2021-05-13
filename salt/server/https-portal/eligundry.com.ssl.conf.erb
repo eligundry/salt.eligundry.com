@@ -23,7 +23,7 @@ server {
     # Serve the API first
     include /etc/nginx/json-error-locations.conf;
 
-    location /api {
+    location ~ ^/api {
         include /etc/nginx/json-errors.conf;
         proxy_pass http://eligundry-api:8080;
     }
