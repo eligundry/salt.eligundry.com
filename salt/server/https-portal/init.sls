@@ -79,9 +79,7 @@ https-portal:
           - https-portal
     - binds:
       - {{ https_portal_dir }}:/var/lib/https-portal
-      - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/eligundry.com.ssl.conf.erb
-      - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/www.eligundry.com.ssl.conf.erb
-      - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/beta.eligundry.com.ssl.conf.erb
+      - {{ https_portal_config_dir }}/eligundry.com.ssl.conf.erb:/var/lib/nginx-conf/api.eligundry.com.ssl.conf.erb
       - {{ https_portal_config_dir }}/salt.eligundry.ninja.ssl.conf.erb:/var/lib/nginx-conf/salt.eligundry.ninja.ssl.conf.erb
       - {{ https_portal_config_dir }}/json-errors.conf:/etc/nginx/json-errors.conf
       - {{ https_portal_config_dir }}/json-error-locations.conf:/etc/nginx/json-error-locations.conf

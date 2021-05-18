@@ -20,44 +20,10 @@ server {
         return 444;
     }
 
-    # Serve the API first
     include /etc/nginx/json-error-locations.conf;
 
-    location ~ ^/api {
+    location /api {
         include /etc/nginx/json-errors.conf;
         proxy_pass http://eligundry-api:8080;
-    }
-
-    # Serve the HTML from DigitalOcean Spaces
-    # All non html assets
-    location / {
-        resolver 1.1.1.1 [::1]:5353 valid=30s;
-        set $cdn_url "https://cdn.eligundry.com/site/";
-        proxy_pass $cdn_url;
-        proxy_set_header Host "cdn.eligundry.com";
-        # Without this, SSL handshakes fail?
-        # https://stackoverflow.com/a/52199403
-        proxy_ssl_server_name on;
-        # proxy_hide_header Strict-Transport-Security;
-    }
-
-    # index.html
-    location = / {
-        resolver 1.1.1.1 [::1]:5353 valid=30s;
-        set $cdn_url "https://cdn.eligundry.com/site/";
-        proxy_pass $cdn_url/index.html;
-        proxy_set_header Host "cdn.eligundry.com";
-        proxy_ssl_server_name on;
-        # proxy_hide_header Strict-Transport-Security;
-    }
-
-    # All other HTML pages
-    location ~ /(?<req_path>.+) {
-        resolver 1.1.1.1 [::1]:5353 valid=30s;
-        set $cdn_url "https://cdn.eligundry.com/site/";
-        proxy_pass $cdn_url/$req_path/index.html;
-        proxy_set_header Host "cdn.eligundry.com";
-        proxy_ssl_server_name on;
-        # proxy_hide_header Strict-Transport-Security;
     }
 }
