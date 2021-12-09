@@ -1,7 +1,3 @@
-background-music:
-  pkg.installed:
-    - name: homebrew/cask/background-music
-
 bearededspice:
   pkg.installed:
     - name: homebrew/cask/beardedspice
@@ -38,10 +34,6 @@ gimp:
 google-chrome:
   pkg.installed:
     - name: homebrew/cask/google-chrome
-
-keepingyouawake:
-  pkg.installed:
-    - name: homebrew/cask/keepingyouawake
 
 licecap:
   pkg.installed:
