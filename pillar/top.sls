@@ -5,7 +5,6 @@
     - .sudoers
     - .system
     - .user
-    - .talentinc
     - .fonts
     - dots
   'eligundry_device:thinkpad':
