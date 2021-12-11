@@ -4,25 +4,6 @@ interface: {{ salt_master['interface'] }}
 # Run as root
 user: root
 
-# Allow Linux users to authenticate with the API via PAM
-auth.pam.service: login
-
-# The external auth system uses the Salt auth modules to authenticate and
-# validate users to access areas of the Salt system.
-external_auth:
-  pam:
-    {{ pillar['user']['name'] }}:
-      - '.*'
-  {% for user in pillar['salt-api']['users'] %}
-    {{ user['name'] }}:
-      - '.*'
-  {% endfor %}
-
-# REST API 4 Salt
-rest_cherrypy:
-  port: 6969
-  disable_ssl: true
-
 # All of the secret configs go in here
 file_roots:
   base:
