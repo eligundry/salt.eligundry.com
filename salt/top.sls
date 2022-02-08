@@ -11,24 +11,6 @@ base:
   'eligundry_device:personal_macbook':
     - match: grain
     - mac.fun
-  'eligundry_device:nuc':
-    - match: grain
-    - linux-desktop
-    - linux-desktop.discord
-    - linux-desktop.dropbox
-    - linux-desktop.slack
-    - linux-desktop.vs-code
-    - linux-desktop.ddns
-    - linux-desktop.virtualbox
-    - nuc
-  'eligundry_device:thinkpad':
-    - match: grain
-    - linux-desktop
-    - linux-desktop.discord
-    - linux-desktop.dropbox
-    - linux-desktop.slack
-    - linux-desktop.vs-code
-    - thinkpad
   'eligundry_device:server':
     - match: grain
     - server

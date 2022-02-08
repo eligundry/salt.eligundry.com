@@ -7,17 +7,6 @@
     - .user
     - .fonts
     - dots
-  'eligundry_device:thinkpad':
-    - match: grain
-    - .repos
-    - .thinkpad
-  'eligundry_device:nuc':
-    - match: grain
-    - .repos
-    - .thinkpad
-  'eligundry_device:media-center':
-    - match: grain
-    - .media-center
   'os:MacOS':
     - match: grain
     - .repos
@@ -27,7 +16,6 @@
     - .server
     - .https-portal
     - .website
-    - .openvpn
   'virtual:VirtualBox':
     - match: grain
     - .vagrant
