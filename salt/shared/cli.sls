@@ -67,6 +67,9 @@ tree:
 vim:
   pkg.installed
 
+weechat:
+  pkg.installed
+
 wget:
   pkg.installed
 

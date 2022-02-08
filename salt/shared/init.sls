@@ -6,7 +6,6 @@ include:
   - shared.repos
   - shared.aws
   - shared.cli
-  - shared.weechat
   - shared.php
   - shared.pass
   - shared.salt-minion

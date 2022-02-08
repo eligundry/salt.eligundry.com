@@ -1,2 +1,0 @@
-weechat:
-  pkg.installed
