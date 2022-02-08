@@ -8,4 +8,4 @@ include:
   - linux.rust
   - linux.tailscale
   - linux.yarn
-  - openssh.config
+  # - openssh.config
