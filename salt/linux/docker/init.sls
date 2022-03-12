@@ -1,5 +1,6 @@
 {% set cleanup_frequency = '@daily' if grains['eligundry_device'] == 'server' else '@monthly' %}
 {% set codename = grains['lsb_distrib_codename'] %}
+{% set arch = grains['osarch'] %}
 
 {% if codename == 'bullseye' %}
   {% set codename = 'buster' %}
@@ -12,7 +13,7 @@
 docker-ppa:
   pkgrepo.managed:
     - humanname: 'Docker offical PPA'
-    - name: 'deb [arch=amd64] https://download.docker.com/linux/{{ grains['os']|lower }} {{ codename }} stable'
+    - name: 'deb [arch={{ arch }}] https://download.docker.com/linux/{{ grains['os']|lower }} {{ codename }} stable'
     - key_url: https://download.docker.com/linux/{{ grains['os']|lower }}/gpg
     - file: /etc/apt/sources.list.d/docker.list
     - clean_file: true
@@ -69,15 +70,6 @@ docker-service:
     - enable: true
     - watch:
       - file: /etc/systemd/system/docker.service.d/docker_user.conf
-
-minikube:
-  file.managed:
-    - comment: "Local Kubernetes Server"
-    - name: /usr/local/bin/minikube
-    - source: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    - mode: 755
-    - show_changes: False
-    - skip_verify: True
 
 docker-py:
   pip.installed:
