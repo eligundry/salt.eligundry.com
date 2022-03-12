@@ -20,12 +20,6 @@ bc:
 curl:
   pkg.installed
 
-emacs:
-  pkg.installed
-
-graphviz:
-  pkg.installed
-
 git:
   pkg.installed
 
@@ -65,9 +59,6 @@ tree:
   pkg.installed
 
 vim:
-  pkg.installed
-
-weechat:
   pkg.installed
 
 wget:
