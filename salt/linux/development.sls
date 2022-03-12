@@ -32,6 +32,3 @@ net-tools:
 
 silversearcher-ag:
   pkg.installed
-
-vagrant:
-  pkg.installed
