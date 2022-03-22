@@ -14,10 +14,6 @@ disk-inventory-x:
   pkg.installed:
     - name: homebrew/cask/disk-inventory-x
 
-dropbox:
-  pkg.installed:
-    - name: homebrew/cask/dropbox
-
 firefox:
   pkg.installed:
     - pkgs:
