@@ -19,11 +19,3 @@ neovim-ppa:
 
 neovim:
   pkg.installed
-
-neovim-js:
-  npm.installed:
-    - name: neovim
-    - force_reinstall: true
-
-bash-language-server:
-  npm.installed
