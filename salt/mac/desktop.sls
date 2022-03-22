@@ -39,6 +39,10 @@ licecap:
   pkg.installed:
     - name: homebrew/cask/licecap
 
+maestral:
+  pkg.installed:
+    - name: homebrew/cask/maestral
+
 numi:
   pkg.installed:
     - name: homebrew/cask/numi
